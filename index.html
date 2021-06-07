@@ -1,10 +1,13 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
-</html>
+---
+layout: default
+title: Home
+---
+<div class="posts">
+{% for post in site.posts %}
+  <div class="post">
+    <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+    <div class="subtitle">{{ post.subtitle }}</div>
+    <div><span class="date">{{ post.date  | date: "%b %d, %Y" }}</span> ㆍ  <span class="readtime">{{ post.readtime }} read</span></div>
+  </div>
+{% endfor %}
+</div>

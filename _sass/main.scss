@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 1000px)  {
+  html { 
+    font-size: 15px;
+  }
+}
+
+body {
+  max-width: 980px;
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Hanna', sans-serif;
+}
+
+header {
+  display: flex;
+  font-size: calc(3rem + 1vw);
+  margin: 3rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px black dou  ble;
+
+  .profile {
+    margin-left: auto;
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: gray 1px dotted;
+
+  .title {
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+    
+  }
+
+  .subtitle {
+    color: gray;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .date, .readtime {
+    color: gray;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.np{font-family: 'Nanum Pen Script', cursive;}
+.jg{font-family: 'Jeju Gothic', sans-serif;}
+.jm{font-family: 'Jeju Myeongjo', serif;}
+.kb{font-family: 'KoPub Batang', serif;}
+.nb{font-family: 'Nanum Brush Script', cursive;}
+.ns{font-family: 'Noto Sans KR', sans-serif;}
+.hn{font-family: 'Hanna', sans-serif;}
+.ng{font-family: 'Nanum Gothic', sans-serif;}
+.nm{font-family: 'Nanum Myeongjo', serif;}
+.jh{font-family: 'Jeju Hallasan', cursive;}
+.ng{font-family: 'Nanum Gothic Coding', monospace;}
