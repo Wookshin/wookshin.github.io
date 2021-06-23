@@ -1,0 +1,35 @@
+body {
+  max-width: 980px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  border-bottom: gray 1px dotted;
+  padding: 4rem 0;
+
+  .title {
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    color: gray;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .date, .readtime {
+    color: gray;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
