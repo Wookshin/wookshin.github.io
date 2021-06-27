@@ -58,3 +58,29 @@ b, strong {
 img {
   max-width: 100%;
 }
+
+.arrow {
+  border: solid gray;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 8px;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.arrow:hover {
+  border-color : cadetblue;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  top: 92%;
+  left: 90%;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  top: 95%;
+  left: 90%;
+}
