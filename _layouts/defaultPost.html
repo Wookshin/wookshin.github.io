@@ -6,9 +6,12 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="stylesheet" href="/assets/css/defaultPost.css">
+    <script src="/assets/js/header.js"></script>
   </head>
   <body>
     {% include header.html %}
-    {{ content }}
+    <div class="md-container">
+      {{ content }}
+    </div>
   </body>
 </html>

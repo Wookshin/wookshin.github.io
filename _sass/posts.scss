@@ -1,14 +1,21 @@
 body {
-  max-width: 980px;
-  width: 90%;
-  margin: 0 auto;
   font-size: 10px;
   font-family: 'Hanna', sans-serif;
 }
 
 .posts {
+  max-width: 1012px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.6rem;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (min-width: 1000px)  {
+  .posts { 
+    width: 90%;
+  }
 }
 
 .post {
@@ -20,6 +27,10 @@ body {
     color: black;
     font-size: 3rem;
     letter-spacing: -1px;
+  }
+
+  .title:hover {
+    color : cadetblue;
   }
 
   .subtitle {
