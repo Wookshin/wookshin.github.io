@@ -66,8 +66,7 @@ img {
   border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 8px;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   -webkit-backface-visibility: hidden;
 }
 
