@@ -67,6 +67,7 @@ img {
   display: inline-block;
   padding: 8px;
   position: fixed;
+  -webkit-backface-visibility: hidden;
 }
 
 .arrow:hover {
