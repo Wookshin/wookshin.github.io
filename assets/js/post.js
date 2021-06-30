@@ -9,3 +9,14 @@ window.addEventListener("load", () => {
         return false;
     });
 }, false);
+
+var isScrolling;
+
+window.addEventListener("scroll", () => {
+    window.clearTimeout( isScrolling );
+    var elem = document.querySelector('.arrow');
+    elem.style.display = 'block';
+    isScrolling = setTimeout(function() {
+        elem.style.display = 'none';
+	}, 2000);
+}, false);
