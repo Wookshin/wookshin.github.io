@@ -45,6 +45,11 @@ kramdown:
       line_numbers: true
       start_line: 1
 
+analytics:
+  provider: google
+
+google_analytics: UA-161100972-1
+
 collections:
   authors:
     output: true
@@ -64,6 +69,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+      
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
