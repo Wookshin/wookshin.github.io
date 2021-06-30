@@ -12,7 +12,7 @@
 }
 
 @media screen and (min-width: 1000px)  {
-  .md-container { 
+  header, .md-container { 
     width: 90%;
   }
 }
@@ -64,17 +64,13 @@ img {
 .arrow {
   
   display: inline-block;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
+  position: fixed;
   -webkit-backface-visibility: hidden;
   top: 90%;
   left: 90%;
 }
 
-.arrow:hover {
+.up:hover, .down:hover {
   border-color : cadetblue;
 }
 
