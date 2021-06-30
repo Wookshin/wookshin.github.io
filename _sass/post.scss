@@ -86,7 +86,23 @@ img {
   padding: 8px;
 }
 
+.upup {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  border: solid gray;
+  border-width: 0 8px 8px 0;
+  padding: 8px;
+}
+
 .down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border: solid gray;
+  border-width: 0 8px 8px 0;
+  padding: 8px;
+}
+
+.downdown {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   border: solid gray;
