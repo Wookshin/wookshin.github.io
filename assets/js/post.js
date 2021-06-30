@@ -18,5 +18,5 @@ window.addEventListener("scroll", () => {
     elem.style.display = 'block';
     isScrolling = setTimeout(function() {
         elem.style.display = 'none';
-	}, 2000);
+	}, 1500);
 }, false);
