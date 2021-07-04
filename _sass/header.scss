@@ -23,3 +23,9 @@ header {
     margin-left: auto;
   }
 }
+
+@media screen and (min-width: 1000px)  {
+  header { 
+    width: 90%;
+  }
+}
