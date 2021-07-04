@@ -171,8 +171,8 @@ body {
   }
   
   .post:hover {
-    border-color : cadetblue;
-    border-width : 3px;
+    border : 3px cadetblue solid;
+    cursor: pointer;
   }
   
   @media (min-width: 1013px){
