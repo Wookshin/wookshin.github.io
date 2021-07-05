@@ -35,7 +35,7 @@ window.addEventListener("pageshow", () => {
    var radios = document.querySelectorAll('input[type=radio][name="display"]');
     
    if(radios[0].checked == true){
-        changeHandler.bind(radios[0]();
+        changeHandler.bind(radios[0])();
     }
    else if(radios[1].chekced == true){
         changeHandler.bind(radios[1])();
