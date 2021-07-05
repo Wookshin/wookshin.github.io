@@ -14,7 +14,6 @@ function changeHandler(event) {
     if(!display.classList.contains('box')){
         display.classList.add('box');
     }
-    }  
 }
 
 window.addEventListener("load", () => {
@@ -36,7 +35,7 @@ window.addEventListener("pageshow", () => {
    if(radios[0].checked == true){
         changeHandler.bind(radios[0]();
     }
-    else if(radios[1].chekced){
+   else if(radios[1].chekced == true){
         changeHandler.bind(radios[1])();
-    }
+   }
 }, false);
