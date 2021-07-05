@@ -21,7 +21,12 @@ window.addEventListener("load", () => {
         }  
     }
     
-    changeHandler();
+    if(radios[0].checked == true){
+        changeHandler.bind(radios[0]();
+    }
+    else if(radios[1].chekced){
+        changeHandler.bind(radios[1])();
+    }
 
     Array.prototype.forEach.call(radios, function(radio) {
         radio.addEventListener('change', changeHandler);
