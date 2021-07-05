@@ -1,7 +1,7 @@
 
 window.addEventListener("load", () => {
     var radios = document.querySelectorAll('input[type=radio][name="display"]');
-
+    
     function changeHandler(event) {
         var display = document.querySelector('.display');
         if ( this.value === 'list' ) {
@@ -20,9 +20,11 @@ window.addEventListener("load", () => {
         }
         }  
     }
+    
+    changeHandler();
 
     Array.prototype.forEach.call(radios, function(radio) {
-    radio.addEventListener('change', changeHandler);
+        radio.addEventListener('change', changeHandler);
     });
 
     // <div onclick="location.href='url'">content</div>
