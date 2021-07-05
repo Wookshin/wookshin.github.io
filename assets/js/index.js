@@ -9,10 +9,12 @@ function changeHandler(event) {
         }
     } else if ( this.value === 'box' ) {
         if(display.classList.contains('list')){
-        display.classList.remove('list');
-    }
-    if(!display.classList.contains('box')){
-        display.classList.add('box');
+            display.classList.remove('list');
+        }
+        
+        if(!display.classList.contains('box')){
+            display.classList.add('box');
+        }
     }
 }
 
