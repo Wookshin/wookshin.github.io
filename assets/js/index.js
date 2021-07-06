@@ -1,6 +1,10 @@
 function changeHandler(event) {
+    console.log("changeHandler");
     var display = document.querySelector('.display');
+    console.log(display);
+    console.log(this);
     if ( this.value === 'list' ) {
+        console.log("list");
         if(display.classList.contains('box')){
             display.classList.remove('box');
         }
@@ -8,6 +12,7 @@ function changeHandler(event) {
             display.classList.add('list');
         }
     } else if ( this.value === 'box' ) {
+        console.log("box");
         if(display.classList.contains('list')){
             display.classList.remove('list');
         }
