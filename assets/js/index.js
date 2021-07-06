@@ -22,12 +22,14 @@ window.addEventListener("load", () => {
     console.log("load");
     var radios = document.querySelectorAll('input[type=radio][name="display"]');
     console.log(radios);
+    console.log(rdaios[0].checked);
+    console.log(rdaios[1].checked);
     
-    if(radios[0].checked == true){
+    if(radios[0].checked === true){
         console.log("radios[0]");
         changeHandler.bind(radios[0])();
     }
-    else if(radios[1].chekced == true){
+    else if(radios[1].chekced === true){
         changeHandler.bind(radios[1])();
         console.log("radios[1]");
     }
