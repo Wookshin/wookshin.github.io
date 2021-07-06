@@ -22,8 +22,8 @@ window.addEventListener("load", () => {
     console.log("load");
     var radios = document.querySelectorAll('input[type=radio][name="display"]');
     console.log(radios);
-    console.log(rdaios[0].checked);
-    console.log(rdaios[1].checked);
+    console.log(radios[0].checked);
+    console.log(radios[1].checked);
     
     if(radios[0].checked === true){
         console.log("radios[0]");
