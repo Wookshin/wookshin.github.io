@@ -21,6 +21,7 @@ function changeHandler(event) {
 window.addEventListener("load", () => {
     console.log("load");
     var radios = document.querySelectorAll('input[type=radio][name="display"]');
+    console.log(radios);
     
     if(radios[0].checked == true){
         console.log("radios[0]");
