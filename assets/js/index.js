@@ -19,6 +19,7 @@ function changeHandler(event) {
 }
 
 window.addEventListener("load", () => {
+    console.log("load");
     var radios = document.querySelectorAll('input[type=radio][name="display"]');
     
     Array.prototype.forEach.call(radios, function(radio) {
@@ -32,6 +33,7 @@ window.addEventListener("load", () => {
 }, false);
 
 window.addEventListener("pageshow", () => {
+   console.log("pageshow");
    var radios = document.querySelectorAll('input[type=radio][name="display"]');
     
    if(radios[0].checked == true){
