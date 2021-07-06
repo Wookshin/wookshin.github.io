@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
     }
     
     Array.prototype.forEach.call(radios, function(radio) {
-        radio.addEventListener('change', changeHandler);
+        radio.addEventListener('click', changeHandler);
     });
 
     // <div onclick="location.href='url'">content</div>
