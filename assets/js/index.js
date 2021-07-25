@@ -1,29 +1,38 @@
-
-window.addEventListener("load", () => {
-    var radios = document.querySelectorAll('input[type=radio][name="display"]');
-
-    function changeHandler(event) {
-        var display = document.querySelector('.display');
-        if ( this.value === 'list' ) {
-            if(display.classList.contains('box')){
-                display.classList.remove('box');
-            }
-            if(!display.classList.contains('list')){
-                display.classList.add('list');
-            }
-        } else if ( this.value === 'box' ) {
-            if(display.classList.contains('list')){
+function changeHandler(event) {
+    console.log("changeHandler");
+    var display = document.querySelector('.display');
+    console.log(display);
+    console.log(this);
+    if ( this.value === 'list' ) {
+        console.log("list");
+        if(display.classList.contains('box')){
+            display.classList.remove('box');
+        }
+        if(!display.classList.contains('list')){
+            display.classList.add('list');
+        }
+    } else if ( this.value === 'box' ) {
+        console.log("box");
+        if(display.classList.contains('list')){
             display.classList.remove('list');
         }
+        
         if(!display.classList.contains('box')){
             display.classList.add('box');
         }
-        }  
     }
+}
 
+window.addEventListener("load", () => {
+    console.log("load");
+    var radios = document.querySelectorAll('input[type=radio][name="display"]');
+    
     Array.prototype.forEach.call(radios, function(radio) {
-    radio.addEventListener('change', changeHandler);
+        radio.addEventListener('click', changeHandler);
     });
+    
+    var checkedRadio = document.querySelectorAll('input[type=radio][name="display"]:checked');
+    checkedRadio[0].click();
 
     // <div onclick="location.href='url'">content</div>
     // $("div").click(function(){

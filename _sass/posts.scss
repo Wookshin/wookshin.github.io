@@ -88,12 +88,6 @@ body {
     flex-direction: column;
   }
 
-  @media screen and (min-width: 1000px)  {
-    .posts { 
-      width: 90%;
-    }
-  }
-
   .post {
     border-bottom: gray 1px dotted;
     padding: 4rem 0;
@@ -175,13 +169,13 @@ body {
     cursor: pointer;
   }
   
-  @media (min-width: 1013px){
+  @media screen and (min-width: 1028px){
     .post:nth-child(3n) {
       margin-right: 0;
     }
   }
   
-  @media (max-width: 1012px){
+  @media screen and (min-width: 768px) and (max-width: 1027px){
     .post {
       width: calc(50% - 2rem);
       margin-right: 4rem;
@@ -192,7 +186,7 @@ body {
     }
   }
   
-  @media (max-width: 767px){
+  @media screen and (max-width: 767px){
     .post {
       width: 100%;
       margin-right: 0;
