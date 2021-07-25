@@ -2,12 +2,17 @@
 title: 반응형 웹 디자인(Responsive Web Design)
 subtitle: CSS responsive 에 대하여
 readtime: 30 min
-author: wookshin
+author: wookshin*
 ---
 
 <br/>
 
 # 반응형 웹 디자인(Responsive Web Design)
+<br/>
+
+*해당 포스트는 MDN Responsive design 페이지를 번역한 후 해당 내용을 가공한 포스트입니다.*  
+ - [MDN Responsive design 페이지 이동하기](https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Responsive_Design)
+
 <br/>
 
 ## 1. 반응형 웹 디자인이란?
@@ -501,3 +506,14 @@ viewport의 크기를 늘어나면 폰트 사이즈도 점차 증가합니다.
 **반응형 디자인은 이제는 옵션이 아니라 필수라고 생각됩니다.**   
 
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
