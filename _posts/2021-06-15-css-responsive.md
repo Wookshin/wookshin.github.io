@@ -10,9 +10,12 @@ author: wookshin*
 # 반응형 웹 디자인(Responsive Web Design)
 <br/>
 
-*해당 포스트는 MDN Responsive design 페이지를 번역한 후 해당 내용을 가공한 포스트입니다.*  
+**_반응형 웹 디자인이란 무엇이고, 어떻게 구현할 수 있는지 알아봅니다._**  
+<br/>
+**_해당 포스트는 MDN Responsive design 페이지를 번역한 후 해당 내용을 가공한 포스트입니다._**  
  - [MDN Responsive design 페이지 이동하기](https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Responsive_Design)
 
+<br/>
 <br/>
 
 ## 1. 반응형 웹 디자인이란?
