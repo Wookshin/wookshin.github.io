@@ -1,5 +1,5 @@
 ---
-title: Iterator와 Generator
+title: Iteration와 Generator
 subtitle: 코드스피츠 77 ES6+ 3화 참조
 readtime: 20 min
 author: wookshin
@@ -7,13 +7,65 @@ author: wookshin
 
 <br/>
 
-# Iterator와 Generator
+# Iteration과 Generator
 
 <br/>
 
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protocols
 
 <br/>
+
+## iteration Protocols
+Iteration Protocols는 ECMAScript 2015에 나왔으며, 2개의 Protocol을 갖습니다.
+iterable protocol과 iterator protocol입니다. 
+
+## iterable protocol이란?
+iterable 하다라는 것은 하기 조건을 충족했을 때 입니다. 
+ - Symbol.iterator라는 Key를 가진 함수가 존재하며 해당 함수는 인자가 없습니다.
+ - 해당 함수의 Return 값은 iterator Protocol을 구현한 객체입니다.
+
+iterable protocol을 구현한 object는 for...of loop, spread, destructing 등 다양한 곳에서 활용 가능합니다. 
+
+<br/>
+
+## iterator protocol이란?
+iterator protocol을 준수했다는 것은 해당 객체가 next라는 함수를 가지며, 이 함수는 iterator라는 객체를 
+iterator 객체는 done과 value 키를 가진 객체입니다.
+
+<br/>
+
+## iteration protocol 예제 
+string도 빌트인 iterable 객체입니다. 
+```js
+const someString = 'hi';
+console.log(typeof someString[Symbol.iterator]); // "function"
+```
+
+```js
+const iterator = someString[Symbol.iterator]();
+console.log(iterator + ''); // "[object String Iterator]"
+
+console.log(iterator.next()); // { value: "h", done: false }
+console.log(iterator.next()); // { value: "i", done: false }
+console.log(iterator.next()); // { value: undefined, done: true }
+```
+
+```js
+console.log([...someString]); // ["h", "i"]
+```
+
+
+## iterable protocol 예제 
+String, Array, TypedArray, Map, Set은 모두 빌트인 iterable입니다. 즉, [Symbol.Iterator] 키를 갖는 함수를 가지고 있단 뜻이죠.
+```js
+const myIterable = {};
+myIterable[Symbol.iterator] = function* () {
+    yield 1;
+    yield 2;
+    yield 3;
+};
+console.log([...myIterable]); // [1, 2, 3]
+```
 
 ## Iterable을 허용하는 내장 API들
 ```js
