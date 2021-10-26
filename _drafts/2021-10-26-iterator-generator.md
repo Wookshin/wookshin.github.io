@@ -15,26 +15,28 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protoco
 
 <br/>
 
-## iteration Protocols
+## Iteration Protocols
 Iteration Protocols는 ECMAScript 2015에 나왔으며, 2개의 Protocol을 갖습니다.
-iterable protocol과 iterator protocol입니다. 
+Iterable protocol과 Iterator protocol입니다. 
 
-## iterable protocol이란?
-iterable 하다라는 것은 하기 조건을 충족했을 때 입니다. 
+<br/>
+
+## Iterable protocol이란?
+Iterable 하다라는 것은 하기 조건을 충족했을 때 입니다. 
  - Symbol.iterator라는 Key를 가진 함수가 존재하며 해당 함수는 인자가 없습니다.
- - 해당 함수의 Return 값은 iterator Protocol을 구현한 객체입니다.
+ - 해당 함수의 Return 값은 Iterator Protocol을 구현한 객체입니다.
 
-iterable protocol을 구현한 object는 for...of loop, spread, destructing 등 다양한 곳에서 활용 가능합니다. 
-
-<br/>
-
-## iterator protocol이란?
-iterator protocol을 준수했다는 것은 해당 객체가 next라는 함수를 가지며, 이 함수는 iterator라는 객체를 
-iterator 객체는 done과 value 키를 가진 객체입니다.
+Iterable protocol을 구현한 object는 for...of loop, spread, destructing 등 다양한 곳에서 활용 가능합니다. 
 
 <br/>
 
-## iteration protocol 예제 
+## Iterator protocol이란?
+Iterator protocol을 준수했다는 것은 해당 객체가 next라는 함수를 가지며, 이 함수는 iterator라는 객체를 
+Iterator 객체는 done과 value 키를 가진 객체입니다.
+
+<br/>
+
+## Iteration protocol 예제 
 string도 빌트인 iterable 객체입니다. 
 ```js
 const someString = 'hi';
