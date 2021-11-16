@@ -810,8 +810,6 @@ changeVal 함수는 매개변수를 통해 전달받은 원시 타입 인수와 
 
 ## 7. 다양한 함수의 형태
 
-<br/>
-
 ### 7.1 즉시 실행 함수
 
 함수 정의와 동시에 즉시 호출되는 함수를 즉시 실행 함수(IIFE, Immediately Invoked Function Expression)라고 합니다.  
