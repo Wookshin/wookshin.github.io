@@ -201,8 +201,6 @@ console.log(x); // 100
 
 ## 3. 전역 변수의 사용을 억제하는 방법
 
-<br/>
-
 전역 변수의 무분별한 사용은 위험합니다.  
 **전역 변수를 반드시 사용해야 할 이유를 찾지 못한다면 지역 변수를 사용해야 합니다.**  
 **변수의 스코프는 좁을수록 좋습니다.**  
@@ -229,8 +227,6 @@ console.log(x); // 100
 console.log(foo); // ReferenceError: foo is not defined
 ```
 
-<br/>
-
 이 방법을 사용하면 전역 변수를 생성하지 않으므로 라이브러리 등에 자주 사용됩니다.
 
 <br/>
@@ -239,8 +235,6 @@ console.log(foo); // ReferenceError: foo is not defined
 ### 3.2 네임스페이스 객체
 
 전역에 네임스페이스(namespace) 역할을 담당할 객체를 생성하고 전역 변수처럼 사용하고 싶은 변수를 프로퍼티로 추가하는 방법입니다.
-
-<br/>
 
 ```javascript
 var MYAPP = {}; // 전역 네임스페이스 객체
@@ -253,8 +247,6 @@ console.log(MYAPP.name); // Lee
 <br/>
 
 네임스페이스 객체에 또 다른 네임스페이스 객체를 프로퍼티로 추가해서 네임스페이스를 계층적으로 구성할 수도 있습니다.
-
-<br/>
 
 ```javascript
 var MYAPP = {}; // 전역 네임스페이스 객체
