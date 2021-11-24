@@ -299,19 +299,99 @@ foo 함수가 종료되면 코드의 제어권은 다시 전역 코드로 이동
 실행 컨텍스트는 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트로 구성됩니다.  
 생성 초기의 실행 컨텍스트와 렉시컬 환경을 그림으로 표현하면 다음과 같습니다.
 
+<br/>
+
 | **Execution Context** |  
 | LexicalEnvironment | -----------> | **Lexical Environment** |  
 | VariableEnvironment | ----------> | ................... | .................. |
+
+<br/>
+
+생성 초기에 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트는 하나의 동일한 렉시컬 환경을 참조합니다.  
+이후 몇 가지 상황을 만나면 VariableEnvironment 컴포넌트를 위한 새로운 렉시컬 환경을 생성하여 생성하고, 이때부터 VariableEnvironment 컴포넌트와 LexicalEnvironment 컴포넌트는 내용이 달라지는 경우도 있습니다.  
+여기에서는 strict mode와 eval 코드, try/catch 문과 같은 특수한 상황은 제외하고, LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트도 구분하지 않고 렉시컬 환경으로 통일해 간략하게 설명하려 합니다.
+
+렉시컬 환경은 다음과 같이 두 개의 컴포넌트로 구성됩니다.
+
+<br/>
+
+| **Lexical Environment** |  
+| EnvironmentRecord | .... |
+| OuterLexicalEnvironmentReference | .... |
+
+<br/>
+
+### 1) 환경 레코드(Environment Record)
+
+스코프에 포함된 식별자를 등록하고 등록된 식별자에 바인딩된 값을 관리하는 저장소입니다.  
+환경 레코드는 소스코드의 타입에 따라 관리하는 내용에 차이가 있습니다.
+
+### 2) 외부 렉시컬 환경에 대한 참조(Outer Lexical Environment Reference)
+
+외부 렉시컬 환경에 대한 참조는 상위 스코프를 가리킵니다.  
+이때 상위 스코프란 외부 렉시컬 환경, 즉 해당 실행 컨텍스트를 생성한 소스코드를 포함하는 상위 코드의 렉시컬 환경을 말합니다.  
+외부 렉시컬 환경에 대한 참조를 통해 단방향 링크드 리스트인 스코프 체인을 구현합니다.
 
 <br/><br/>
 
 ## 6. 실행 컨텍스트의 생성과 식별자 검색 과정
 
+다음 예제를 통해 어떻게 실행 컨텍스트가 생성되고 코드 실행 결과가 관리되는지, 그리고 어떻게 실행 컨텍스트를 통해 식별자를 검색하는지 살펴봅시다.
+
+<br/>
+
+```javascript
+var x = 1;
+const y = 2;
+
+function foo(a) {
+  var x = 3;
+  const y = 4;
+
+  function bar(b) {
+    const z = 5;
+    console.log(a + b + x + y + z);
+  }
+  bar(10);
+}
+
+foo(20); // 42
+```
+
+<br/>
+
 ### 6.1 전역 객체 생성
+
+전역 객체는 전역 코드가 평가되기 이전에 생성됩니다.  
+이때 전역 객체에는 빌트인 전역 프로퍼티와 빌트인 전역 함수, 그리고 표준 빌트인 객체가 추가되며 동작 환경(클라이언트 사이드 또는 서버 사이드)에 따라 클라이언트 사이드 Web API(DOM, BOM, Canvas, XMLHttpRequest, fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web Worker 등) 또는 특정 환경을 위한 호스트 객체를 포함합니다.  
+전역 객체도 Object.prototype을 상속받습니다.  
+즉, 전역 객체도 프로토타입 체인의 일원입니다.
+
+<br/>
+
+```javascript
+// Object.prototype.toString
+window.toString(); // -> "[object Window]"
+
+window.__proto__.__proto__.__proto__.__proto__ === Object.prototype; // -> true
+```
+
+</br>
 
 <br/><br/>
 
 ### 6.2 전역 코드 평가
+
+소스코드가 로드되면 자바스크립트 엔진은 전역 코드를 평가합니다.  
+전역 코드 평가는 다음과 같은 순서로 진행됩니다.
+
+.1. 전역 실행 컨텍스트 생성  
+.2. 전역 렉시컬 환경 생성  
+ .2.1 전역 환경 레코드 생성  
+ <\t>.2.1.1 객체 환경 레코드 생성  
+ <\t>.2.1.2 선언적 환경 레코드 생성  
+ .2.2 this 바인딩  
+ .2.3 외부 렉시컬 환경에 대한 참조 결정
 
 <br/><br/>
 
