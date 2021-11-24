@@ -387,11 +387,11 @@ window.__proto__.__proto__.__proto__.__proto__ === Object.prototype; // -> true
 
 &nbsp;1. 전역 실행 컨텍스트 생성  
 &nbsp;2. 전역 렉시컬 환경 생성  
-&nbsp;&nbsp;2.1 전역 환경 레코드 생성  
-&nbsp;&nbsp;&nbsp;2.1.1 객체 환경 레코드 생성  
-&nbsp;&nbsp;&nbsp;2.1.2 선언적 환경 레코드 생성  
-&nbsp;&nbsp;2.2 this 바인딩  
-&nbsp;&nbsp;2.3 외부 렉시컬 환경에 대한 참조 결정
+&nbsp;&nbsp;&nbsp;&nbsp;2.1 전역 환경 레코드 생성  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1 객체 환경 레코드 생성  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 선언적 환경 레코드 생성  
+&nbsp;&nbsp;&nbsp;&nbsp;2.2 this 바인딩  
+&nbsp;&nbsp;&nbsp;&nbsp;2.3 외부 렉시컬 환경에 대한 참조 결정
 
 <br/><br/>
 
