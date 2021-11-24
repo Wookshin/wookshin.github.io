@@ -299,9 +299,9 @@ foo 함수가 종료되면 코드의 제어권은 다시 전역 코드로 이동
 실행 컨텍스트는 LexicalEnvironment 컴포넌트와 VariableEnvironment 컴포넌트로 구성됩니다.  
 생성 초기의 실행 컨텍스트와 렉시컬 환경을 그림으로 표현하면 다음과 같습니다.
 
-|Execution Context |  
-|LexicalEnvrionment| | -> |Lexical Environment|  
-|VariableEnvironment| | -> |... | ...|
+|**Execution Context**||  
+|LexicalEnvrionment| -----------> |Lexical Environment|  
+|VariableEnvironment| ----------> | ....... | ....... |
 
 <br/><br/>
 
