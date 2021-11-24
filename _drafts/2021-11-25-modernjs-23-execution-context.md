@@ -301,7 +301,7 @@ foo 함수가 종료되면 코드의 제어권은 다시 전역 코드로 이동
 
 | **Execution Context** |  
 | LexicalEnvironment | -----------> | **Lexical Environment** |  
-| VariableEnvironment | ----------> | ................ | ............... |
+| VariableEnvironment | ----------> | ................... | .................. |
 
 <br/><br/>
 
