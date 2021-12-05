@@ -23,13 +23,21 @@ h1 {
   margin: 0.67em 0;
   padding-bottom: 0.3em;
   font-size: 3.2rem;
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid #373e47;
 }
 
 h2 {
   padding-bottom: 0.3em;
   font-size: 2.4rem;
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid #373e47;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+h4 {
+  font-size: 1.9rem;
 }
 
 h1,
@@ -117,4 +125,32 @@ img {
 .highlight {
   padding-left: 0.5rem;
   font-family: "Roboto Mono";
+}
+
+blockquote {
+  padding: 0 1em;
+  color: #768390;
+  border-left: 0.25em solid #768390;
+  margin-inline-start: 1rem;
+  margin-inline-end: 1rem;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #444c56;
+}
+
+table th {
+  font-weight: 600;
+  background-color: rgb(173, 173, 173);
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
 }

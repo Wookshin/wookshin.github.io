@@ -11,6 +11,13 @@ function changeHandler(event) {
     if (!display.classList.contains("list")) {
       display.classList.add("list");
     }
+
+    var posts = document.querySelectorAll("div.display.list > div > .post");
+    Array.prototype.forEach.call(posts, function (post) {
+      post.addEventListener("click", function () {
+        post.firstElementChild.click();
+      });
+    });
   } else if (this.value === "box") {
     console.log("box");
     if (display.classList.contains("list")) {
