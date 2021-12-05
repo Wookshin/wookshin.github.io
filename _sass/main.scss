@@ -1,7 +1,9 @@
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
 }
 
 html {
@@ -10,7 +12,7 @@ html {
 }
 
 // @media screen and (min-width: 1000px)  {
-//   html { 
+//   html {
 //     font-size: 15px;
 //   }
 // }

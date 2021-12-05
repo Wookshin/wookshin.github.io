@@ -1,6 +1,6 @@
 body {
   font-size: 10px;
-  font-family: 'Hanna', sans-serif;
+  font-family: "Hanna", sans-serif;
 }
 
 .rdo-button {
@@ -99,10 +99,6 @@ body {
       letter-spacing: -1px;
     }
 
-    .title:hover {
-      color : cadetblue;
-    }
-
     .subtitle {
       color: gray;
       font-size: 1.5rem;
@@ -110,17 +106,24 @@ body {
       margin-bottom: 2rem;
     }
 
-    .date, .readtime {
+    .date,
+    .readtime {
       color: gray;
       font-size: 1.5rem;
       margin-top: 1.5rem;
     }
   }
+
+  .post:hover {
+    cursor: pointer;
+    .title {
+      color: cadetblue;
+    }
+  }
 }
 
-
 .box {
-  .posts {  
+  .posts {
     max-width: 1012px;
     width: 100%;
     margin: 0 auto;
@@ -128,7 +131,7 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .post {
     width: 30rem;
     padding: 1rem;
@@ -137,18 +140,14 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-  
+
     .title {
       text-decoration: none;
       color: black;
       font-size: 2.3rem;
       letter-spacing: -1px;
     }
-  
-    .title:hover {
-      color : cadetblue;
-    }
-  
+
     .subtitle {
       color: gray;
       font-size: 1.5rem;
@@ -156,37 +155,41 @@ body {
       margin-bottom: 2rem;
       flex: 1 1 0%;
     }
-  
-    .date, .readtime {
+
+    .date,
+    .readtime {
       color: gray;
       font-size: 1.5rem;
       margin-top: 1.5rem;
     }
   }
-  
+
   .post:hover {
-    border : 3px cadetblue solid;
+    outline: 3px cadetblue solid;
     cursor: pointer;
+    .title {
+      color: cadetblue;
+    }
   }
-  
-  @media screen and (min-width: 1028px){
+
+  @media screen and (min-width: 1028px) {
     .post:nth-child(3n) {
       margin-right: 0;
     }
   }
-  
-  @media screen and (min-width: 768px) and (max-width: 1027px){
+
+  @media screen and (min-width: 768px) and (max-width: 1027px) {
     .post {
       width: calc(50% - 2rem);
       margin-right: 4rem;
     }
-  
+
     .post:nth-child(2n) {
       margin-right: 0;
     }
   }
-  
-  @media screen and (max-width: 767px){
+
+  @media screen and (max-width: 767px) {
     .post {
       width: 100%;
       margin-right: 0;

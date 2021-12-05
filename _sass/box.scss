@@ -1,10 +1,10 @@
 body {
   font-size: 10px;
-  font-family: 'Hanna', sans-serif;
+  font-family: "Hanna", sans-serif;
   margin: 0;
 }
 
-.posts {  
+.posts {
   max-width: 1012px;
   width: 100%;
   margin: 0 auto;
@@ -31,7 +31,7 @@ body {
   }
 
   .title:hover {
-    color : cadetblue;
+    color: cadetblue;
   }
 
   .subtitle {
@@ -42,7 +42,8 @@ body {
     flex: 1 1 0%;
   }
 
-  .date, .readtime {
+  .date,
+  .readtime {
     color: gray;
     font-size: 1.5rem;
     margin-top: 1.5rem;
@@ -50,15 +51,14 @@ body {
 }
 
 .post:hover {
-  border-color : cadetblue;
-  border-width : 3px;
+  outline: cadetblue 3px solid;
 }
 
 .post:nth-child(3n) {
   margin-right: 0;
 }
 
-@media (max-width: 1012px){
+@media (max-width: 1012px) {
   .post {
     width: calc(50% - 4rem);
   }
@@ -68,7 +68,7 @@ body {
   }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .post {
     width: 100%;
   }
