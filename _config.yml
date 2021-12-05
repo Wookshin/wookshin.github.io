@@ -33,6 +33,7 @@ github_username: wookshin
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 markdown: kramdown
 highligher: rouge
