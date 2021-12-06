@@ -1,7 +1,8 @@
 .highlighter-rouge {
-  padding: 2px 4px;
+  padding: 3px 5px;
   color: cadetblue;
   background: #272822;
+  border-radius: 4px;
 }
 
 .highlight table td { padding: 5px; }
