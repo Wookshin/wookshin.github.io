@@ -9,6 +9,8 @@ author: wookshin
 
 # strict mode
 
+<br/>
+
 ## 1. strict mode란?
 
 아래 예제의 실행 결과는 무엇일까요?
