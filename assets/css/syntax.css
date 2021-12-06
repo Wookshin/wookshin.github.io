@@ -1,8 +1,10 @@
 .highlighter-rouge {
-  padding: 3px 5px;
+  padding: 1px 3px;
   color: cadetblue;
   background: #272822;
   border-radius: 4px;
+  font-family: 'Roboto Mono';
+  font-size: 1.2rem;
 }
 
 .highlight table td { padding: 5px; }
