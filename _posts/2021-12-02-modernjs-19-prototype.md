@@ -1,7 +1,7 @@
 ---
 title: 프로토타입
 subtitle: 모던 자바스크립트 Deep Dive | 19장 | 프로토타입
-readtime: 15 min
+readtime: 52 min
 author: wookshin
 ---
 
