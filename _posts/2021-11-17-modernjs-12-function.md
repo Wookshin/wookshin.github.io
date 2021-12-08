@@ -1,7 +1,7 @@
 ---
 title: 함수
 subtitle: 모던 자바스크립트 Deep Dive | 10장 | 함수
-readtime: 15 min
+readtime: 30 min
 author: wookshin
 ---
 
