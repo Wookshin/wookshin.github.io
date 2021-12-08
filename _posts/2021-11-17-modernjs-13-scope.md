@@ -1,7 +1,7 @@
 ---
 title: 스코프
 subtitle: 모던 자바스크립트 Deep Dive | 13장 | 스코프
-readtime: 15 min
+readtime: 10 min
 author: wookshin
 ---
 
