@@ -1,7 +1,7 @@
 ---
 title: Iteration와 Generator
 subtitle: 코드스피츠 77 ES6+ 3화 참조
-readtime: 20 min
+readtime: 5 min
 author: wookshin
 ---
 
