@@ -1,7 +1,7 @@
 ---
 title: 변수
 subtitle: 모던 자바스크립트 Deep Dive | 4장 | 변수
-readtime: 15 min
+readtime: 8 min
 author: wookshin
 ---
 
