@@ -1,7 +1,7 @@
 ---
 title: 클로저
 subtitle: 모던 자바스크립트 Deep Dive | 24장 | 클로저
-readtime: 15 min
+readtime: 24 min
 author: wookshin
 ---
 
