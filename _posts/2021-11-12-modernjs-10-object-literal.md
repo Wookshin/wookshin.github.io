@@ -1,7 +1,7 @@
 ---
 title: 객체 리터럴
 subtitle: 모던 자바스크립트 Deep Dive | 10장 | 객체 리터럴
-readtime: 15 min
+readtime: 10 min
 author: wookshin
 ---
 

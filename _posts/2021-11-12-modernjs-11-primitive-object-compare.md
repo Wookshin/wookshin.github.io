@@ -1,7 +1,7 @@
 ---
 title: 원시 값과 객체의 비교
 subtitle: 모던 자바스크립트 Deep Dive | 11장 | 원시 값과 객체의 비교
-readtime: 15 min
+readtime: 13 min
 author: wookshin
 ---
 

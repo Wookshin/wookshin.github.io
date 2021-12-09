@@ -1,7 +1,7 @@
 ---
 title: 타입 변환과 단축 평가
 subtitle: 모던 자바스크립트 Deep Dive | 9장 | 타입 변환과 단축 평가
-readtime: 15 min
+readtime: 14 min
 author: wookshin
 ---
 

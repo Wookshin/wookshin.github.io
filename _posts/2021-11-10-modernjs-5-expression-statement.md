@@ -1,7 +1,7 @@
 ---
 title: 표현식과 문
 subtitle: 모던 자바스크립트 Deep Dive | 5장 | 표현식과 문
-readtime: 15 min
+readtime: 6 min
 author: wookshin
 ---
 

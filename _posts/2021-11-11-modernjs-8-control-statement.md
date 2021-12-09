@@ -1,7 +1,7 @@
 ---
 title: 제어문
 subtitle: 모던 자바스크립트 Deep Dive | 8장 | 제어문
-readtime: 15 min
+readtime: 10 min
 author: wookshin
 ---
 

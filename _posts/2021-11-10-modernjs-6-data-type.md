@@ -1,7 +1,7 @@
 ---
 title: 데이터 타입
 subtitle: 모던 자바스크립트 Deep Dive | 6장 | 데이터 타입
-readtime: 15 min
+readtime: 9 min
 author: wookshin
 ---
 

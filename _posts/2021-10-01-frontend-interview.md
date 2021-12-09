@@ -1,7 +1,7 @@
 ---
 title: 프론트엔드(FE) 면접 질문 정리
 subtitle: FE관련 면접 질문 및 답변 정리한 내용입니다. 
-readtime: 60 min
+readtime: 70 min
 author: wookshin
 ---
 

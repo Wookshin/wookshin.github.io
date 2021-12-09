@@ -1,7 +1,7 @@
 ---
 title: 연산자
 subtitle: 모던 자바스크립트 Deep Dive | 7장 | 연산자
-readtime: 15 min
+readtime: 12 min
 author: wookshin
 ---
 

@@ -9,6 +9,8 @@ author: wookshin
 
 # 프로퍼티 어트리뷰트
 
+<br/>
+
 ## 1. 내부 슬롯과 내부 메서드
 
 앞으로 살펴볼 프로퍼티 어트리뷰트를 이해하기 위해 먼저 내부 슬롯(internal slot)과 내부 메서드(internal method)의 개념에 대해 알아봅시다.
