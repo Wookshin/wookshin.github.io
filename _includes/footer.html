@@ -1,0 +1,7 @@
+<div id="flick" class="flicking-viewport">
+  <div class="flicking-camera">
+    {% for post in site.posts %}
+      <a class="flicking-panel" href="{{ post.url }}" class="title">{{ post.title }}</a>
+    {% endfor %}
+  </div>
+</div>

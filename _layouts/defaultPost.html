@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="stylesheet" href="/assets/css/defaultPost.css">
     <link rel="stylesheet" href="/assets/css/syntax.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
     <script src="/assets/js/header.js"></script>
     <script src="/assets/js/post.js"></script>
+    <script src="https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@egjs/flicking/dist/flicking.css" crossorigin="anonymous" />   
+    <script defer src="/assets/js/footer.js"></script>
   </head>
   <body>
     {% include header.html %}
@@ -23,6 +27,7 @@
     <div class="md-container">
       {{ content }}
     </div>
+    {% include footer.html %}
     {% include analytics.html %}
   </body>
 </html>
