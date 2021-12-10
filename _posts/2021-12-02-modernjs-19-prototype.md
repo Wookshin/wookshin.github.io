@@ -1770,7 +1770,7 @@ Foo.x(); // x
 MDN과 같은 문서를 보면 다음과 같이 정적 프로퍼티/메서드와 프로토타입 프로퍼티/메서드를 구분하여 소개하고 있습니다.  
 따라서 표기법만으로도 정적 프로퍼티/메서드와 프로토타입 프로퍼티/메서드를 구변할 수 있어야 합니다.
 
-참고로 프로토타입 프로퍼티/메서드를 표기할 때 prototype을 #으로 표기(예를 들어, Object.prototype.isPrototypeOf를 Object#isPrototypeOf으로 표기)하는 경우도 있으니 알아두도록 합시다.
+참고로 프로토타입 프로퍼티/메서드를 표기할 때 `prototype`을 #으로 표기(예를 들어, `Object.prototype.isPrototypeOf`를 `Object#isPrototypeOf`으로 표기)하는 경우도 있으니 알아두도록 합시다.
 
 <br/><br/>
 
@@ -1778,7 +1778,7 @@ MDN과 같은 문서를 보면 다음과 같이 정적 프로퍼티/메서드와
 
 ### 13.1 in 연산자
 
-in 연산자는 객체 내에 특정 프로퍼티가 존재하는지 여부를 확인합니다.
+`in` 연산자는 객체 내에 특정 프로퍼티가 존재하는지 여부를 확인합니다.
 
 <br/>
 
@@ -1798,8 +1798,8 @@ console.log("age" in person); // false
 
 <br/>
 
-in 연산자는 확인 대상 객체(위 예제의 경우 person 객체)의 프로퍼티뿐만 아니라 확인 대상 객체가 상속받은 모든 프로토타입의 프로퍼티를 확인하므로 주의가 필요합니다.  
-person 객체에는 toString이라는 프로퍼티가 없지만 다음 코드의 실행 결과는 true입니다.
+`in` 연산자는 확인 대상 객체(위 예제의 경우 `person` 객체)의 프로퍼티뿐만 아니라 확인 대상 객체가 상속받은 모든 프로토타입의 프로퍼티를 확인하므로 주의가 필요합니다.  
+`person` 객체에는 `toString`이라는 프로퍼티가 없지만 다음 코드의 실행 결과는 `true`입니다.
 
 <br/>
 
@@ -1809,11 +1809,11 @@ console.log("toString" in person); // true
 
 <br/>
 
-이는 in 연산자가 person 객체가 속한 프로토타입 체인 상에 존재하는 모든 프로토타입에서 toString 프로퍼티를 검색했기 때문입니다.  
-toString은 Object.prototype의 메서드입니다.
+이는 `in` 연산자가 `person` 객체가 속한 프로토타입 체인 상에 존재하는 모든 프로토타입에서 `toString` 프로퍼티를 검색했기 때문입니다.  
+`toString`은 `Object.prototype`의 메서드입니다.
 
-in 연산자 대신 ES6에서 도입된 Reflect.has 메서드를 사용할 수도 있습니다.  
-Reflect.has 메서드는 in 연산자와 동일하게 동작합니다.
+`in` 연산자 대신 ES6에서 도입된 `Reflect.has` 메서드를 사용할 수도 있습니다.  
+`Reflect.has` 메서드는 `in` 연산자와 동일하게 동작합니다.
 
 <br/>
 
@@ -1828,7 +1828,7 @@ console.log(Reflect.has(person, "toString")); // true
 
 ### 13.2 Object.prototype.hasOwnProperty 메서드
 
-Object.prototype.hasOwnProperty 메서드를 사용해도 객체에 특정 프로퍼티가 존재하는지 확인할 수 있습니다.
+`Object.prototype.hasOwnProperty` 메서드를 사용해도 객체에 특정 프로퍼티가 존재하는지 확인할 수 있습니다.
 
 <br/>
 
@@ -1839,7 +1839,7 @@ console.log(person.hasOwnProperty("age")); // false
 
 <br/>
 
-Object.prototype.hasOwnProperty 메서드는 이름에서 알 수 있듯이 인수로 전달받은 프로퍼티 키가 객체 고유의 프로퍼티 키인 경우에만 true를 반환하고 상속받은 프로토타입의 프로퍼티 키인 경우 false를 반환합니다.
+`Object.prototype.hasOwnProperty` 메서드는 이름에서 알 수 있듯이 인수로 전달받은 프로퍼티 키가 객체 고유의 프로퍼티 키인 경우에만 true를 반환하고 상속받은 프로토타입의 프로퍼티 키인 경우 false를 반환합니다.
 
 <br/>
 
@@ -1853,7 +1853,7 @@ console.log(person.hasOwnProperty("toString")); // false
 
 ### 14.1 for...in 문
 
-객체의 모든 프로퍼티를 순회하며 열거(enumeration)하려면 for...in 문을 사용합니다.
+객체의 모든 프로퍼티를 순회하며 열거(enumeration)하려면 `for...in` 문을 사용합니다.
 
 for (변수선언문 in 객체) {...}
 
@@ -1875,12 +1875,12 @@ for (const key in person) {
 
 <br/>
 
-for...in 문은 객체의 프로퍼티 개수만큼 순회하며 for...in 문의 변수 선언문에서 선언한 변수에 프로퍼티 키를 할당합니다.  
-위 예제의 경우 person 객체에는 2개의 프로퍼티가 있으므로 객체를 2번 순회하면서 프로퍼티 키를 key 변수에 할당한 후 코드 블록을 실행합니다.  
-첫 번째 순회에서는 프로퍼티 키 'name'을 key 변수에 할당한 후 코드 블록을 실행하고 두 번째 순회에서는 프로퍼티 키 'address'를 key 변수에 할당한 후 코드 블록을 실행합니다.
+`for...in` 문은 객체의 프로퍼티 개수만큼 순회하며 `for...in` 문의 변수 선언문에서 선언한 변수에 프로퍼티 키를 할당합니다.  
+위 예제의 경우 `person` 객체에는 2개의 프로퍼티가 있으므로 객체를 2번 순회하면서 프로퍼티 키를 `key` 변수에 할당한 후 코드 블록을 실행합니다.  
+첫 번째 순회에서는 프로퍼티 키 `'name'`을 `key` 변수에 할당한 후 코드 블록을 실행하고 두 번째 순회에서는 프로퍼티 키 `'address'`를 `key` 변수에 할당한 후 코드 블록을 실행합니다.
 
-for...in 문은 in 연산자처럼 순회 대상 객체의 프로퍼티뿐만 아니라 상속받은 프로토타입의 프로퍼티까지 열거합니다.  
-하지만 위 예제의 경우 toString과 같은 Object.prototype의 프로퍼티가 열거되지 않습니다.
+`for...in` 문은 `in` 연산자처럼 순회 대상 객체의 프로퍼티뿐만 아니라 상속받은 프로토타입의 프로퍼티까지 열거합니다.  
+하지만 위 예제의 경우 `toString`과 같은 `Object.prototype`의 프로퍼티가 열거되지 않습니다.
 
 <br/>
 
@@ -1905,8 +1905,8 @@ for (const key in person) {
 
 <br/>
 
-이는 toString 메서드가 열거할 수 없도록 정의되어 있는 프로퍼티이기 때문입니다.  
-다시 말해, Object.prototype.toString 프로퍼티의 프로퍼티 어트리뷰트 [[Enumerable]]의 값이 false이기 때문입니다.  
+이는 `toString` 메서드가 열거할 수 없도록 정의되어 있는 프로퍼티이기 때문입니다.  
+다시 말해, `Object.prototype.toString` 프로퍼티의 프로퍼티 어트리뷰트 [[Enumerable]]의 값이 `false`이기 때문입니다.  
 프로퍼티 어트리뷰트 [[Enumerable]]은 프로퍼티의 열거 가능 여부를 나타내며 불리언 값을 갖습니다.
 
 <br/>
@@ -1920,9 +1920,9 @@ console.log(Object.getOwnPropertyDescriptor(Object.prototype, "toString"));
 
 <br/>
 
-따라서 for...in 문에 대해 좀 더 정확히 표현하면 아래와 같습니다.
+따라서 `for...in` 문에 대해 좀 더 정확히 표현하면 아래와 같습니다.
 
-**for...in 문은 객체의 프로토타입 체인 상에 존재하는 모든 프로토타입의 프로퍼티 중에서 프로퍼티 어트리뷰트 [[Enumerable]]의 값이 true인 프로퍼티를 순회하며 열거(enumeration)합니다.**
+**`for...in` 문은 객체의 프로토타입 체인 상에 존재하는 모든 프로토타입의 프로퍼티 중에서 프로퍼티 어트리뷰트 [[Enumerable]]의 값이 `true`인 프로퍼티를 순회하며 열거(enumeration)합니다.**
 
 <br/>
 
@@ -1943,7 +1943,7 @@ for (const key in person) {
 
 <br/>
 
-for...in 문은 프로퍼티 키가 심벌인 프로퍼티는 열거하지 않습니다.
+`for...in` 문은 프로퍼티 키가 심벌인 프로퍼티는 열거하지 않습니다.
 
 <br/>
 
@@ -1962,7 +1962,7 @@ for (const key in obj) {
 
 <br/>
 
-상속받은 프로퍼티는 제외하고 객체 자신의 프로퍼티만 열거하려면 Object.prototype.hasOwnProperty 메서드를 사용하여 객체 자신의 프로퍼티인지 확인해야 합니다.
+상속받은 프로퍼티는 제외하고 객체 자신의 프로퍼티만 열거하려면 `Object.prototype.hasOwnProperty` 메서드를 사용하여 객체 자신의 프로퍼티인지 확인해야 합니다.
 
 <br/>
 
@@ -1984,8 +1984,8 @@ for (const key in person) {
 
 <br/>
 
-위 예제의 결과는 person 객체의 프로퍼티가 정의된 순서대로 열거되었습니다.  
-하지만 for...in 문은 프로퍼티를 열거할 때 순서를 보장하지 않으므로 주의하기 바랍니다.  
+위 예제의 결과는 `person` 객체의 프로퍼티가 정의된 순서대로 열거되었습니다.  
+하지만 `for...in` 문은 프로퍼티를 열거할 때 순서를 보장하지 않으므로 주의하기 바랍니다.  
 하지만 대부분의 모던 브라우저는 순서를 보장하고 숫자(사실은 문자열)인 프로퍼티 키에 대해서는 정렬을 실시합니다.
 
 <br/>
@@ -2015,7 +2015,7 @@ a: a
 
 <br/>
 
-배열에는 for...in 문을 사용하지 말고 일반적인 for 문이나 for...of 문 또는 Array.prototype.forEach 메서드를 사용하기를 권장합니다.  
+배열에는 `for...in` 문을 사용하지 말고 일반적인 `for` 문이나 `for...of` 문 또는 `Array.prototype.forEach` 메서드를 사용하기를 권장합니다.  
 사실 배열도 객체이므로 프로퍼티와 상속받은 프로퍼티가 포함될 수 있습니다.
 
 <br/>
@@ -2047,12 +2047,12 @@ for (const value of arr) {
 
 ### 14.2 Object.keys/values/entries 메서드
 
-지금까지 살펴보았듯이 for...in문은 객체 자신의 고유 프로퍼티뿐 아니라 상속받은 프로퍼티도 열거합니다.  
-따라서 Object.prototype.hasOwnProperty 메서드를 사용하여 객체 자신의 프로퍼티인지 확인하는 추가 처리가 필요합니다.
+지금까지 살펴보았듯이 `for...in`문은 객체 자신의 고유 프로퍼티뿐 아니라 상속받은 프로퍼티도 열거합니다.  
+따라서 `Object.prototype.hasOwnProperty` 메서드를 사용하여 객체 자신의 프로퍼티인지 확인하는 추가 처리가 필요합니다.
 
-객체 자신의 고유 프로퍼티만 열거하기 위해서는 for...in 문을 사용하는 것보다 Object.keys/values/entries 메서드를 사용하는 것을 권장합니다.
+객체 자신의 고유 프로퍼티만 열거하기 위해서는 `for...in` 문을 사용하는 것보다 `Object.keys/values/entries` 메서드를 사용하는 것을 권장합니다.
 
-Object.ekys 메서드는 객체 자신의 열거 가능한(enumerable) 프로퍼티 키를 배열로 반환합니다.
+`Object.keys` 메서드는 객체 자신의 열거 가능한(enumerable) 프로퍼티 키를 배열로 반환합니다.
 
 <br/>
 
@@ -2068,7 +2068,7 @@ console.log(Object.keys(person)); // ["name", "address"]
 
 <br/>
 
-ES8에서 도입된 Object.values 메서드는 객체 자신의 열거 가능한 프로퍼티 값을 배열로 반환합니다.
+ES8에서 도입된 `Object.values` 메서드는 객체 자신의 열거 가능한 프로퍼티 값을 배열로 반환합니다.
 
 <br/>
 
@@ -2078,7 +2078,7 @@ console.log(Object.values(person)); // ["Lee", "Seoul"]
 
 <br/>
 
-ES8에서 도입된 Object.entries 메서드는 객체 자신의 열거 가능한 프로퍼티 키와 값의 쌍의 배열을 배열에 담아 반환합니다.
+ES8에서 도입된 `Object.entries` 메서드는 객체 자신의 열거 가능한 프로퍼티 키와 값의 쌍의 배열을 배열에 담아 반환합니다.
 
 <br/>
 
