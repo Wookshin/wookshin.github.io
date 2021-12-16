@@ -2,8 +2,9 @@
   max-width: 1012px;
   width: 100%;
   margin: 0 auto;
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 1.6rem;
   line-height: 1.5;
   color: #24292e;
@@ -157,5 +158,32 @@ tr:nth-child(even) {
 }
 
 code {
-    font-family: 'Roboto Mono';
+  font-family: "Roboto Mono";
+}
+
+.dark {
+  background-color: #121212 !important;
+  color: #e0e0e0;
+
+  .md-container {
+    color: #e0e0e0;
+    background-color: #121212 !important;
+  }
+
+  table th {
+    font-weight: 600;
+    background-color: cadetblue;
+  }
+
+  tr:nth-child(even) {
+    background-color: gray;
+  }
+
+  .flicking-panel {
+    background-color: #121212 !important;
+
+    .title {
+      color: #e0e0e0;
+    }
+  }
 }
