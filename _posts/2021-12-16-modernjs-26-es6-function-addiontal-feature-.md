@@ -1,7 +1,7 @@
 ---
 title: ES6 함수의 추가 기능
 subtitle: 모던 자바스크립트 Deep Dive | 26장 | ES6 함수의 추가 기능
-readtime: 15 min
+readtime: 24 min
 author: wookshin
 ---
 
@@ -19,8 +19,6 @@ ES6 이전까지 자바스크립트의 함수는 별다른 구분 없이 다양�
 
 다음 예제를 살펴봅시다.  
 ES6 이전의 함수는 동일한 함수라도 다양한 형태로 호출할 수 있습니다.
-
-<br/>
 
 ```javascript
 var foo = function () {
@@ -44,8 +42,6 @@ obj.foo(); // -> 1
 즉, **ES6 이전의 모든 함수는 일반 함수로서 호출할 수 있는 것은 물론 생성자 함수로서 호출할 수 있습니다.**  
 다시 말해, ES6 이전의 모든 함수는 `callable` 이면서 `constructor` 입니다.
 
-<br/>
-
 ```javascript
 var foo = function () {};
 
@@ -63,8 +59,6 @@ new foo(); // -> foo {}
 
 주의할 것은 ES6 이전에 일반적으로 메서드라고 부르던 객체에 바인딩된 함수도 `callable` 이며 `constructor` 라는 것입니다.  
 따라서 객체에 바인딩된 함수도 일반 함수로서 호출할 수 있는 것은 물론 생성자 함수로서 호출할 수도 있습니다.
-
-<br/>
 
 ```javascript
 // 프로퍼티 f에 바인딩된 함수는 callable이며 constructor다.
@@ -95,8 +89,6 @@ console.log(new obj.f()); // f {}
 
 함수에 전달되어 보조 함수의 역할을 수행하는 콜백 함수도 마찬가지입니다.  
 콜백 함수도 `constructor` 이기 때문에 불필요한 프로토타입 객체를 생성합니다.
-
-<br/>
 
 ```javascript
 // 콜백 함수를 사용하는 고차 함수 map. 콜백 함수도 constructor이며 프로토타입을 생성한다.
@@ -138,8 +130,6 @@ ES6 사양에서는 메서드에 대한 정의가 명확하게 규정되었습�
 
 **ES6 사양에서 메서드는 메서드 축약 표현으로 정의된 함수만을 의미합니다.**
 
-<br/>
-
 ```javascript
 const obj = {
   x: 1,
@@ -162,8 +152,6 @@ console.log(obj.bar()); // 1
 **ES6 사양에서 정의한 메서드(이하 ES6 메서드)는 인스턴스를 생성할 수 없는 `non-constructor` 입니다.**  
 따라서 ES6 메서드는 생성자 함수로서 호출할 수 없습니다.
 
-<br/>
-
 ```javascript
 new obj.foo(); // -> TypeError: obj.foo is not a constructor
 new obj.bar(); // -> bar {}
@@ -172,8 +160,6 @@ new obj.bar(); // -> bar {}
 <br/>
 
 ES6 메서드는 인스턴스를 생성할 수 없으므로 `prototype` 프로퍼티가 없고 프로토타입도 생성하지 않습니다.
-
-<br/>
 
 ```javascript
 // obj.foo는 constructor가 아닌 ES6 메서드이므로 prototype 프로퍼티가 없다.
@@ -186,8 +172,6 @@ obj.bar.hasOwnProperty("prototype"); // -> true
 <br/>
 
 참고로 표준 빌트인 객체가 제공하는 프로토타입 메서드와 정적 메서드는 모두 `non-constructor` 입니다.
-
-<br/>
 
 ```javascript
 String.prototype.toUpperCase.prototype; // -> undefined
@@ -204,8 +188,6 @@ Array.from.prototype; // -> undefined
 
 **ES6 메서드는 자신을 바인딩한 객체를 가리키는 내부 슬롯 `[[HomeObject]]` 를 갖습니다.**  
 `super` 참조는 내부 슬롯 `[[HomeObject]]`를 사용하여 수퍼클래스의 메서드를 참조하므로 내부 슬롯 `[[HomeObject]]` 를 갖는 ES6 메서드는 `super` 키워드를 사용할 수 있습니다.
-
-<br/>
 
 ```javascript
 const base = {
@@ -232,8 +214,6 @@ console.log(derived.sayHi()); // Hi! Lee. how are you doing?
 
 ES6 메서드가 아닌 함수는 `super` 키워드를 사용할 수 없습니다.  
 ES6 메서드가 아닌 함수는 내부 슬롯 `[[HomeObject]]` 를 갖지 않기 때문입니다.
-
-<br/>
 
 ```javascript
 const derived = {
@@ -271,8 +251,6 @@ const derived = {
 화살표 함수는 함수 선언문으로 정의할 수 없고 함수 표현식으로 정의해야 합니다.  
 호출 방식은 기존 함수와 동일합니다.
 
-<br/>
-
 ```javascript
 const multiply = (x, y) => x * y;
 multiply(2, 3); // -> 6
@@ -284,8 +262,6 @@ multiply(2, 3); // -> 6
 
 매개변수가 여러 개인 경우 소괄호 `()` 안에 매개변수를 선언합니다.
 
-<br/>
-
 ```javascript
 const arrow = (x, y) => { ... };
 ```
@@ -294,8 +270,6 @@ const arrow = (x, y) => { ... };
 
 매개변수가 한 개인 경우 소괄호 `()` 를 생략할 수 있습니다.
 
-<br/>
-
 ```javascript
 const arrow = x => { ... };
 ```
@@ -303,8 +277,6 @@ const arrow = x => { ... };
 <br/>
 
 매개변수가 없는 경우 소괄호 `()` 를 생략할 수 없습니다.
-
-<br/>
 
 ```javascript
 const arrow = () => { ... };
@@ -316,8 +288,6 @@ const arrow = () => { ... };
 
 함수 몸체가 하나의 문으로 구성된다면 함수 몸체를 감싸는 중괄호 `{}` 를 생략할 수 있습니다.  
 이때 함수 몸체 내부의 문이 값으로 평가될 수 있는 표현식인 문이라면 암묵적으로 반환됩니다.
-
-<br/>
 
 ```javascript
 // concise body
