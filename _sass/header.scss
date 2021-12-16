@@ -1,22 +1,41 @@
 header {
   display: flex;
-  font-family: 'Hanna', sans-serif;
+  font-family: "Hanna", sans-serif;
   font-size: calc(3rem + 1vw);
-    max-width: 1012px;
+  max-width: 1012px;
   width: 100%;
   margin: 2rem auto;
   padding: 0 1.6rem;
 
   .logo {
     letter-spacing: -5px;
+    width: 100%;
   }
 
   .logo:hover {
-    color : cadetblue;
+    color: cadetblue;
     cursor: pointer;
   }
 
-  .profile {
-    margin-left: auto;
+  .main-features {
+    max-width: 1012px;
+    width: 100%;
+    padding: 0 1.6rem;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+
+    .main-theme {
+      margin-right: 1.5rem;
+    }
+
+    .bi {
+      font-size: 3rem;
+    }
+
+    .bi-moon,
+    .bi-box {
+      display: none;
+    }
   }
 }
