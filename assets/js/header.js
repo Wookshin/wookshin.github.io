@@ -83,6 +83,10 @@ window.addEventListener(
       icon.addEventListener("click", iconChangeHandler);
     });
 
+    localStorage.getItem("theme") === "light"
+      ? document.querySelector(".bi-moon").click()
+      : document.querySelector(".bi-sun-fill").click();
+
     localStorage.getItem("display") === "list"
       ? document.querySelector(".bi-box").click()
       : document.querySelector(".bi-card-list").click();
