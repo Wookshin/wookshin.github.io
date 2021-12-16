@@ -306,8 +306,6 @@ const power = (x) => {
 함수 몸체를 감싸는 중괄호 `{}` 를 생략한 경우 함수 몸체 내부의 문이 표현식이 아닌 문이라면 에러가 발생합니다.  
 표현식이 아닌 문은 반환할 수 없기 때문입니다.
 
-<br/>
-
 ```javascript
 const arrow = () => const x = 1; // SyntaxError: Unexpected token 'const'
 
@@ -319,8 +317,6 @@ const arrow = () => { return const x = 1; };
 
 따라서 함수 몸체가 하나의 문으로 구성된다 해도 함수 몸체의 문이 표현식이 아닌 문이라면 중괄호를 생략할 수 없습니다.
 
-<br/>
-
 ```javascript
 const arrow = () => {
   const x = 1;
@@ -330,8 +326,6 @@ const arrow = () => {
 <br/>
 
 객체 리터럴을 반환하는 경우 객체 리터럴을 소괄호 `()` 로 감싸주어야 합니다.
-
-<br/>
 
 ```javascript
 const create = (id, content) => ({ id, content });
@@ -347,8 +341,6 @@ const create = (id, content) => {
 
 객체 리터럴을 소괄호 `()` 로 감싸지 않으면 객체 리터럴의 중괄호 `{}` 를 함수 몸체를 감싸는 중괄호 `{}` 로 잘못 해석합니다.
 
-<br/>
-
 ```javascript
 // { id, content }를 함수 몸체 내의 쉼표 연산자문으로 해석한다.
 const create = (id, content) => {
@@ -362,8 +354,6 @@ create(1, "JavaScript"); // -> undefined
 함수 몸체가 여러 개의 문으로 구성된다면 함수 몸체를 감싸는 중괄호 `{}` 를 생략할 수 없습니다.  
 이때 반환값이 있다면 명시적으로 반환해야 합니다.
 
-<br/>
-
 ```javascript
 const sum = (a, b) => {
   const result = a + b;
@@ -374,8 +364,6 @@ const sum = (a, b) => {
 <br/>
 
 화살표 함수도 즉시 실행 함수(IIFE)로 사용할 수 있습니다.
-
-<br/>
 
 ```javascript
 const person = ((name) => ({
@@ -391,8 +379,6 @@ console.log(person.sayHi()); // Hi? My name is Lee.
 
 화살표 함수도 일급 객체이므로 `Array.prototype.map`, `Array.prototype.filter`, `Array.prototype.reduce` 같은 고차 함수(Higher-Order Function, HOF)에 인수로 전달할 수 있습니다.  
 이 경우 일반적인 함수 표현식보다 표현이 간결하고 가독성이 좋습니다.
-
-<br/>
 
 ```javascript
 // ES5
@@ -417,9 +403,9 @@ console.log(person.sayHi()); // Hi? My name is Lee.
 
 화살표 함수와 일반 함수의 차이는 다음과 같습니다.
 
-#### 1. 화살표 함수는 인스턴스를 생성할 수 없는 `non-constructor` 입니다.
-
 <br/>
+
+#### 1. 화살표 함수는 인스턴스를 생성할 수 없는 `non-constructor` 입니다.
 
 ```javascript
 const Foo = () => {};
@@ -430,8 +416,6 @@ new Foo(); // TypeError: Foo is not a constructor
 <br/>
 
 화살표 함수는 인스턴스를 생성할 수 없으므로 `prototype` 프로퍼티가 없고 프로토타입도 생성하지 않습니다.
-
-<br/>
 
 ```javascript
 const Foo = () => {};
@@ -445,8 +429,6 @@ Foo.hasOwnProperty("prototype"); // -> false
 
 일반 함수는 중복된 매개변수 이름을 선언해도 에러가 발생하지 않습니다.
 
-<br/>
-
 ```javascript
 function normal(a, a) {
   return a + a;
@@ -457,8 +439,6 @@ console.log(normal(1, 2)); // 4
 <br/>
 
 단, `strict mode` 에서 중복된 매개변수 이름을 선언하면 에러가 발생합니다.
-
-<br/>
 
 ```javascript
 "use strict";
@@ -472,8 +452,6 @@ function normal(a, a) {
 <br/>
 
 화살표 함수에서도 중복된 매개변수 이름을 선언하면 에러가 발생합니다.
-
-<br/>
 
 ```javascript
 const arrow = (a, a) => a + a;
@@ -505,8 +483,6 @@ const arrow = (a, a) => a + a;
 이때 주의할 것은 일반 함수로서 호출되는 콜백 함수의 경우입니다.  
 고차 함수(Higher-Order Funcdtion, HOF)의 인수로 전달되어 고차 함수 내부에서 호출되는 콜백 함수도 중첩 함수라고 할 수 있습니다.  
 주어진 배열의 각 요소에 접두어를 추가하는 다음 예제를 살펴봅시다.
-
-<br/>
 
 ```javascript
 class Prefixer {
@@ -561,8 +537,6 @@ console.log(prefixer.add(["transition", "user-select"]));
 
 #### 1. add 메서드를 호출한 prefixer 객체를 가리키는 this를 일단 회피시킨 후에 콜백 함수 내부에서 사용합니다.
 
-<br/>
-
 ```javascript
 ...
 add(arr) {
@@ -582,8 +556,6 @@ add(arr) {
 
 ES5에서 도입된 `Array.prototype.map`은 "콜백 함수 내부의 `this` 문제"를 해결하기 위해 두 번쨰 인수로 콜백 함수 내부에서 `this` 로 사용할 객체를 전달할 수 있습니다.
 
-<br/>
-
 ```javascript
 ...
 add(arr) {
@@ -598,8 +570,6 @@ add(arr) {
 
 #### 3. Function.prototype.bind 메서드를 사용하여 add 메서드를 호출한 prefixer 객체를 가리키는 this 를 바인딩합니다.
 
-<br/>
-
 ```javascript
 ...
 add(arr) {
@@ -613,8 +583,6 @@ add(arr) {
 <br/>
 
 ES6에서는 화살표 함수를 사용하여 "콜백 함수 내부의 `this` 문제"를 해결할 수 있습니다.
-
-<br/>
 
 ```javascript
 class Prefixer {
@@ -643,10 +611,9 @@ console.log(prefixer.add(["transition", "user-select"]));
 화살표 함수를 제외한 모든 함수에는 `this` 바인딩이 반드시 존재합니다.  
 따라서 ES6에서 화살표 함수가 도입되기 이전에는 일반적인 식별자처럼 스코프 체인을 통해 `this` 를 탐색할 필요가 없었습니다.  
 하지만 화살표 함수는 함수 자체의 `this` 바인딩이 존재하지 않습니다.  
-따라서 화살표 함수 내부에서 `this` 를 참조하면 일반적인 식별자처럼 스코프 체인을 통해 상위 스코프에서 `this` 를 탐색합니다.  
-화살표 함수를 `Function.prototype.bind` 를 사용하여 표현하면 다음과 같습니다.
+따라서 화살표 함수 내부에서 `this` 를 참조하면 일반적인 식별자처럼 스코프 체인을 통해 상위 스코프에서 `this` 를 탐색합니다.
 
-<br/>
+화살표 함수를 `Function.prototype.bind` 를 사용하여 표현하면 다음과 같습니다.
 
 ```javascript
 // 화살표 함수는 상위 스코프의 this를 참조한다.
@@ -661,8 +628,6 @@ console.log(prefixer.add(["transition", "user-select"]));
 <br/>
 
 만약 화살표 함수와 화살표 함수가 중첩되어 있다면 상위 화살표 함수에도 `this` 바인딩이 없으므로 스코프 체인 상에서 가장 가까운 상위 함수 중에서 화살표 함수가 아닌 함수의 `this` 를 참조합니다.
-
-<br/>
 
 ```javascript
 // 중첩 함수 foo의 상위 스코프는 즉시 실행 함수다.
@@ -687,8 +652,6 @@ console.log(prefixer.add(["transition", "user-select"]));
 만약 화살표 함수가 전역 함수라면 화살표 함수의 `this` 는 전역 객체를 가리킵니다.  
 전역 함수의 상위 스코프는 전역이고 전역에서 `this` 는 전역 객체를 가리키기 때문입니다.
 
-<br/>
-
 ```javascript
 // 전역 함수 foo의 상위 스코프는 전역이므로 화살표 함수 foo의 this는 전역 객체를 가리킨다.
 const foo = () => console.log(this);
@@ -698,8 +661,6 @@ foo(); // window
 <br/>
 
 프로퍼티에 할당한 화살표 함수도 스코프 체인 상에서 가장 가까운 상위 함수 중에서 화살표 함수가 아닌 함수의 `this` 를 참조합니다.
-
-<br/>
 
 ```javascript
 // increase 프로퍼티에 할당한 화살표 함수의 상위 스코프는 전역이다.
@@ -715,8 +676,6 @@ console.log(counter.increase()); // NaN
 <br/>
 
 화살표 함수는 함수 자체의 `this` 바인딩을 갖지 않기 때문에 `Function.prototype.call`, `Function.prototype.apply`, `Function.prototype.bind` 메서드를 사용해도 화살표 함수 내부의 `this` 를 교체할 수 없습니다.
-
-<br/>
 
 ```javascript
 window.x = 1;
@@ -735,8 +694,6 @@ console.log(arrow.call({ x: 10 })); // 1
 화살표 함수가 `Function.prototype.call`, `Function.prototype.apply`, `Function.prototype.bind` 메서드를 호출할 수 없다는 의미는 아닙니다.  
 화살표 함수는 함수 자체의 `this` 바인딩을 갖지 않기 때문에 `this` 를 교체할 수 없고 언제나 상위 스코프의 `this` 바인딩을 참조합니다.
 
-<br/>
-
 ```javascript
 const add = (a, b) => a + b;
 
@@ -750,8 +707,6 @@ console.log(add.bind(null, 1, 2)()); // 3
 메서드를 화살표 함수로 정의하는 것은 피해야 합니다.  
 화살표 함수로 메서드를 정의하여 봅시다.  
 여기서 말하는 메서드는 ES6 메서드가 아닌 일반적인 의미의 메서드를 말합니다.
-
-<br/>
 
 ```javascript
 // Bad
@@ -772,8 +727,6 @@ person.sayHi(); // Hi
 따라서 화살표 함수로 메서드를 정의하는 것은 바람직하지 않습니다.  
 메서드를 정의할 때는 ES6 메서드 축약 표현으로 정의한 ES6 메서드를 사용하는 것이 좋습니다.
 
-<br/>
-
 ```javascript
 // Good
 const person = {
@@ -789,8 +742,6 @@ person.sayHi(); // Hi Lee
 <br/>
 
 프로토타입 객체의 프로퍼티에 화살표 함수를 할당하는 경우도 동일한 문제가 발생합니다.
-
-<br/>
 
 ```javascript
 // Bad
@@ -809,8 +760,6 @@ person.sayHi(); // Hi
 
 프로퍼티를 동적 추가할 때는 ES6 메서드 정의를 사용할 수 없으므로 일반 함수를 할당합니다.
 
-<br/>
-
 ```javascript
 // Good
 function Person(name) {
@@ -828,8 +777,6 @@ person.sayHi(); // Hi Lee
 <br/>
 
 일반 함수가 아닌 ES6 메서드를 동적 추가하고 싶다면 다음과 같이 객체 리터럴을 바인딩하고 프로토타입의 `constructor` 프로퍼티와 생성자 함수 간의 연결을 재설정합니다.
-
-<br/>
 
 ```javascript
 function Person(name) {
@@ -852,8 +799,6 @@ person.sayHi(); // Hi Lee
 
 클래스 필드 정의 제안을 사용하여 클래스 필드에 화살표 함수를 할당할 수도 있습니다.
 
-<br/>
-
 ```javascript
 // Bad
 class Person {
@@ -871,8 +816,6 @@ person.sayHi(); // Hi Lee
 이때 `sayHi` 클래스 필드에 할당한 화살표 함수 내부에서 `this` 를 참조하면 상위 스코프의 `this` 바인딩을 참조합니다.  
 그렇다면 `sayHi` 클래스 필드에 할당한 화살표 함수의 상위 스코프는 무엇일까요?  
 `sayHi` 클래스 필드는 인스턴스 프로퍼티이므로 다음과 같은 의미입니다.
-
-<br/>
 
 ```javascript
 class Person {
@@ -894,8 +837,6 @@ class Person {
 하지만 클래스 필드에 할당한 화살표 함수는 프로토타입 메서드가 아니라 인스턴스 메서드가 됩니다.  
 따라서 메서드를 정의할 때는 ES6 메서드 축약 표현으로 정의한 ES6 메서드를 사용하는 것이 좋습니다.
 
-<br/>
-
 ```javascript
 // Good
 class Person {
@@ -916,8 +857,6 @@ person.sayHi(); // Hi Lee
 
 화살표 함수는 함수 자체의 `super` 바인딩을 갖지 않습니다.  
 따라서 화살표 함수 내부에서 `super` 를 참조하면 `this` 와 마찬가지로 상위 스코프의 `super` 를 참조합니다.
-
-<br/>
 
 ```javascript
 class Base {
@@ -951,8 +890,6 @@ console.log(derived.sayHi()); // Hi! Lee how are you doing?
 화살표 함수는 함수 자체의 `arguments` 바인딩을 갖지 않습니다.  
 따라서 화살표 함수 내부에서 `arguments` 를 참조하면 `this` 와 마찬가지로 상위 스코프의 `arguments` 를 참조합니다.
 
-<br/>
-
 ```javascript
 (function () {
   // 화살표 함수 foo의 arguments는 상위 스코프인 즉시 실행 함수의 arguments를 가리킨다.
@@ -983,8 +920,6 @@ foo(1, 2); // ReferenceError: arguments is not defined
 Rest 파라미터(나머지 매개변수)는 매개변수 이름 앞에 세개의 점 `...` 을 붙여서 정의한 매개변수를 의미합니다.  
 **Rest 파라미터는 함수에 전달된 인수들의 목록을 배열로 전달받습니다.**
 
-<br/>
-
 ```javascript
 function foo(...rest) {
   // 매개변수 rest는 인수들의 목록을 배열로 전달받는 Rest 파라미터다.
@@ -998,8 +933,6 @@ foo(1, 2, 3, 4, 5);
 
 일반 매개변수와 Rest 파라미터는 함께 사용할 수 있습니다.  
 이때 함수에 전달된 인수들은 매개변수와 Rest 파라미터에 순차적으로 할당됩니다.
-
-<br/>
 
 ```javascript
 function foo(param, ...rest) {
@@ -1023,8 +956,6 @@ bar(1, 2, 3, 4, 5);
 Rest 파라미터는 이름 그대로 먼저 선언된 매개변수에 할당된 인수를 제외한 나머지 인수들로 구성된 배열이 할당됩니다.  
 따라서 Rest 파라미터는 반드시 마지막 파라미터이어야 합니다.
 
-<br/>
-
 ```javascript
 function foo(...rest, param1, param2) { }
 
@@ -1036,8 +967,6 @@ foo(1, 2, 3, 4, 5);
 
 Rest 파라미터는 단 하나만 선언할 수 있습니다.
 
-<br/>
-
 ```javascript
 function foo(...rest1, ...rest2) { }
 
@@ -1048,8 +977,6 @@ foo(1, 2, 3, 4, 5);
 <br/>
 
 Rest 파라미터는 함수 정의 시 선언한 매개변수 개수를 나타내는 함수 객체의 `length` 프로퍼티에 영향을 주지 않습니다.
-
-<br/>
 
 ```javascript
 function foo(...rest) {}
@@ -1069,8 +996,6 @@ console.log(baz.length); // 2
 ES5에서는 함수를 정의할 때 매개변수의 개수를 확정할 수 없는 가변 인자 함수의 경우 매개변수를 통해 인수를 전달받는 것이 불가능하므로 `arguments` 객체를 활용하여 인수를 전달받았습니다.  
 `arguments` 객체는 함수 호출 시 전달된 인수(argument)들의 정보를 담고 있는 순회 가능한 유사 배열 객체(array-like object)이며, 함수 내부에서 지역 변수처럼 사용할 수 있습니다.
 
-<br/>
-
 ```javascript
 // 매개변수의 개수를 사전에 알 수 없는 가변 인자 함수
 function sum() {
@@ -1084,8 +1009,6 @@ sum(1, 2); // {length: 2, '0': 1, '1': 2}
 <br/>
 
 하지만 `arguments` 객체는 배열이 아닌 유사 배열 객체이므로 배열 메서드를 사용하려면 `Function.prototype.call`이나 `Function.prototype.apply` 메서드를 사용해 `arguments` 객체를 배열로 변환해야 하는 번거로움이 있었습니다.
-
-<br/>
 
 ```javascript
 function sum() {
@@ -1104,8 +1027,6 @@ console.log(sum(1, 2, 3, 4, 5)); // 15
 
 ES6에서는 rest 파라미터를 사용하여 가변 인자 함수의 인수 목록을 배열로 직접 전달받을 수 있습니다.  
 이를 통해 유사 배열 객체인 `arguments` 객체를 배열로 변환하는 번거로움을 피할 수 있습니다.
-
-<br/>
 
 ```javascript
 function sum(...args) {
@@ -1131,8 +1052,6 @@ console.log(sum(1, 2, 3, 4, 5)); // 15
 인수가 전달되지 않은 매개변수의 값은 `undefined` 입니다.  
 이를 방치하면 다음 예제와 같이 의도치 않은 결과가 나올 수 있습니다.
 
-<br/>
-
 ```javascript
 function sum(x, y) {
   return x + y;
@@ -1145,8 +1064,6 @@ console.log(sum(1)); // NaN
 
 따라서 다음 예제와 같이 매개변수에 인수가 전달되었는지 확인하여 인수가 전달되지 않은 경우 매개변수에 기본값을 할당할 필요가 있습니다.  
 즉, 방어 코드가 필요합니다.
-
-<br/>
 
 ```javascript
 function sum(x, y) {
@@ -1165,8 +1082,6 @@ console.log(sum(1)); // 1
 
 ES6에서 도입된 매개변수 기본값을 사용하면 함수 내에서 수행하던 인수 체크 및 초기화를 간소화할 수 있습니다.
 
-<br/>
-
 ```javascript
 function sum(x = 0, y = 0) {
   return x + y;
@@ -1179,8 +1094,6 @@ console.log(sum(1)); // 1
 <br/>
 
 매개변수 기본값은 매개변수에 인수를 전달하지 않은 경우와 `undefined` 를 전달한 경우에만 유효합니다.
-
-<br/>
 
 ```javascript
 function logName(name = "Lee") {
@@ -1196,8 +1109,6 @@ logName(null); // null
 
 앞서 살펴본 Rest 파라미터에는 기본값을 지정할 수 없습니다.
 
-<br/>
-
 ```javascript
 function foo(...rest = []) {
   console.log(rest);
@@ -1208,8 +1119,6 @@ function foo(...rest = []) {
 <br/>
 
 매개변수 기본값은 함수 정의 시 선언한 매개변수 개수를 나타내는 함수 객체의 `length` 프로퍼티와 `arguments` 객체에 아무런 영향을 주지 않습니다.
-
-<br/>
 
 ```javascript
 function sum(x, y = 0) {
