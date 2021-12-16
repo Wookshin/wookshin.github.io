@@ -2,26 +2,14 @@
 layout: default
 title: Home
 ---
-<div class="rdo-button">
-  <label class="container">List
-    <input type="radio" id="list" name="display" value="list" checked="checked">
-    <span class="checkmark"></span>
-  </label>
-
-  <label class="container">Box
-    <input type="radio" id="box" name="display" value="box">
-    <span class="checkmark"></span>
-  </label>
-</div>
-
 <div class="display list">
-<div class="posts">
-  {% for post in site.posts %}
-    <div class="post">
-      <a href="{{ post.url }}" class="title">{{ post.title }}</a>
-      <div class="subtitle">{{ post.subtitle }}</div>
-      <div><span class="date">{{ post.date  | date: "%b %d, %Y" }}</span> ㆍ  <span class="readtime">{{ post.readtime }} read</span></div>
-    </div>
-  {% endfor %}
-</div>
+  <div class="posts">
+    {% for post in site.posts %}
+      <div class="post">
+        <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+        <div class="subtitle">{{ post.subtitle }}</div>
+        <div><span class="date">{{ post.date  | date: "%b %d, %Y" }}</span> ㆍ  <span class="readtime">{{ post.readtime }} read</span></div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
