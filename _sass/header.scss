@@ -18,14 +18,32 @@ header {
   }
 
   .main-features {
-    max-width: 1012px;
     width: 100%;
     padding: 0 1.6rem;
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
 
-    .main-theme {
+    .fab-class {
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .fab {
+      font-size: 3.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .fas {
+      font-size: 2.9rem;
+      margin-right: 0.5rem;
+      margin-bottom: 3px;
+      vertical-align: middle;
+    }
+
+    .bi-moon,
+    .bi-sun-fill,
+    .bi-archive {
       margin-right: 1.5rem;
     }
 
