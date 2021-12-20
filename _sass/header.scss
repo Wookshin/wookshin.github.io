@@ -52,10 +52,15 @@ header {
       display: none;
     }
   }
+}
 
-  @media screen and (max-width: 534px) {
+@media screen and (max-width: 534px) {
+  header {
+    flex-wrap: wrap;
+
     .logo {
-      display: none;
+      margin-bottom: 1.5rem;
+      width: 100%;
     }
   }
 }
