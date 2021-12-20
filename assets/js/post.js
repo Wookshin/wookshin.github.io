@@ -1,5 +1,5 @@
 window.addEventListener(
-  "load",
+  "DOMContentLoaded",
   () => {
     document.querySelector(".main-tags").classList.add("hidden");
 
