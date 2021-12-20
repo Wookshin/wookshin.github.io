@@ -9,17 +9,20 @@ header {
 
   .logo {
     letter-spacing: -5px;
-    width: 100%;
+    width: 40%;
   }
 
-  .logo:hover {
+  .logo:hover,
+  .fab:hover,
+  .fas:hover,
+  .bi:hover {
     color: cadetblue;
     cursor: pointer;
   }
 
   .main-features {
     width: 100%;
-    padding: 0 1.6rem;
+    padding-left: 1.6rem;
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
