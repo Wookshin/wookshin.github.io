@@ -25,7 +25,7 @@ function iconChangeHandler(event) {
     localStorage.setItem("theme", "light");
   } else if (event.target.matches(".fa-list")) {
     event.target.style.display = "none";
-    document.querySelector(".fa-th-large").style.display = "inline";
+    document.querySelector(".fa-th").style.display = "inline";
     localStorage.setItem("display", "box");
 
     var display = document.querySelector(".display");
@@ -47,7 +47,7 @@ function iconChangeHandler(event) {
         post.firstElementChild.click();
       });
     });
-  } else if (event.target.matches(".fa-th-large")) {
+  } else if (event.target.matches(".fa-th")) {
     event.target.style.display = "none";
     document.querySelector(".fa-list").style.display = "inline";
     localStorage.setItem("display", "list");
@@ -89,7 +89,7 @@ window.addEventListener(
       : document.querySelector(".fa-sun").click();
 
     localStorage.getItem("display") === "list"
-      ? document.querySelector(".fa-th-large").click()
+      ? document.querySelector(".fa-th").click()
       : document.querySelector(".fa-list").click();
 
     var mainTags = document.querySelector(".main-tags");
