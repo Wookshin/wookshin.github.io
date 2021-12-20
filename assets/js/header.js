@@ -90,6 +90,27 @@ window.addEventListener(
     localStorage.getItem("display") === "list"
       ? document.querySelector(".bi-box").click()
       : document.querySelector(".bi-card-list").click();
+
+    var mainTags = document.querySelector(".main-tags");
+    mainTags.addEventListener("click", (e) => {
+      currentTag = e.target.dataset?.tag;
+      if (currentTag) {
+        filterByTagName(currentTag);
+      }
+    });
+
+    function filterByTagName(tagName) {
+      var elems = document.querySelectorAll(".hidden");
+      elems?.forEach((elem) => elem.classList.remove("hidden"));
+
+      var posts = document.querySelectorAll(".post");
+      posts.forEach((elem) => {
+        console.log(elem);
+        if (!elem.hasAttribute(`data-${tagName}`)) {
+          elem.classList.add("hidden");
+        }
+      });
+    }
   },
   false
 );
