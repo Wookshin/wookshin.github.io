@@ -3,6 +3,7 @@ title: this
 subtitle: 모던 자바스크립트 Deep Dive | 22장 | this
 readtime: 17 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
