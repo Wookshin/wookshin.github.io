@@ -3,6 +3,7 @@ title: 프로퍼티 어트리뷰트
 subtitle: 모던 자바스크립트 Deep Dive | 16장 | 프로퍼티 어트리뷰트
 readtime: 15 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
