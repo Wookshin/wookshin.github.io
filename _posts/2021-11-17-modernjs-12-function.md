@@ -3,6 +3,7 @@ title: 함수
 subtitle: 모던 자바스크립트 Deep Dive | 12장 | 함수
 readtime: 30 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
