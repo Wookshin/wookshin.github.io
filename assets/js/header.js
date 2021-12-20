@@ -41,6 +41,7 @@ function iconChangeHandler(event) {
     }
 
     var posts = document.querySelectorAll("div.display.box > div > .post");
+    var idx = 0;
     Array.prototype.forEach.call(posts, function (post) {
       post.addEventListener("click", function () {
         post.firstElementChild.click();
@@ -95,6 +96,13 @@ window.addEventListener(
     mainTags.addEventListener("click", (e) => {
       currentTag = e.target.dataset?.tag;
       if (currentTag) {
+        var tags = document.querySelectorAll("i");
+        for (let tag of tags) {
+          if (tag.classList.contains("selected")) {
+            tag.classList.remove("selected");
+          }
+        }
+        e.target.classList.add("selected");
         filterByTagName(currentTag);
       }
     });
@@ -105,7 +113,6 @@ window.addEventListener(
 
       var posts = document.querySelectorAll(".post");
       posts.forEach((elem) => {
-        console.log(elem);
         if (!elem.hasAttribute(`data-${tagName}`)) {
           elem.classList.add("hidden");
         }
