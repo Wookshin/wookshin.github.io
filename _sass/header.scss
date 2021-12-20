@@ -15,7 +15,7 @@ header {
   .logo:hover,
   .fab:hover,
   .fas:hover,
-  .bi:hover,
+  .far:hover,
   .selected {
     color: cadetblue;
     cursor: pointer;
@@ -27,36 +27,34 @@ header {
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
+    font-size: 3rem;
+    align-items: center;
 
-    .fab-class {
-      display: inline-block;
-      margin-top: 2px;
+    .main-tags {
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      margin-left: 1.4rem;
     }
 
     .fab {
       font-size: 3.5rem;
-      margin-right: 0.5rem;
     }
 
     .fas {
-      font-size: 2.9rem;
-      margin-right: 0.5rem;
-      margin-bottom: 3px;
       vertical-align: middle;
     }
 
-    .bi-moon,
-    .bi-sun-fill,
-    .bi-archive {
-      margin-right: 1.5rem;
+    .fa-moon,
+    .fa-th-large {
+      display: none;
     }
+  }
 
-    .bi {
-      font-size: 3rem;
-    }
-
-    .bi-moon,
-    .bi-box {
+  @media screen and (max-width: 534px) {
+    .logo {
       display: none;
     }
   }
