@@ -3,6 +3,7 @@ title: strict mode
 subtitle: 모던 자바스크립트 Deep Dive | 20장 | strict mode
 readtime: 6 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
