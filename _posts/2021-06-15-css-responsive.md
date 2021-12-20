@@ -3,6 +3,7 @@ title: 반응형 웹 디자인(Responsive Web Design)
 subtitle: CSS responsive 에 대하여
 readtime: 15 min
 author: wookshin*
+tags: [css]
 ---
 
 <br/>
