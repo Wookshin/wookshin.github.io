@@ -3,6 +3,7 @@ title: 생성자 함수에 의한 객체 생성
 subtitle: 모던 자바스크립트 Deep Dive | 17장 | 생성자 함수에 의한 객체 생성
 readtime: 16 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
