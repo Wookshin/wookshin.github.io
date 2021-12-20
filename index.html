@@ -5,7 +5,12 @@ title: Home
 <div class="display list">
   <div class="posts">
     {% for post in site.posts %}
-      <div class="post">
+      <div class="post" 
+      {% if post.tags %}
+        {% for tag in post.tags %}
+          data-{{ tag }}
+        {% endfor %}
+      {% endif %}>
         <a href="{{ post.url }}" class="title">{{ post.title }}</a>
         <div class="subtitle">{{ post.subtitle }}</div>
         <div><span class="date">{{ post.date  | date: "%b %d, %Y" }}</span> ㆍ  <span class="readtime">{{ post.readtime }} read</span></div>
