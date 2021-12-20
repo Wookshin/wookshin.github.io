@@ -3,6 +3,7 @@ title: 실행 컨텍스트
 subtitle: 모던 자바스크립트 Deep Dive | 23장 | 실행 컨텍스트
 readtime: 21 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
