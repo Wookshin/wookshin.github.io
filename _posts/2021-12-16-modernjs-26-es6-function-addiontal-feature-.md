@@ -3,6 +3,7 @@ title: ES6 함수의 추가 기능
 subtitle: 모던 자바스크립트 Deep Dive | 26장 | ES6 함수의 추가 기능
 readtime: 24 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
