@@ -13,19 +13,19 @@ window.addEventListener(
 function iconChangeHandler(event) {
   console.log("iconChangeHandler");
 
-  if (event.target.matches(".bi-sun-fill")) {
+  if (event.target.matches(".fa-sun")) {
     event.target.style.display = "none";
-    document.querySelector(".bi-moon").style.display = "inline";
+    document.querySelector(".fa-moon").style.display = "inline";
     document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
-  } else if (event.target.matches(".bi-moon")) {
+  } else if (event.target.matches(".fa-moon")) {
     event.target.style.display = "none";
-    document.querySelector(".bi-sun-fill").style.display = "inline";
+    document.querySelector(".fa-sun").style.display = "inline";
     document.documentElement.classList.remove("dark");
     localStorage.setItem("theme", "light");
-  } else if (event.target.matches(".bi-card-list")) {
+  } else if (event.target.matches(".fa-list")) {
     event.target.style.display = "none";
-    document.querySelector(".bi-box").style.display = "inline";
+    document.querySelector(".fa-th-large").style.display = "inline";
     localStorage.setItem("display", "box");
 
     var display = document.querySelector(".display");
@@ -47,9 +47,9 @@ function iconChangeHandler(event) {
         post.firstElementChild.click();
       });
     });
-  } else if (event.target.matches(".bi-box")) {
+  } else if (event.target.matches(".fa-th-large")) {
     event.target.style.display = "none";
-    document.querySelector(".bi-card-list").style.display = "inline";
+    document.querySelector(".fa-list").style.display = "inline";
     localStorage.setItem("display", "list");
 
     var display = document.querySelector(".display");
@@ -78,19 +78,19 @@ window.addEventListener(
   () => {
     console.log("DOMContentLoaded");
 
-    var icons = document.querySelectorAll(".bi");
+    var icons = document.querySelectorAll(".toggle");
 
     Array.prototype.forEach.call(icons, function (icon) {
       icon.addEventListener("click", iconChangeHandler);
     });
 
     localStorage.getItem("theme") === "light"
-      ? document.querySelector(".bi-moon").click()
-      : document.querySelector(".bi-sun-fill").click();
+      ? document.querySelector(".fa-moon").click()
+      : document.querySelector(".fa-sun").click();
 
     localStorage.getItem("display") === "list"
-      ? document.querySelector(".bi-box").click()
-      : document.querySelector(".bi-card-list").click();
+      ? document.querySelector(".fa-th-large").click()
+      : document.querySelector(".fa-list").click();
 
     var mainTags = document.querySelector(".main-tags");
     mainTags.addEventListener("click", (e) => {
