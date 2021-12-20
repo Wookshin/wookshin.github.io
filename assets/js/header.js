@@ -1,5 +1,5 @@
 window.addEventListener(
-  "load",
+  "DOMContentLoaded",
   () => {
     document
       .getElementsByClassName("logo")[0]
@@ -74,9 +74,9 @@ function iconChangeHandler(event) {
 }
 
 window.addEventListener(
-  "load",
+  "DOMContentLoaded",
   () => {
-    console.log("load");
+    console.log("DOMContentLoaded");
 
     var icons = document.querySelectorAll(".bi");
 
