@@ -3,6 +3,7 @@ title: 쿠버네티스(kubernetes, k8s) 용어 정리
 subtitle: 쿠버네티스(kubernetes, k8s) 용어 정리
 readtime: 7 min
 author: wookshin
+tags: [tool]
 ---
 
 <br/>
