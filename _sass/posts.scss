@@ -1,6 +1,10 @@
 body {
   font-size: 10px;
   font-family: "Hanna", sans-serif;
+
+  .hidden {
+    display: none !important;
+  }
 }
 
 /* Customize the label (the container) */
