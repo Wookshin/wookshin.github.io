@@ -3,6 +3,7 @@ title: 클래스
 subtitle: 모던 자바스크립트 Deep Dive | 25장 | 클래스
 readtime: 50 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
