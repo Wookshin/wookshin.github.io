@@ -3,6 +3,7 @@ title: 전역 변수의 문제점
 subtitle: 모던 자바스크립트 Deep Dive | 14장 | 전역 변수의 문제점
 readtime: 8 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
