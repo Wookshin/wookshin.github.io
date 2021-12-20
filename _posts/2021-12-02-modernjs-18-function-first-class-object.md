@@ -3,6 +3,7 @@ title: 함수와 일급 객체
 subtitle: 모던 자바스크립트 Deep Dive | 18장 | 함수와 일급 객체
 readtime: 10 min
 author: wookshin
+tags: [javascript]
 ---
 
 <br/>
