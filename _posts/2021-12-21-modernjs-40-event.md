@@ -90,7 +90,7 @@ tags: [javascript]
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `keydown`   | 모든 키를 눌렀을 때 발생합니다. ※ control, opinion, shift, tab, delete, enter, 방향 키와 문자, 숫자, 특수 문자 키를 눌렀을 때 발생합니다. 단, 문자, 숫자, 특수 문자, enter 키를 눌렀을 때는 연속적으로 발생하지만 그 외의 키를 눌렀을 때는 한 번만 발생합니다. |
 | `keypress`  | 모든 키를 눌렀을 때 연속적으로 발생합니다. ※ control, opinion, shift, tab, delete, 방향 키 등을 눌렀을 때는 발생하지 않고 문자, 숫자, 특수 문자, enter 키를 눌렀을 때만 발생합니다. 폐지(deprecated)되었으므로 사용하지 않을 것을 권장합니다.                  |
-| `keyup`     | .누르고 있던 키를 놓았을 때 한 번만 발생합니다. ※ control, opinion, shift, tab, delete, enter, 방향 키와 문자, 숫자, 특수 문자 키를 놓았을 때 발생합니다.                                                                                                      |
+| `keyup`     | 누르고 있던 키를 놓았을 때 한 번만 발생합니다. ※ control, opinion, shift, tab, delete, enter, 방향 키와 문자, 숫자, 특수 문자 키를 놓았을 때 발생합니다.                                                                                                       |
 
 <br/>
 
@@ -716,17 +716,17 @@ function onclick(event) {
 즉, `Event` 인터페이스의 이벤트 관련 프로퍼티는 모든 이벤트 객체가 상속받는 공통 프로퍼티입니다.  
 이벤트 객체의 공통 프로퍼티는 다음과 같습니다.
 
-| 공통 프로퍼티      | 설명                                                                                                                                                                                                                                              | 타입          |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `type`             | 이벤트 타입                                                                                                                                                                                                                                       | `string`      |
-| `target`           | 이벤트를 발생시킨 DOM 요소                                                                                                                                                                                                                        | DOM 요소 노드 |
-| `currentTarget`    | 이벤트 핸들러가 바인딩된 DOM 요소                                                                                                                                                                                                                 | DOM 요소 노드 |
-| `eventPhase`       | 이벤트 전파 단계 (0: 이벤트 없음, 1: 캡쳐링 단계, 2: 타깃 단계, 3: 버블링 단계                                                                                                                                                                    | `number`      |
-| `bubbles`          | 이벤트를 버블링으로 전파하는지 여부. 다음 이벤트는 bubbles: false로 버블링하지 않습니다. (포커스 이벤트 focus/blur, 리소스 이벤트 load/unload/abort/error, 마우스 이벤트 mouseenter/mouseleave                                                    | `boolean`     |
-| `cancelable`       | preventDefault 메서드를 호출하여 이벤트의 기본 동작을 취소할 수 있는지 여부. 다음 이벤트는 cancelable: false로 취소할 수 없습니다. (포커스 이벤트 focus/blur, 리소스 이벤트 load/unload/abort/error, 마우스 이벤트 dbclick/mouseenter/mouseleave) | `boolean`     |
-| `defaultPrevented` | preventDefault 메서드를 호출하여 이벤트를 취소했는지 여부                                                                                                                                                                                         | `boolean`     |
-| `isTrusted`        | 사용자의 행위에 의해 발생한 이벤트인지 여부. 예를 들어, click 메서드 또는 dispatchEvent 메서드를 통해 인위적으로 발생시킨 이벤트인 경우 isTrusted 는 false 입니다.                                                                                | `boolean`     |
-| `timeStamp`        | 이벤트가 발생한 시각(1970/01/01/00:00:0부터 경과한 밀리초)                                                                                                                                                                                        | `number`      |
+| 공통 프로퍼티      | 설명                                                                                                                                                                                                                                                                                | 타입          |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `type`             | 이벤트 타입                                                                                                                                                                                                                                                                         | `string`      |
+| `target`           | 이벤트를 발생시킨 DOM 요소                                                                                                                                                                                                                                                          | DOM 요소 노드 |
+| `currentTarget`    | 이벤트 핸들러가 바인딩된 DOM 요소                                                                                                                                                                                                                                                   | DOM 요소 노드 |
+| `eventPhase`       | 이벤트 전파 단계 (0: 이벤트 없음, 1: 캡쳐링 단계, 2: 타깃 단계, 3: 버블링 단계                                                                                                                                                                                                      | `number`      |
+| `bubbles`          | 이벤트를 버블링으로 전파하는지 여부. 다음 이벤트는 `bubbles: false`로 버블링하지 않습니다. (포커스 이벤트 `focus` / `blur`, 리소스 이벤트 `load` / `unload` / `abort` / `error`, 마우스 이벤트 `mouseenter` / `mouseleave`                                                          | `boolean`     |
+| `cancelable`       | `preventDefault` 메서드를 호출하여 이벤트의 기본 동작을 취소할 수 있는지 여부. 다음 이벤트는 `cancelable: false`로 취소할 수 없습니다. (포커스 이벤트 `focus` / `blur`, 리소스 이벤트 `load` / `unload` / `abort` / `error`, 마우스 이벤트 `dbclick` / `mouseenter` / `mouseleave`) | `boolean`     |
+| `defaultPrevented` | `preventDefault` 메서드를 호출하여 이벤트를 취소했는지 여부                                                                                                                                                                                                                         | `boolean`     |
+| `isTrusted`        | 사용자의 행위에 의해 발생한 이벤트인지 여부. 예를 들어, `click` 메서드 또는 `dispatchEvent` 메서드를 통해 인위적으로 발생시킨 이벤트인 경우 `isTrusted` 는 `false` 입니다.                                                                                                          | `boolean`     |
+| `timeStamp`        | 이벤트가 발생한 시각(1970/01/01/00:00:0부터 경과한 밀리초)                                                                                                                                                                                                                          | `number`      |
 
 <br/>
 
@@ -786,8 +786,10 @@ $checkbox.onchange = (e) => {
 
 `click`, `dbclick`, `mousedown`, `mouseup`, `mousemove`, `mouseenter`, `mouseleave` 이벤트가 발생하면 생성되는 `MouseEvent` 타입의 이벤트 객체는 다음과 같은 고유의 프로퍼티를 갖습니다.
 
-- 마우스 포인터의 좌표 정보를 나타내는 프로퍼티: `screenX/screenY`, `clientX/clientY`, `pageX/pageY`, `offsetX/offsetY`
+- 마우스 포인터의 좌표 정보를 나타내는 프로퍼티: `screenX` / `screenY`, `clientX` / `clientY`, `pageX` / `pageY`, `offsetX` / `offsetY`
 - 버튼 정보를 나타내는 프로퍼티: `altKey`, `ctrlKey`, `shiftKey`, `button`
+
+<br/>
 
 예를 들어, DOM 요소를 드래그하여 이동시키는 예제를 만들어봅시다.  
 드래그는 마우스 버튼을 누른 상태에서 마우스를 이동하는 것으로 시작하고 마우스 버튼을 떼면 종료합니다.  
@@ -799,8 +801,8 @@ $checkbox.onchange = (e) => {
 이때 드래그 대상 요소를 이동시키는 이벤트 핸들러를 제거하여 이동을 멈춥니다.
 
 마우스 포인터 좌표는 `MouseEvent` 타입의 이벤트 객체에서 제공합니다.  
-`mousedown`, `mouseup`, `mousemove` 이벤트가 발생하면 생성되는 `MouseEvent` 타입의 이벤트 객체는 마우스 포인터의 좌표 정보를 나타내는 `screenX/screenY`, `clientX/clientY`, `pageX/pageY`, `offsetX/offsetY` 프로퍼티를 제공합니다.  
-이 프로퍼티 중에서 `clientX/clientY` 는 뷰포트(viewport), 즉 웹페이지의 가시 영역을 기준으로 마우스 포인터 좌표를 나타냅니다.
+`mousedown`, `mouseup`, `mousemove` 이벤트가 발생하면 생성되는 `MouseEvent` 타입의 이벤트 객체는 마우스 포인터의 좌표 정보를 나타내는 `screenX` / `screenY`, `clientX` / `clientY`, `pageX` / `pageY`, `offsetX` / `offsetY` 프로퍼티를 제공합니다.  
+이 프로퍼티 중에서 `clientX` / `clientY` 는 뷰포트(viewport), 즉 웹페이지의 가시 영역을 기준으로 마우스 포인터 좌표를 나타냅니다.
 
 ```html
 <!DOCTYPE html>
@@ -1032,14 +1034,14 @@ DOM 트리 상에 존재하는 DOM 요소 노드에서 발생한 이벤트는 DO
 하지만 다음 이벤트는 버블링을 통해 전파되지 않습니다.  
 이 이벤트들은 버블링을 통해 이벤트를 전파하는지 여부를 나타내는 이벤트 객체의 공통 프로퍼티 `event.bubbles` 의 값이 모두 `false` 입니다.
 
-- 포커스 이벤트: `focus/blur`
-- 리소스 이벤트: `load/unload/abort/error`
-- 마우스 이벤트: `mouseenter/mouseleave`
+- 포커스 이벤트: `focus` / `blur`
+- 리소스 이벤트: `load` / `unload` / `abort` / `error`
+- 마우스 이벤트: `mouseenter` / `mouseleave`
 
 위 이벤트는 버블링되지 않으므로 이벤트 타깃의 상위 요소에서 위 이벤트를 캐치하려면 캡처링 단계의 이벤트를 캐치해야 합니다.  
 하지만 위 이벤트를 상위 요소에서 캐치해야 할 경우는 그리 많지 않지만 반드시 위 이벤트를 상위 요소에서 캐치해야 한다면 대체할 수 있는 이벤트가 존재합니다.  
-예를 들어, `focus/blur` 이벤트는 `focusin/focusout` 으로, `mouseenter/mouseleave` 는 `mouseover/mouseout` 으로 대체할 수 있습니다.  
-`focusin/focusout`, `mouseover/mouseout` 은 버블링을 통해 전파됩니다.  
+예를 들어, `focus` / `blur` 이벤트는 `focusin` / `focusout` 으로, `mouseenter` / `mouseleave` 는 `mouseover` / `mouseout` 으로 대체할 수 있습니다.  
+`focusin` / `focusout`, `mouseover` / `mouseout` 은 버블링을 통해 전파됩니다.  
 따라서 캡처링 단계에서 이벤트를 캐치해야 할 경우는 거의 없습니다.
 
 다음 예제를 살펴봅시다.  
@@ -1678,7 +1680,7 @@ console.log(customEvent.cancelable); // false
 
 <br/>
 
-커스텀 이벤트 객체의 bubbles 또는 cancelable 프로퍼티를 true 로 설정하려면 이벤트 생성자 함수의 두 번째 인수로 bubbles 또는 cancelable 프로퍼티를 갖는 객체를 전달합니다.
+커스텀 이벤트 객체의 `bubbles` 또는 `cancelable` 프로퍼티를 `true` 로 설정하려면 이벤트 생성자 함수의 두 번째 인수로 `bubbles` 또는 `cancelable` 프로퍼티를 갖는 객체를 전달합니다.
 
 ```javascript
 // MouseEvent 생성자 함수로 click 이벤트 타입의 커스텀 이벤트 객체를 생성
@@ -1693,8 +1695,8 @@ console.log(customEvent.cancelable); // true
 
 <br/>
 
-커스텀 이벤트 객체에는 bubbles 또는 cancelable 프로퍼티뿐만 아니라 이벤트 타입에 따라 가지는 이벤트 고유의 프로퍼티 값을 지정할 수 있습니다.  
-예를 들어, MouseEvent 생성자 함수로 생성한 마우스 이벤트 객체는 마우스 포인터의 좌표 정보를 나타내는 마우스 이벤트 객체 고유의 프로퍼티 screenX/screenY, clientX/clientY, pageX/pageY, offsetX/offsetY 와 버튼 정보를 나타내는 프로퍼티 altKey, ctrlKey, shiftKey, button 을 갖습니다.  
+커스텀 이벤트 객체에는 `bubbles` 또는 `cancelable` 프로퍼티뿐만 아니라 이벤트 타입에 따라 가지는 이벤트 고유의 프로퍼티 값을 지정할 수 있습니다.  
+예를 들어, `MouseEvent` 생성자 함수로 생성한 마우스 이벤트 객체는 마우스 포인터의 좌표 정보를 나타내는 마우스 이벤트 객체 고유의 프로퍼티 `screenX` / `screenY`, `clientX` / `clientY`, `pageX` / `pageY`, `offsetX` / `offsetY` 와 버튼 정보를 나타내는 프로퍼티 `altKey`, `ctrlKey`, `shiftKey`, `button` 을 갖습니다.  
 이러한 이벤트 객체 고유의 프로퍼티 값을 지정하려면 다음과 같이 이벤트 생성자 함수의 두 번째 인수로 프로퍼티를 전달합니다.
 
 ```javascript
@@ -1717,8 +1719,8 @@ console.log(keyboardEvent.key); // Enter
 
 <br/>
 
-이벤트 생성자 함수로 생성한 커스텀 이벤트는 isTrusted 프로퍼티의 값이 언제나 false 입니다.  
-커스텀 이벤트가 아닌 사용자의 행위에 의해 발생한 이벤트에 의해 생성된 이벤트 객체의 isTrusted 프로퍼티 값은 언제나 true 입니다.
+이벤트 생성자 함수로 생성한 커스텀 이벤트는 `isTrusted` 프로퍼티의 값이 언제나 `false` 입니다.  
+커스텀 이벤트가 아닌 사용자의 행위에 의해 발생한 이벤트에 의해 생성된 이벤트 객체의 `isTrusted` 프로퍼티 값은 언제나 `true` 입니다.
 
 ```javascript
 // InputEvent 생성자 함수로 foo 이벤트 타입의 커스텀 이벤트 객체를 생성
@@ -1730,8 +1732,8 @@ console.log(customEvent.isTrusted); // false
 
 ### 11.2 커스텀 이벤트 디스패치
 
-생성된 커스텀 이벤트는 dispatchEvent 메서드로 디스패치(dispatch, 이벤트를 발생시키는 행위) 할 수 있습니다.  
-dispatchEvent 메서드에 이벤트 객체를 인수로 전달하면서 호출하면 인수로 전달한 이벤트 타입의 이벤트가 발생합니다.
+생성된 커스텀 이벤트는 `dispatchEvent` 메서드로 디스패치(dispatch, 이벤트를 발생시키는 행위) 할 수 있습니다.  
+`dispatchEvent` 메서드에 이벤트 객체를 인수로 전달하면서 호출하면 인수로 전달한 이벤트 타입의 이벤트가 발생합니다.
 
 ```html
 <!DOCTYPE html>
@@ -1760,11 +1762,11 @@ dispatchEvent 메서드에 이벤트 객체를 인수로 전달하면서 호출�
 
 <br/>
 
-일반적으로 이벤트 핸들러는 비동기(asynchronous) 처리 방식으로 동작하지만 dispatchEvent 메서드는 이벤트 핸들러를 동기(synchronous) 처리 방식으로 호출합니다.  
-다시 말해, dispatchEvent 메서드를 호출하면 커스텀 이벤트에 바인딩된 이벤트 핸들러를 직접 호출하는 것과 같습니다.  
-따라서 dispatchEvent 메서드로 이벤트를 디스패치하기 이전에 커스텀 이벤트를 처리할 이벤트 핸들러를 등록해야 합니다.
+일반적으로 이벤트 핸들러는 비동기(asynchronous) 처리 방식으로 동작하지만 `dispatchEvent` 메서드는 이벤트 핸들러를 동기(synchronous) 처리 방식으로 호출합니다.  
+다시 말해, `dispatchEvent` 메서드를 호출하면 커스텀 이벤트에 바인딩된 이벤트 핸들러를 직접 호출하는 것과 같습니다.  
+따라서 `dispatchEvent` 메서드로 이벤트를 디스패치하기 이전에 커스텀 이벤트를 처리할 이벤트 핸들러를 등록해야 합니다.
 
-기존 이벤트 타입이 아닌 임의의 이벤트 타입을 지정하여 이벤트 객체를 생성하는 경우 일반적으로 CustomEvent 이벤트 생성자 함수를 사용합니다.
+기존 이벤트 타입이 아닌 임의의 이벤트 타입을 지정하여 이벤트 객체를 생성하는 경우 일반적으로 `CustomEvent` 이벤트 생성자 함수를 사용합니다.
 
 ```javascript
 // CustomEvent 생성자 함수로 foo 이벤트 타입의 커스텀 이벤트 객체를 생성
@@ -1774,8 +1776,8 @@ console.log(customEvent.type); // foo
 
 <br/>
 
-이때 CustomEvent 이벤트 생성자 함수에는 두 번째 인수로 이벤트와 함께 전달하고 싶은 정보를 담은 detail 프로퍼티를 포함하는 객체를 전달할 수 있습니다.  
-이 정보는 이벤트 객체의 detail 프로퍼티(e.detail)에 담겨 전달됩니다.
+이때 `CustomEvent` 이벤트 생성자 함수에는 두 번째 인수로 이벤트와 함께 전달하고 싶은 정보를 담은 `detail` 프로퍼티를 포함하는 객체를 전달할 수 있습니다.  
+이 정보는 이벤트 객체의 `detail` 프로퍼티(`e.detail`)에 담겨 전달됩니다.
 
 ```html
 <!DOCTYPE html>
@@ -1806,8 +1808,8 @@ console.log(customEvent.type); // foo
 
 <br/>
 
-기존 이벤트 타입이 아닌 임의의 이벤트 타입을 지정하여 커스텀 이벤트 객체를 생성한 경우 반드시 addEventListener 메서드 방식으로 이벤트 핸들러를 등록해야 합니다.  
+기존 이벤트 타입이 아닌 임의의 이벤트 타입을 지정하여 커스텀 이벤트 객체를 생성한 경우 반드시 `addEventListener` 메서드 방식으로 이벤트 핸들러를 등록해야 합니다.  
 이벤트 핸들러 어트리뷰트/프로퍼티 방식을 사용할 수 없는 이유는 'on + 이벤트 타입'으로 이루어진 이벤트 핸들러 어트리뷰트/프로퍼티가 요소 노드에 존재하지 않기 때문입니다.  
-예를 들어, 'foo'라는 임의의 이벤트 타입으로 커스텀 이벤트를 생성한 경우 'onfoo'라는 핸들러 어트리뷰트/프로퍼티가 요소 노드에 존재하지 않기 때문에 이벤트 핸들러 어트리뷰트/프로퍼티 방식으로는 이벤트 핸들러를 등록할 수 없습니다.
+예를 들어, `'foo'`라는 임의의 이벤트 타입으로 커스텀 이벤트를 생성한 경우 `'onfoo'` 라는 핸들러 어트리뷰트/프로퍼티가 요소 노드에 존재하지 않기 때문에 이벤트 핸들러 어트리뷰트/프로퍼티 방식으로는 이벤트 핸들러를 등록할 수 없습니다.
 
 <br/><br/><br/><br/><br/>
