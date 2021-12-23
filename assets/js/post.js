@@ -33,7 +33,7 @@ window.addEventListener(
     elem.style.display = "block";
     isScrolling = setTimeout(function () {
       elem.style.display = "none";
-    }, 1500);
+    }, 2000);
   },
   false
 );
