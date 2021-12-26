@@ -1,7 +1,7 @@
 ---
 title: Number
 subtitle: 모던 자바스크립트 Deep Dive | 28장 | Number
-readtime: 15 min
+readtime: 9 min
 author: wookshin
 tags: [javascript]
 ---
