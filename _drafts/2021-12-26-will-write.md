@@ -34,4 +34,14 @@ https://web.dev/trusted-types/
 
 ## ES6 module, commonjs, amd
 
+## async, await
+
+## promise
+
+## event delegation
+
+## memory cache(localStorage ...)
+
+## how to make api module
+
 <br/><br/><br/><br/><br/>
