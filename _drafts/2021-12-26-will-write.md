@@ -43,6 +43,7 @@ https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Async_await
 
 ## memory cache(localStorage ...)
 
-## how to make api module
+## API error handling 
+https://coffeeandcakeandnewjeong.tistory.com/37
 
 <br/><br/><br/><br/><br/>
