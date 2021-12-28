@@ -35,6 +35,7 @@ https://web.dev/trusted-types/
 ## ES6 module, commonjs, amd
 
 ## async, await
+https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Async_await
 
 ## promise
 
