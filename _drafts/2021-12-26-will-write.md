@@ -46,4 +46,6 @@ https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Async_await
 ## API error handling 
 https://coffeeandcakeandnewjeong.tistory.com/37
 
+## location 활용
+
 <br/><br/><br/><br/><br/>
