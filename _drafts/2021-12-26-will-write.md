@@ -48,4 +48,8 @@ https://coffeeandcakeandnewjeong.tistory.com/37
 
 ## location 활용
 
+## HTML History API
+https://developer.mozilla.org/ko/docs/Web/API/History_API
+
+
 <br/><br/><br/><br/><br/>
