@@ -829,8 +829,6 @@ NodeList.prototype 은 forEach 외에도 item, entries, keys, values 메서드�
 NodeList 객체는 대부분의 경우 노드 객체의 상태 변경을 실시간으로 반영하지 않고 과거의 정적 상태를 유지하는 non-live 객체로 동작합니다.  
 하지만 **childNodes 프로퍼티가 반환하는 NodeList 객체는 HTMLCollection 객체와 같이 실시간으로 노드 객체의 상태 변경을 반영하는 live 객체로 동작하므로 주의가 필요합니다.**
 
-# 39-23
-
 ```html
 <!DOCTYPE html>
 <html>
