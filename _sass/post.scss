@@ -39,6 +39,8 @@ h2 {
 
 h3 {
   font-size: 2.2rem;
+  border-bottom: 1px solid cadetblue;
+  padding-bottom: 0.3em;
 }
 
 h4 {
@@ -145,7 +147,7 @@ blockquote {
 table th,
 table td {
   padding: 6px 13px;
-  border: 1px solid #444c56;
+  border: 2px solid #444c56;
 }
 
 table th {
