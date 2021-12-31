@@ -51,5 +51,9 @@ https://coffeeandcakeandnewjeong.tistory.com/37
 ## HTML History API
 https://developer.mozilla.org/ko/docs/Web/API/History_API
 
+## lazy loading
+https://helloinyong.tistory.com/297
+https://imagekit.io/blog/lazy-loading-images-complete-guide/#javascript-dependency-of-lazy-loading
+
 
 <br/><br/><br/><br/><br/>
