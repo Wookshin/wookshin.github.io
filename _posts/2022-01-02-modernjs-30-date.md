@@ -275,6 +275,8 @@ today.getDate(); // -> 1
 | 금요일 | 5      |
 | 토요일 | 6      |
 
+<br/>
+
 ```javascript
 new Date("2020/07/24").getDay(); // -> 5
 ```
