@@ -1,7 +1,7 @@
 ---
 title: 디스트럭처링
 subtitle: 모던 자바스크립트 Deep Dive | 36장 | 디스트럭처링
-readtime: 10 min
+readtime: 7 min
 author: wookshin
 tags: [javascript]
 ---
@@ -11,7 +11,7 @@ tags: [javascript]
 # 디스트럭처링
 
 디스트럭처링 할당(destructuring assignment, 구조 분해 할당)은 구조화된 배열과 같은 이터러블 또는 객체를 destructuring(비구조화, 구조 파괴)하여 1개 이상의 변수에 개별적으로 할당하는 것을 말합니다.  
-배열과 같은 이터러블 또는 객체 리터럴에서 필요한 값만 추출하여 변수에 할당할 때 유요합니다.
+배열과 같은 이터러블 또는 객체 리터럴에서 필요한 값만 추출하여 변수에 할당할 때 유용합니다.
 
 <br/>
 
