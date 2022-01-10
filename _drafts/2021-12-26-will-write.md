@@ -63,4 +63,10 @@ https://imagekit.io/blog/lazy-loading-images-complete-guide/#javascript-dependen
 
 ## transition & transform
 
+## CSS Variable
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+## :root
+https://developer.mozilla.org/ko/docs/Web/CSS/:root
+
 <br/><br/><br/><br/><br/>
