@@ -208,7 +208,40 @@ Media Queries를 통해 구현 가능
 - tablet: 768px-1024px
 - desktop: 1024px~
 
+<br/>
+
+#### Emmet
+
+- !: html 템플릿
+- div: div 태그
+- div.class : class 이름의 div태그
+- div#id : id 이름의 div태그
+- div>ul>li : div 자손 ul 자손 li
+- div>ul+ol : div 자손 ul-ol 형제
+- ul>li\*5 : li 5번 반복
+- div>ul>li^ol : ol은 li의 부모의 형제로 위치
+- div>(header>ul>li\*2>a)+footer>p : 그룹화하기
+- p{hello} : 텍스트입력하기
+- p.class${item $} : 자동 숫자 넣기
+- p>lorem : 더미 데이터 넣기
+- p>lorem4 : 4개의 단어 더미 넣기
 
 <br/>
 
-####
+#### javascript
+
+js 배경
+
+async/defer
+
+- async : 병렬로 js를 fetch함. 대신 fetch하자마자 바로 execute 함.
+- defer : 병렬로 js를 fetch함. DOMContentLoaded가 되었을 때 execute 함.
+
+async 는 순서가 지켜지지 않음.
+defer 는 순서가 지켜져서 실행됨.
+
+'use strict'; 는 필수! 
+
+
+
+
