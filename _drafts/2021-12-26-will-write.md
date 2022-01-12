@@ -69,4 +69,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 ## :root
 https://developer.mozilla.org/ko/docs/Web/CSS/:root
 
+## requestAnimationFrame
+https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
+
 <br/><br/><br/><br/><br/>
