@@ -1,36 +1,51 @@
+/* color */
+$base-color: black;
+$base-sub-color: gray;
+$base-background-color: #f8f9fa;
+$base-hover-color: cadetblue;
+
+/* size */
+$max-width: 1012px;
+$base-margin-size: 1rem;
+$base-padding-size: 1rem;
+$base-font-size: 1rem;
+$base-border-radius: 1rem;
+
 #flick {
-  max-width: 1012px;
+  max-width: $max-width;
   width: 100%;
   margin: 0 auto;
 }
 
 .flicking-panel {
-  color: black;
-  margin: 1rem 2rem 5rem 1rem;
-  background-color: #f8f9fa;
-  padding: 3rem 2rem 1rem 2rem;
+  color: $base-color;
+  margin: $base-margin-size calc(#{$base-margin-size} * 2)
+    calc(#{$base-margin-size} * 5) $base-margin-size;
+  background-color: $base-background-color;
+  padding: calc(#{$base-padding-size} * 3) calc(#{$base-padding-size} * 2)
+    $base-padding-size calc(#{$base-padding-size} * 2);
   font-family: "Hanna";
-  font-size: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 1px grey;
+  font-size: calc(#{$base-font-size} * 2.5);
+  border-radius: $base-border-radius;
+  box-shadow: 0px 0px 10px 1px $base-sub-color;
 
   .title {
     text-decoration: none;
-    color: black;
-    font-size: 2.3rem;
+    color: $base-color;
+    font-size: calc(#{$base-font-size} * 2.3);
     letter-spacing: -1px;
   }
 
   .subtitle {
-    color: gray;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    color: $base-sub-color;
+    font-size: calc(#{$base-font-size} * 1.2);
+    margin-top: $base-margin-size;
+    margin-bottom: calc(#{$base-margin-size} * 2);
   }
 }
 
 .flicking-panel:hover {
-  outline: 3px cadetblue solid;
+  outline: 3px $base-hover-color solid;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: $base-border-radius;
 }

@@ -1,20 +1,43 @@
+/* color */
+$base-color: cadetblue;
+$base-font-color: #24292e;
+$base-background-color: #fff;
+$hover-color: grey;
+$block-quote-color: #768390;
+$table-base-color: #444c56;
+$table-th-color: #9ac7c9;
+$table-dark-th-color: #083032;
+$table-even-color: #cceaeb;
+$table-dark-even-color: #333c3c;
+$base-dark-color: #e0e0e0;
+$base-dark-background-color: #121212;
+
+/* size */
+$max-width: 1012px;
+$base-font-size: 1rem;
+$base-font-weight: 600;
+$base-padding-size: 1rem;
+$base-margin-size: 1rem;
+
+$highlight-font-family: "Roboto Mono";
+
 .hidden {
   display: none !important;
 }
 
 .md-container {
-  max-width: 1012px;
+  max-width: $max-width;
   width: 100%;
   margin: 0 auto;
   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  font-size: 1.6rem;
+  font-size: calc(#{$base-font-size} * 1.6);
   line-height: 1.5;
-  color: #24292e;
-  background-color: #fff;
+  color: $base-font-color;
+  background-color: $base-background-color;
   word-wrap: break-word;
-  padding: 0 1.6rem;
+  padding: 0 calc(#{$base-padding-size} * 1.6);
 }
 
 @media screen and (min-width: 1000px) {
@@ -27,25 +50,25 @@
 h1 {
   margin: 0.67em 0;
   padding-bottom: 0.3em;
-  font-size: 4rem;
-  border-bottom: 3px solid cadetblue;
+  font-size: calc(#{$base-font-size} * 4);
+  border-bottom: 3px solid $base-color;
 }
 
 h2 {
   padding-bottom: 0.3em;
-  font-size: 3rem;
-  border-bottom: 2px solid cadetblue;
+  font-size: calc(#{$base-font-size} * 3);
+  border-bottom: 2px solid $base-color;
 }
 
 h3 {
-  font-size: 2.2rem;
-  border-bottom: 1px solid cadetblue;
+  font-size: calc(#{$base-font-size} * 2.2);
+  border-bottom: 1px solid $base-color;
   padding-bottom: 0.3em;
 }
 
 h4 {
-  font-size: 1.9rem;
-  color: cadetblue;
+  font-size: calc(#{$base-font-size} * 1.9);
+  color: $base-color;
 }
 
 h1,
@@ -54,15 +77,15 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 2.4rem;
-  margin-bottom: 1.6rem;
-  font-weight: 600;
+  margin-top: calc(#{$base-margin-size} * 2.4);
+  margin-bottom: calc(#{$base-margin-size} * 1.6);
+  font-weight: $base-font-weight;
   line-height: 1.25;
 }
 
 p {
   margin-top: 0;
-  margin-bottom: 1.6rem;
+  margin-bottom: calc(#{$base-margin-size} * 1.6);
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -74,12 +97,12 @@ pre {
   overflow: auto;
   tab-size: 2;
   -moz-tab-size: 2;
-  margin: 4px 0px;
+  margin: calc(#{$base-margin-size} * 0.4) 0px;
 }
 
 b,
 strong {
-  font-weight: 600;
+  font-weight: $base-font-weight;
 }
 
 img {
@@ -96,63 +119,63 @@ img {
 
 .up:hover,
 .down:hover {
-  border-color: grey;
+  border-color: $hover-color;
 }
 
 .up {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
-  border: solid cadetblue;
+  border: solid $base-color;
   border-width: 0 8px 8px 0;
-  padding: 8px;
+  padding: calc(#{$base-padding-size} * 0.8);
 }
 
 .upup {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
-  border: solid cadetblue;
+  border: solid $base-color;
   border-width: 0 8px 8px 0;
-  padding: 8px;
+  padding: calc(#{$base-padding-size} * 0.8);
 }
 
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  border: solid cadetblue;
+  border: solid $base-color;
   border-width: 0 8px 8px 0;
-  padding: 8px;
+  padding: calc(#{$base-padding-size} * 0.8);
 }
 
 .downdown {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  border: solid cadetblue;
+  border: solid $base-color;
   border-width: 0 8px 8px 0;
-  padding: 8px;
+  padding: calc(#{$base-padding-size} * 0.8);
 }
 
 .highlight {
-  padding-left: 0.5rem;
-  font-family: "Roboto Mono";
+  padding-left: calc(#{$base-padding-size} * 0.5);
+  font-family: $highlight-font-family;
 }
 
 blockquote {
   padding: 0 1em;
-  color: #768390;
-  border-left: 0.25em solid cadetblue;
-  margin-inline-start: 1rem;
-  margin-inline-end: 1rem;
+  color: $block-quote-color;
+  border-left: 0.25em solid $base-color;
+  margin-inline-start: $base-margin-size;
+  margin-inline-end: $base-margin-size;
 }
 
 table th,
 table td {
-  padding: 6px 13px;
-  border: 2px solid #444c56;
+  padding: calc(#{$base-padding-size} * 0.6) calc(#{$base-padding-size} * 1.3);
+  border: 2px solid $table-base-color;
 }
 
 table th {
-  font-weight: 600;
-  background-color: #9ac7c9;
+  font-weight: $base-font-weight;
+  background-color: $table-th-color;
 }
 
 table {
@@ -161,36 +184,36 @@ table {
 }
 
 tr:nth-child(even) {
-  background-color: #cceaeb;
+  background-color: $table-even-color;
 }
 
 code {
-  font-family: "Roboto Mono";
+  font-family: $highlight-font-family;
 }
 
 .dark {
-  background-color: #121212 !important;
-  color: #e0e0e0;
+  background-color: $base-dark-background-color !important;
+  color: $base-dark-color;
 
   .md-container {
-    color: #e0e0e0;
-    background-color: #121212 !important;
+    color: $base-dark-color;
+    background-color: $base-dark-background-color !important;
   }
 
   table th {
-    font-weight: 600;
-    background-color: #083032;
+    font-weight: $base-font-weight;
+    background-color: $table-dark-th-color;
   }
 
   tr:nth-child(even) {
-    background-color: #333c3c;
+    background-color: $table-dark-even-color;
   }
 
   .flicking-panel {
-    background-color: #121212 !important;
+    background-color: $base-dark-background-color !important;
 
     .title {
-      color: #e0e0e0;
+      color: $base-dark-color;
     }
   }
 }

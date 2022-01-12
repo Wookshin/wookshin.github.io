@@ -1,11 +1,20 @@
+/* size */
+$max-width: 1012px;
+$base-left-right-margin: 2rem;
+$base-padding: 1.6rem;
+$base-font-size: 3rem;
+
+/* color */
+$base-color: cadetblue;
+
 header {
   display: flex;
   font-family: "Hanna", sans-serif;
-  font-size: calc(3rem + 1vw);
-  max-width: 1012px;
+  font-size: calc(#{$base-font-size} + 1vw);
+  max-width: $max-width;
   width: 100%;
-  margin: 2rem auto;
-  padding: 0 1.6rem;
+  margin: $base-left-right-margin auto;
+  padding: 0 $base-padding;
 
   .logo {
     letter-spacing: -5px;
@@ -17,17 +26,17 @@ header {
   .fas:hover,
   .far:hover,
   .selected {
-    color: cadetblue;
+    color: $base-color;
     cursor: pointer;
   }
 
   .main-features {
     width: 100%;
-    padding-left: 1.6rem;
+    padding-left: $base-padding;
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
-    font-size: 3rem;
+    font-size: $base-font-size;
     align-items: center;
 
     .main-tags {
@@ -40,7 +49,7 @@ header {
     }
 
     .fab {
-      font-size: 3.5rem;
+      font-size: calc(#{$base-font-size} + 0.5rem);
     }
 
     .fas {
