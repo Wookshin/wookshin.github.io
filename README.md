@@ -1,2 +1,17 @@
-# 🖋 지식 저장소 
-## 🎇 https://wookshin.github.io/
+# 욱신 블로그
+
+<img src="imgs/projects/portfolio.png" width="500px" height="500px" title="portfolio"/>
+
+<br/>
+
+## URL
+ - https://wookshin.github.io/
+
+<br/>
+
+## 사용한 기술 스택
+
+- HTML
+- CSS
+- Vanilla JS
+- Jekyll
