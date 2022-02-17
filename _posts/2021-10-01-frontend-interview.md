@@ -53,7 +53,7 @@ tags: [etc]
 
 <br/>
 
-> 쓰로틀이란?
+> 쓰로틀이란?  
 > 짧은 시간 간격으로 이벤트가 연속해서 발생하더라도 일정 시간 간격으로 이벤트 핸들러가 최대 한 번만 호출되도록 한다. 즉, 쓰로틀은 짧은 시간 간격으로 이벤트가 연속해서 발생하더라도 일정 시간 간격으로 이벤트 핸들러가 최대 한 번만 호출되도록 한다. 즉, 스로틀은 짧은 시간 간격으로 연속해서 발생하는 이벤트를 그룹화해서 일정 시간 단위로 이벤트 핸들러가 호출되도록 호출 주기를 만든다.
 
 <br/>
@@ -78,10 +78,10 @@ tags: [etc]
 
 <br/>
 
-- https://nykim.work/81
-- https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC
-- https://webclub.tistory.com/607
-- https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path
+> https://nykim.work/81
+> https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC  
+> https://webclub.tistory.com/607  
+> https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path  
 
 <br/><br/>
 
@@ -316,11 +316,15 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 
 <br/><br/>
 
-# 소프트웨어 개발론
+## 소프트웨어 개발론
+
+<br/>
 
 ### 1. OOP 특징
 
-**프로그램을 명령어의 목록이 아닌 독립된 객체들의 모임으로 바라봅니다.**
+프로그램을 명령어의 목록이 아닌 독립된 객체들의 모임으로 바라봅니다.  
+
+<br/>
 
 **1) 추상화 (Abstraction)**
 
@@ -345,8 +349,9 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 - 오버라이딩 : 상속받은 동일한 메소드 재정의
 
 <br/>
- - https://knoc-story.tistory.com/27
-<br/>
+
+> https://knoc-story.tistory.com/27
+
 <br/>
 
 ### 2. 함수형 프로그래밍이란?
