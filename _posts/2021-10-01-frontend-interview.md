@@ -78,7 +78,7 @@ tags: [etc]
 
 <br/>
 
-참고 :  
+참고자료 :  
 *https://nykim.work/81*  
 *https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC*  
 *https://webclub.tistory.com/607*  
