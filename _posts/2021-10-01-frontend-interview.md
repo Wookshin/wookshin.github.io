@@ -78,8 +78,8 @@ tags: [etc]
 
 <br/>
 
-> https://nykim.work/81
-> https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC  
+_https://nykim.work/81_  
+_https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC_    
 > https://webclub.tistory.com/607  
 > https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path  
 
