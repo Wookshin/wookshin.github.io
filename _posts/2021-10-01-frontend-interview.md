@@ -58,17 +58,22 @@ tags: [etc]
 
 <br/>
 
-4\) 공백과 주석을 없애 압축합니다.  
-5\) 이미지를 적게, 작게 씁니다.  
-6\) 이미지를 디바이스의 크기에 따라 다운받도록 합니다. (반응형 최적화)  
+4\) 공백과 주석을 없애 압축합니다.
+
+5\) 이미지를 적게, 작게 씁니다.
+
+6\) 이미지를 디바이스의 크기에 따라 다운받도록 합니다. (반응형 최적화)
+
 7\) 리플로우, 리페인트를 최소화 시킵니다.
 
 <br/>
 
 제일 중요한 결론은,
 
-1\) 다운 받을 중요한 리소스들의 수를 최소화 시킵니다.  
-2\) 파일 사이즈와 요청 횟수를 최소화 시킵니다.  
+1\) 다운 받을 중요한 리소스들의 수를 최소화 시킵니다.
+
+2\) 파일 사이즈와 요청 횟수를 최소화 시킵니다.
+
 3\) 중요 리소스의 다운로드 우선 순위를 지정하여 중요 리소스가 로드되는 순서를 최적화하고 CRP 길이를 최대한 줄입니다.
 
 <br/>
@@ -109,9 +114,13 @@ Simple requests는 CORS preflight를 사용하지 않습니다.
 <br/>
 
 1\) Method는 GET, HEAD, POST만 사용합니다.  
-2\) User agent로부터 자동으로 세팅된 헤더를 제외하고 수동으로 설정할 수 있는 헤더는 Accept, Accept-Language, Content-Language, Content-Type 뿐입니다.  
-3\) Content-Type에 할당될 수 있는 값은 application/x-www-form-urlencoded, multipart/form-data, text/plain 뿐입니다.  
-4\) 만약 XMLHttpRequest로 요청한다면, XMLHttpRequest.upload 속성에 어떤 이벤트 리스너도 등록되지 않아야 합니다.  
+
+2\) User agent로부터 자동으로 세팅된 헤더를 제외하고 수동으로 설정할 수 있는 헤더는 Accept, Accept-Language, Content-Language, Content-Type 뿐입니다.
+
+3\) Content-Type에 할당될 수 있는 값은 application/x-www-form-urlencoded, multipart/form-data, text/plain 뿐입니다.
+
+4\) 만약 XMLHttpRequest로 요청한다면, XMLHttpRequest.upload 속성에 어떤 이벤트 리스너도 등록되지 않아야 합니다.
+
 5\) 요청에 ReadableStraeam 객체를 사용하지 않습니다.
 
 <br/>
@@ -192,8 +201,10 @@ HTTP는 사용이 쉬운 확장 가능한 프로토콜입니다.
 
 ### 2. http와 https 차이
 
-1\) http와 달리 https는 데이터를 암호화시켜 브라우저와 서버가 데이터를 주고 받을 때 데이터가 도난 당해도 정보가 노출되지 않도록 합니다. HTTP의 일반 텍스트에 SSL이나 TLS 프로토콜을 씌워 데이터를 암호화합니다.  
-2\) 검색엔진 최적화(SEO)에 있어서도 큰 혜택을 줍니다. 구글이 https 구축된 사이트에 가산점을 주며, 사용자들 또한 https가 http보다 안전하다는 것을 알기에 해당 사이트를 더 많이 방문하게 됩니다.  
+1\) http와 달리 https는 데이터를 암호화시켜 브라우저와 서버가 데이터를 주고 받을 때 데이터가 도난 당해도 정보가 노출되지 않도록 합니다. HTTP의 일반 텍스트에 SSL이나 TLS 프로토콜을 씌워 데이터를 암호화합니다.
+
+2\) 검색엔진 최적화(SEO)에 있어서도 큰 혜택을 줍니다. 구글이 https 구축된 사이트에 가산점을 주며, 사용자들 또한 https가 http보다 안전하다는 것을 알기에 해당 사이트를 더 많이 방문하게 됩니다.
+
 3\) 가속화된 모바일 페이지(AMP, Accerlerated Mobile Pages)를 만들 때 https 프로토콜을 사용해야만 합니다.
 
 <br/>
