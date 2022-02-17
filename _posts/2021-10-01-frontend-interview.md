@@ -140,7 +140,8 @@ OPTIONS method에는 Access-Control-Request-Method, Access-Control-Request-Heade
 
 <br/>
 
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+참고자료 :  
+*https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS*
 
 <br/><br/>
 
@@ -196,7 +197,8 @@ HTTP는 사용이 쉬운 확장 가능한 프로토콜입니다.
 
 <br/>
 
-- https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
+참고자료 :  
+*https://developer.mozilla.org/ko/docs/Web/HTTP/Overview*
 
 <br/><br/>
 
@@ -210,7 +212,8 @@ HTTP는 사용이 쉬운 확장 가능한 프로토콜입니다.
 
 <br/>
 
-- http://blog.wishket.com/http-vs-https-%EC%B0%A8%EC%9D%B4-%EC%95%8C%EB%A9%B4-%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%9D%98-%EB%A0%88%EB%B2%A8%EC%9D%B4-%EB%B3%B4%EC%9D%B8%EB%8B%A4/
+참고자료 :  
+*http://blog.wishket.com/http-vs-https-%EC%B0%A8%EC%9D%B4-%EC%95%8C%EB%A9%B4-%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%9D%98-%EB%A0%88%EB%B2%A8%EC%9D%B4-%EB%B3%B4%EC%9D%B8%EB%8B%A4/*
 
 <br/><br/>
 
@@ -261,8 +264,9 @@ https는 대칭키와 공개키(비대칭키) 방식을 전부 사용하는 하�
 
 <br/>
 
-- https://mysterico.tistory.com/30
-- https://bravenamme.github.io/2019/12/03/https-2/
+참고자료 :  
+*https://mysterico.tistory.com/30*
+*https://bravenamme.github.io/2019/12/03/https-2/*
 
 <br/><br/>
 
@@ -287,7 +291,8 @@ HTTP2는 성능 뿐만 아니라 속도면에서도 월등한 녀석입니다.
 
 <br/>
 
-- https://medium.com/@shlee1353/http1-1-vs-http2-0-%EC%B0%A8%EC%9D%B4%EC%A0%90-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-5727b7499b78
+참고자료 :  
+*https://medium.com/@shlee1353/http1-1-vs-http2-0-%EC%B0%A8%EC%9D%B4%EC%A0%90-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-5727b7499b78*
 
 <br/><br/>
 
@@ -313,7 +318,8 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 
 <br/>
 
-- https://mysterico.tistory.com/29?category=938083
+참고자료 :  
+*https://mysterico.tistory.com/29?category=938083*
 
 <br/><br/>
 
@@ -351,7 +357,8 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 
 <br/>
 
-> https://knoc-story.tistory.com/27
+참고자료 :  
+*https://knoc-story.tistory.com/27*
 
 <br/>
 
@@ -371,13 +378,14 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 
 <br/>
 
-> https://mangkyu.tistory.com/111
+참고자료 :  
+*https://mangkyu.tistory.com/111*
 
 <br/><br/>
 
 ### 3. 순수 함수란?
 
-**부수효과들을 제거한 함수를 순수함수라고 합니다.**
+부수효과들을 제거한 함수를 순수함수라고 합니다.  
 
 - Memory or I/O의 관점에서 Side Effect가 없는 함수
 - 함수의 실행이 외부에 영향을 끼치지 않는 함수
@@ -386,53 +394,73 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 
 순수 함수를 이용하면 다음과 같은 효과를 얻습니다.
 
-- **함수 자체가 독립적이며 Side-Effect가 없기 때문에 Thread에 안전성을 보장받을 수 있다.**
-- **Thread에 안전성을 보장받아 병렬 처리를 동기화 없이 진행할 수 있다.**
+- 함수 자체가 독립적이며 Side-Effect가 없기 때문에 Thread에 안전성을 보장받을 수 있다.
+- Thread에 안전성을 보장받아 병렬 처리를 동기화 없이 진행할 수 있다.
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 4. 일급 객체란?
 
 다음 4가지 조건을 만족할 때 일급 객체라고 합니다.
 
-**1) 무명의 리터럴로 생성할 수 있다. 즉, 런타임에 생성이 가능하다.**  
-**2) 변수나 자료구조(객체, 배열 등)에 저장할 수 있다.**  
-**3) 함수의 매개변수에 전달할 수 있다.**  
-**4) 함수의 반환값으로 사용할 수 있다.**
+<br/>
+
+1\) 무명의 리터럴로 생성할 수 있다. 즉, 런타임에 생성이 가능하다.
+
+2\) 변수나 자료구조(객체, 배열 등)에 저장할 수 있다.
+
+3\) 함수의 매개변수에 전달할 수 있다.
+
+4\) 함수의 반환값으로 사용할 수 있다.
+
+<br/>
 
 자바스크립트의 함수는 위 조건을 모두 만족하므로 일급 객체라고 할 수 있습니다.  
-<br/>
-<br/>
+
+<br/><br/>
 
 ### 5. 객체지향 프로그래밍 vs 함수형 프로그래밍
 
-두드러지는 특징은 **객체지향은 객체 중심으로 프로그래밍**을 하는 반면, **함수형 프로그래밍은 함수 실행이 중심**이 됩니다.
-
-1. 함수형 프로그래밍 패러다임은 특정한 일을 수행하는 함수들을 어떻게 사용할 지를 강조하는 반면, 객체형 프로그래밍 패러다임은 객체 지향 컨셉을 강조합니다.
-2. 함수형 요소는 변수와 함수를 사용하며 함수 내의 데이터는 불변합니다. 객체형 요소는 객체와 메소드, 그리고 변할 수 있는 데이터를 사용합니다.
-3. 함수형의 중요성은 데이터가 아닌 함수에 있는 반면, 객체형의 중요성은 프로시져보단 데이터에 있습니다.
-4. 함수형은 선언적 프로그래밍 모델인 반면, 객체형은 명렁적 프로그래밍 모델입니다.
-5. 함수형은 반복을 위해 순환을 사용하지만, 객체형은 loop를 사용합니다.
-6. 함수형은 병렬 프로그래밍을 지원하지만, 객체형은 병렬 프로그래밍을 지원하지 않습니다.
-7. 함수형은 특정한 접근자가 없는 반면 ,객체형은 세가지 특정 접근자가 있습니다. Public, Private, Protected.
-8. 함수형은 새로운 데이터, 함수를 추가하는게 쉽지 않은 반면, 객체형은 쉽게 데이터, 함수를 추가할 수 있습니다.
-9. 함수형은 데이터 은닉이 안되지만 객체형은 데이터 은닉을 제공하여 보안 프로그램이 가능합니다.
+두드러지는 특징은 **객체지향은 객체 중심으로 프로그래밍**을 하는 반면, **함수형 프로그래밍은 함수 실행이 중심**이 됩니다.  
 
 <br/>
- - https://www.geeksforgeeks.org/difference-between-functional-programming-and-object-oriented-programming/
+
+1\. 함수형 프로그래밍 패러다임은 특정한 일을 수행하는 함수들을 어떻게 사용할 지를 강조하는 반면, 객체형 프로그래밍 패러다임은 객체 지향 컨셉을 강조합니다.
+
+2\. 함수형 요소는 변수와 함수를 사용하며 함수 내의 데이터는 불변합니다. 객체형 요소는 객체와 메소드, 그리고 변할 수 있는 데이터를 사용합니다.
+
+3\. 함수형의 중요성은 데이터가 아닌 함수에 있는 반면, 객체형의 중요성은 프로시져보단 데이터에 있습니다.
+
+4\. 함수형은 선언적 프로그래밍 모델인 반면, 객체형은 명령적 프로그래밍 모델입니다.
+
+5\. 함수형은 반복을 위해 순환을 사용하지만, 객체형은 loop를 사용합니다.
+
+6\. 함수형은 병렬 프로그래밍을 지원하지만, 객체형은 병렬 프로그래밍을 지원하지 않습니다.
+
+7\. 함수형은 특정한 접근자가 없는 반면 ,객체형은 세가지 특정 접근자가 있습니다. Public, Private, Protected.
+
+8\. 함수형은 새로운 데이터, 함수를 추가하는게 쉽지 않은 반면, 객체형은 쉽게 데이터, 함수를 추가할 수 있습니다.
+
+9\. 함수형은 데이터 은닉이 안되지만 객체형은 데이터 은닉을 제공하여 보안 프로그램이 가능합니다.
+
 <br/>
-<br/>
+
+참고자료 :  
+*https://www.geeksforgeeks.org/difference-between-functional-programming-and-object-oriented-programming/*
+
+<br/><br/>
 
 ### 6. Loop와 재귀의 차이
 
 가장 큰 차이는 Call Stack에 쌓이는 여부일 것입니다.  
 Loop는 하나의 실행 컨텍스트를 통해 계속 실행하는 반면, 재귀의 경우 새로운 Function이 계속 실행되기 때문에 Call Stack에 새로운 실행 컨텍스트가 계속 쌓이게 됩니다. 이는 Stack Overflow를 발생시킵니다.  
 알고리즘에 따라 가독성과 유지보수성이 다르므로 상황에 맞추어 써야될 것입니다.
-<br/>
-<br/>
 
-# 비동기프로그래밍
+<br/><br/>
+
+## 비동기프로그래밍
+
+<br/>
 
 ### 1. Ajax란?
 
@@ -585,7 +613,7 @@ async 함수 내에서 catch 문을 사용해서 에러 처리를 하던지, 혹
 <br/>
 <br/>
 
-# js관련
+## Javascript 관련  
 
 ### 1. forEach와 map의 차이
 
