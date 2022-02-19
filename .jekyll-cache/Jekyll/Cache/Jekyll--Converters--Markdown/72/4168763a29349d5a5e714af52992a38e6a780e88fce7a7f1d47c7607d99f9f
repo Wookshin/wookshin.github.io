@@ -1,0 +1,574 @@
+I"�<p><br /></p>
+
+<h1 id="date">Date</h1>
+
+<p>표준 빌트인 객체인 Date 는 날짜와 시간(연, 월, 일, 시, 분, 초, 밀리초(millisecond/ms, 천분의 1초))을 위한 메서드를 제공하는 빌트인 객체이면서 생성자 함수입니다.</p>
+
+<p>UTC(협정 세계시, Coordinated Universal Time)는 국제 표준시를 말합니다.<br />
+UTC는 GMT(그리니치 평균시, Greenwich Mean Time)로 불리기도 합니다.<br />
+UTC와 GMT는 초의 소수점 단위에서만 차이가 나기 때문에 일상에서는 혼용되어 사용됩니다.<br />
+기술적인 표기에서는 UTC가 사용됩니다.</p>
+
+<p>KST(한국 표준시, Korea Standard Time)는 UTC에 9시간을 더한 시간입니다.<br />
+즉, KST는 UTC보다 9시간이 빠릅니다.<br />
+예를 들어, UTC 00:00 AM은 KST 09:00 AM입니다.</p>
+
+<p>현재 날짜와 시간은 자바스크립트 코드가 실행된 시스템의 시계에 의해 결정됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="1-date-생성자-함수">1. Date 생성자 함수</h2>
+
+<p><code class="language-html highlighter-rouge">Date</code> 는 생성자 함수입니다.<br />
+<code class="language-html highlighter-rouge">Date</code> 생성자 함수로 생성한 <code class="language-html highlighter-rouge">Date</code> 객체는 내부적으로 날짜와 시간을 나타내는 정수값을 갖습니다.<br />
+이 값은 1970년 1월 1일 00:00:00(UTC)을 기점으로 <code class="language-html highlighter-rouge">Date</code> 객체가 나타내는 날짜와 시간까지의 밀리초를 나타냅니다.<br />
+예를 들어, 모든 시간의 기점인 1970년 1월 1일 0시를 나타내는 <code class="language-html highlighter-rouge">Date</code> 객체는 내부적으로 정수값 <code class="language-html highlighter-rouge">0</code> 을 가지며, 1970년 1월 1일 0시를 기점으로 하루가 지난 1970년 1월 2일 0시를 나타내는 Date 객체는 내부적으로 정수값 86,400,000(24h x 60m x 60s * 1000ms)을 갖습니다.</p>
+
+<p><code class="language-html highlighter-rouge">Date</code> 생성자 함수로 생성한 <code class="language-html highlighter-rouge">Date</code> 객체는 기본적으로 현재 날짜와 시간을 나타내는 정수값을 가집니다.<br />
+현재 날짜와 시간이 아닌 다른 날짜와 시간을 다루고 싶은 경우 <code class="language-html highlighter-rouge">Date</code> 생성자 함수에 명시적으로 해당 날짜와 시간 정보를 인수로 지정합니다.<br />
+<code class="language-html highlighter-rouge">Date</code> 생성자 함수로 객체를 생성하는 방법은 다음과 같이 4가지가 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="11-new-date">1.1 new Date()</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 생성자 함수를 인수 없이 <code class="language-html highlighter-rouge">new</code> 연산자와 함께 호출하면 현재 날짜와 시간을 가지는 <code class="language-html highlighter-rouge">Date</code> 객체를 반환합니다.<br />
+<code class="language-html highlighter-rouge">Date</code> 객체는 내부적으로 날짜와 시간을 나타내는 정수값을 갖지만 <code class="language-html highlighter-rouge">Date</code> 객체를 콘솔에 출력하면 기본적으로 날짜와 시간 정보를 출력합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span> <span class="c1">// -&gt; Mon Jul 06 2020 01:03:18 GMT+0900 (대한민국 표준시)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><code class="language-html highlighter-rouge">Date</code> 생성자 함수를 <code class="language-html highlighter-rouge">new</code> 연산자 없이 호출하면 <code class="language-html highlighter-rouge">Date</code> 객체를 반환하지 않고 날짜와 시간 정보를 나타내는 문자열을 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nb">Date</span><span class="p">();</span> <span class="c1">// -&gt; "Mon Jul 06 2020 01:10:47 GMT+0900 (대한민국 표준시)"</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="12-new-datemilliseconds">1.2 new Date(milliseconds)</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 생성자 함수에 숫자 타입의 밀리초를 인수로 전달하면 1970년 1월 1일 00:00:00(UTC)을 기점으로 인수로 전달된 밀리초만큼 경과한 날짜와 시간을 나타내는 <code class="language-html highlighter-rouge">Date</code> 객체를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 한국 표준시 KST는 협정 세계시 UTC에 9시간을 더한 시간이다.</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// -&gt; Thu Jan 01 1970 09:00:00 GMT+0900 (대한민국 표준시)</span>
+
+<span class="cm">/*
+86400000ms는 1day를 의미한다.
+1s = 1,000ms
+1m = 60s * 1,000ms = 60,000ms
+1h = 60m * 60,000ms = 3,600,000ms
+1d = 24h * 3,600,000ms = 86,400,000ms
+*/</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">86400000</span><span class="p">);</span> <span class="c1">// -&gt; Fri Jan 02 1970 09:00:00 GMT+0900 (대한민국 표준시)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="13-new-datedatestring">1.3 new Date(dateString)</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 생성자 함수에 날짜와 시간을 타나내는 문자열을 인수로 전달하면 지정된 날짜와 시간을 나타내는 <code class="language-html highlighter-rouge">Date</code> 객체를 반환합니다.<br />
+이때 인수로 전달한 문자열은 <code class="language-html highlighter-rouge">Date.parse</code> 메서드에 의해 해석 가능한 형식이어야 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">May 26, 2020 10:00:00</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// -&gt; Tue May 26 2020 10:00:00 GMT+0900 (대한민국 표준시)</span>
+
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/03/26/10:00:00</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// -&gt; Thu Mar 26 2020 10:00:00 GMT+0900 (대한민국 표준시)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="14-new-dateyearmonthdayhourminutesecondmillisecond">1.4 new Date(year,month[,day,hour,minute,second,millisecond])</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 생성자 함수에 연, 월, 일, 시, 분, 초, 밀리초를 의미하는 숫자를 인수로 전달하면 지정된 날짜와 시간을 나타내는 <code class="language-html highlighter-rouge">Date</code> 객체를 반환합니다.<br />
+이때 연, 월은 반드시 지정해야 합니다.<br />
+지정하지 않은 옵션 정보는 <code class="language-html highlighter-rouge">0</code> 또는 <code class="language-html highlighter-rouge">1</code> 로 초기화됩니다.<br />
+인수는 다음과 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>인수</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>year</td>
+      <td>연을 타나내는 1900년 이후의 정수. 0부터 99는 1900부터 1999로 처리됩니다.</td>
+    </tr>
+    <tr>
+      <td>month</td>
+      <td>월을 타나내는 0 ~ 11까지의 정수(주의: 0부터 시작, 0 = 1월)</td>
+    </tr>
+    <tr>
+      <td>day</td>
+      <td>일을 나타내는 1 ~ 31까지의 정수</td>
+    </tr>
+    <tr>
+      <td>hour</td>
+      <td>시를 나타내는 0 ~ 23까지의 정수</td>
+    </tr>
+    <tr>
+      <td>minute</td>
+      <td>분을 나타내는 0 ~ 59까지의 정수</td>
+    </tr>
+    <tr>
+      <td>second</td>
+      <td>초를 나타내는 0 ~ 59까지의 정수</td>
+    </tr>
+    <tr>
+      <td>millisecond</td>
+      <td>밀리초를 나타내는 0 ~ 999까지의 정수</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>연, 월을 지정하지 않은 경우 1970년 1월 1일 00:00:00(UTC)을 나타내는 <code class="language-html highlighter-rouge">Date</code> 객체를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 월을 나타내는 2는 3월을 의미한다. 2020/3/1/00:00:00:00</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">// -&gt; Sun Mar 01 2020 00:00:00 GMT+0900 (대한민국 표준시)</span>
+
+<span class="c1">// 월을 나타내는 2는 3월을 의미한다. 2020/3/26/10:00:00:00</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">00</span><span class="p">,</span> <span class="mi">00</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// -&gt; Thu Mar 26 2020 10:00:00 GMT+0900 (대한민국 표준시)</span>
+
+<span class="c1">// 다음처럼 표현하면 가독성이 훨씬 좋다.</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/3/26/10:00:00:00</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// -&gt; Thu Mar 26 2020 10:00:00 GMT+0900 (대한민국 표준시)</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="2-date-메서드">2. Date 메서드</h2>
+
+<p><br /></p>
+
+<h3 id="21-datenow">2.1 Date.now</h3>
+
+<p>1970년 1월 1일 00:00:00(UTC)을 기점으로 현재 시간까지 경과한 밀리초를 숫자로 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span> <span class="c1">// -&gt; 1593971539112</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="22-dateparse">2.2 Date.parse</h3>
+
+<p>1970년 1월 1일 00:00:00(UTC)을 기점으로 인수로 전달된 지정 시간(<code class="language-html highlighter-rouge">new Date(dateString)</code> 의 인수와 동일한 형식)까지의 밀리초를 숫자로 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// UTC</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">"</span><span class="s2">Jan 2, 1970 00:00:00 UTC</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 86400000</span>
+
+<span class="c1">// KST</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">"</span><span class="s2">Jan 2, 1970 09:00:00</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 86400000</span>
+
+<span class="c1">// KST</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">"</span><span class="s2">1970/01/02/09:00:00</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 86400000</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="23-dateutc">2.3 Date.UTC</h3>
+
+<p>1970년 1월 1일 00:00:00(UTC)을 기점으로 인수로 전달된 지정 시간까지의 밀리초를 숫자로 반환합니다.</p>
+
+<p><code class="language-html highlighter-rouge">Date.UTC</code> 메서드는 <code class="language-html highlighter-rouge">new Date(year, month[, day, hour, minute, second, millisecond])</code>와 같은 형식의 인수를 사용해야 합니다.<br />
+<code class="language-html highlighter-rouge">Date.UTC</code> 메서드의 인수는 로컬 타임(KST)이 아닌 UTC로 인식됩니다.<br />
+<code class="language-html highlighter-rouge">month</code> 는 월을 의미하는 <code class="language-html highlighter-rouge">0~11</code> 까지의 정수입니다.<br />
+<code class="language-html highlighter-rouge">0</code> 부터 시작하므로 주의가 필요합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// -&gt; 86400000</span>
+<span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="dl">"</span><span class="s2">1970/1/2</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; NaN</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="24-dateprototypegetfullyear">2.4 Date.prototype.getFullYear</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 연도를 나타내는 정수를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24</span><span class="dl">"</span><span class="p">).</span><span class="nx">getFullYear</span><span class="p">();</span> <span class="c1">// -&gt; 2020</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="25-dateprototypesetfullyear">2.5 Date.prototype.setFullYear</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 연도를 타나내는 정수를 설정합니다.<br />
+연도 이외에 옵션으로 월, 일도 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 년도 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span> <span class="c1">// -&gt; 2000</span>
+
+<span class="c1">// 년도/월/일 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span> <span class="c1">// -&gt; 1900</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="26-dateprototypegetmonth">2.6 Date.prototype.getMonth</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 월을 나타내는 <code class="language-html highlighter-rouge">0 ~ 11</code> 의 정수를 반환합니다.<br />
+1월은 <code class="language-html highlighter-rouge">0</code>, 12월은 <code class="language-html highlighter-rouge">11</code> 입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24</span><span class="dl">"</span><span class="p">).</span><span class="nx">getMonth</span><span class="p">();</span> <span class="c1">// -&gt; 6</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="27-dateprototypesetmonth">2.7 Date.prototype.setMonth</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 월을 타나내는 <code class="language-html highlighter-rouge">0 ~ 11</code> 의 정수를 설정합니다.<br />
+1월은 <code class="language-html highlighter-rouge">0</code>, 12월은 <code class="language-html highlighter-rouge">11</code> 입니다.<br />
+월 이외에 옵션으로 일도 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 월 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 1월</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span> <span class="c1">// -&gt; 0</span>
+
+<span class="c1">// 월/일 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 12월 1일</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span> <span class="c1">// -&gt; 11</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="28-dateprototypegetdate">2.8 Date.prototype.getDate</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 날짜(<code class="language-html highlighter-rouge">1 ~ 31</code>)를 나타내는 정수를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24</span><span class="dl">"</span><span class="p">).</span><span class="nx">getDate</span><span class="p">();</span> <span class="c1">// -&gt; 24</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="29-dateprototypesetdate">2.9 Date.prototype.setDate</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 날짜(<code class="language-html highlighter-rouge">1 ~ 31</code>)를 나타내는 정수를 설정합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 날짜 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span> <span class="c1">// -&gt; 1</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="210-dateprototypegetday">2.10 Date.prototype.getDay</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 요일(<code class="language-html highlighter-rouge">0 ~ 6</code>)을 나타내는 정수를 반환합니다.<br />
+반환값은 다음과 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>요일</th>
+      <th>반환값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>일요일</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>월요일</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>화요일</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>수요일</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>목요일</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>금요일</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>토요일</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24</span><span class="dl">"</span><span class="p">).</span><span class="nx">getDay</span><span class="p">();</span> <span class="c1">// -&gt; 5</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="211-dateprototypegethours">2.11 Date.prototype.getHours</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 시간(<code class="language-html highlighter-rouge">0 ~ 23</code>)을 나타내는 정수를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24/12:00</span><span class="dl">"</span><span class="p">).</span><span class="nx">getHours</span><span class="p">();</span> <span class="c1">// -&gt; 12</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="212-dateprototypesethours">2.12 Date.prototype.setHours</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 시간(<code class="language-html highlighter-rouge">0 ~ 23</code>)을 나타내는 정수를 설정합니다.<br />
+시간 이외에 옵션으로 분, 초, 밀리초도 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 시간 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span> <span class="c1">// -&gt; 7</span>
+
+<span class="c1">// 시간/분/초/밀리초 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 00:00:00:00</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span> <span class="c1">// -&gt; 0</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="213-dateprototypegetminutes">2.13 Date.prototype.getMinutes</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 분(<code class="language-html highlighter-rouge">0 ~ 59</code>)을 나타내는 정수를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24/12:30</span><span class="dl">"</span><span class="p">).</span><span class="nx">getMinutes</span><span class="p">();</span> <span class="c1">// -&gt; 30</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="214-dateprototypesetminutes">2.14 Date.prototype.setMinutes</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 분(<code class="language-html highlighter-rouge">0 ~ 59</code>)을 나타내는 정수를 설정합니다.<br />
+분 이외에 옵션으로 초, 밀리초도 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 분 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setMinutes</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span> <span class="c1">// -&gt; 50</span>
+
+<span class="c1">// 분/초/밀리초 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setMinutes</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">999</span><span class="p">);</span> <span class="c1">// HH:05:10:999</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span> <span class="c1">// -&gt; 5</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="215-dateprototypegetseconds">2.15 Date.prototype.getSeconds</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 초(<code class="language-html highlighter-rouge">0 ~ 59</code>)를 나타내는 정수를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24/12:30:10</span><span class="dl">"</span><span class="p">).</span><span class="nx">getSeconds</span><span class="p">();</span> <span class="c1">// -&gt; 10</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="216-dateprototypesetseconds">2.16 Date.prototype.setSeconds</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 초(<code class="language-html highlighter-rouge">0 ~ 59</code>)를 나타내는 정수를 설정합니다.<br />
+초 이외에 옵션으로 밀리초도 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 초 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span> <span class="c1">// -&gt; 30</span>
+
+<span class="c1">// 초/밀리초 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// HH:MM:10:000</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span> <span class="c1">// -&gt; 10</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="217-dateprototypegetmilliseconds">2.17 Date.prototype.getMilliseconds</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체의 밀리초(<code class="language-html highlighter-rouge">0 ~ 999</code>)를 나타내는 정수를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24/12:30:10:150</span><span class="dl">"</span><span class="p">).</span><span class="nx">getMilliseconds</span><span class="p">();</span> <span class="c1">// -&gt; 150</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="218-dateprototypesetmilliseconds">2.18 Date.prototype.setMilliseconds</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 밀리초(<code class="language-html highlighter-rouge">0 ~ 999</code>)를 나타내는 정수를 설정합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 밀리초 지정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setMilliseconds</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getMilliseconds</span><span class="p">();</span> <span class="c1">// -&gt; 123</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="219-dateprototypegettime">2.19 Date.prototype.getTime</h3>
+
+<p>1970년 1월 1일 00:00:00(UTC)를 기점으로 <code class="language-html highlighter-rouge">Date</code> 객체의 시간까지 경과된 밀리초를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/07/24/12:30</span><span class="dl">"</span><span class="p">).</span><span class="nx">getTime</span><span class="p">();</span> <span class="c1">// -&gt; 1595561400000</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="220-dateprototypesettime">2.20 Date.prototype.setTime</h3>
+
+<p><code class="language-html highlighter-rouge">Date</code> 객체에 1970년 1월 1일 00:00:00(UTC)를 기점으로 경과된 밀리초를 설정합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// 1970년 1월 1일 00:00:00(UTC)를 기점으로 경과된 밀리초 설정</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="mi">86400000</span><span class="p">);</span> <span class="c1">// 86400000는 1day를 나타낸다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">);</span> <span class="c1">// -&gt; Fri Jan 02 1970 09:00:00 GMT+0900 (대한민국 표준시)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="221-dateprototypegettimezoneoffset">2.21 Date.prototype.getTimezoneOffset</h3>
+
+<p>UTC와 <code class="language-html highlighter-rouge">Date</code> 객체에 지정된 로캘(locale) 시간과의 차이를 분 단위로 반환합니다.<br />
+KST는 UTC에 9시간을 더한 시간입니다.<br />
+즉, UTC = KST - 9h 입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span> <span class="c1">// today의 지정 로캘은 KST다.</span>
+
+<span class="c1">//UTC와 today의 지정 로캘 KST와의 차이는 -9시간이다.</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">// -9</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="222-dateprototypetodatestring">2.22 Date.prototype.toDateString</h3>
+
+<p>사람이 읽을 수 있는 형식의 문자열로 <code class="language-html highlighter-rouge">Date</code> 객체의 날짜를 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/7/24/12:30</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">today</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// -&gt; Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">();</span> <span class="c1">// -&gt; Fri Jul 24 2020</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="223-dateprototypetotimestring">2.23 Date.prototype.toTimeString</h3>
+
+<p>사람이 읽을 수 있는 형식으로 <code class="language-html highlighter-rouge">Date</code> 객체의 시간을 표현한 문자열을 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/7/24/12:30</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">today</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// -&gt; Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toTimeString</span><span class="p">();</span> <span class="c1">// -&gt; 12:30:00 GMT+0900 (대한민국 표준시)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="224-dateprototypetoisostring">2.24 Date.prototype.toISOString</h3>
+
+<p>ISO 8601 형식으로 <code class="language-html highlighter-rouge">Date</code> 객체의 날짜와 시간을 표현한 문자열을 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/7/24/12:30</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">today</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// -&gt; Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">();</span> <span class="c1">// -&gt; 2020-07-24T03:30:00.000Z</span>
+
+<span class="nx">today</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// -&gt; 2020-07-24</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span> <span class="c1">// -&gt; 20200724</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="225-dateprototypetolocalestring">2.25 Date.prototype.toLocaleString</h3>
+
+<p>인수로 전달한 로캘을 기준으로 <code class="language-html highlighter-rouge">Date</code> 객체의 날짜와 시간을 표현한 문자열을 반환합니다.<br />
+인수를 생략한 경우 브라우저가 동작 중인 시스템의 로캘을 적용합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/7/24/12:30</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">today</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// -&gt; Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">();</span> <span class="c1">// -&gt; 2020. 7. 24. 오후 12:30:00</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="dl">"</span><span class="s2">ko-KR</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 2020. 7. 24. 오후 12:30:00</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="dl">"</span><span class="s2">en-US</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 7/24/2020, 12:30:00 PM</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="dl">"</span><span class="s2">ja-JP</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 2020/7/24 12:30:00</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="226-dateprototypetolocaletimestring">2.26 Date.prototype.toLocaleTimeString</h3>
+
+<p>인수로 전달한 로캘을 기준으로 <code class="language-html highlighter-rouge">Date</code> 객체의 시간을 표현한 문자열을 반환합니다.<br />
+인수를 생략한 경우 브라우저가 동작 중인 시스템의 로캘을 적용합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2020/7/24/12:30</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">today</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// -&gt; Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span> <span class="c1">// -&gt; 오후 12:30:00</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">(</span><span class="dl">"</span><span class="s2">ko-KR</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 오후 12:30:00</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">(</span><span class="dl">"</span><span class="s2">en-US</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 12:30:00 PM</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">(</span><span class="dl">"</span><span class="s2">ja-JP</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// -&gt; 12:30:00</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="3-date를-활용한-시계-예제">3. Date를 활용한 시계 예제</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="nx">printNow</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">dayNames</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">(일요일)</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">(월요일)</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">(화요일)</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">(수요일)</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">(목요일)</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">(금요일)</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">(토요일)</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">];</span>
+  <span class="c1">// getDay 메서드는 해당 요일(0 ~ 6)을 나타내는 정수를 반환한다.</span>
+  <span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">dayNames</span><span class="p">[</span><span class="nx">today</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()];</span>
+
+  <span class="kd">const</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">hour</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">minute</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">second</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">ampm</span> <span class="o">=</span> <span class="nx">hour</span> <span class="o">&gt;=</span> <span class="mi">12</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">PM</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">AM</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">// 12시간제로 변경</span>
+  <span class="nx">hour</span> <span class="o">%=</span> <span class="mi">12</span><span class="p">;</span>
+  <span class="nx">hour</span> <span class="o">=</span> <span class="nx">hour</span> <span class="o">||</span> <span class="mi">12</span><span class="p">;</span> <span class="c1">// hour가 0이면 12를 재할당</span>
+
+  <span class="c1">// 10미만인 분과 초를 2자리로 변경</span>
+  <span class="nx">minute</span> <span class="o">=</span> <span class="nx">minute</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">minute</span> <span class="p">:</span> <span class="nx">minute</span><span class="p">;</span>
+  <span class="nx">second</span> <span class="o">=</span> <span class="nx">second</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">second</span> <span class="p">:</span> <span class="nx">second</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">now</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">year</span><span class="p">}</span><span class="s2">년 </span><span class="p">${</span><span class="nx">month</span><span class="p">}</span><span class="s2">월 </span><span class="p">${</span><span class="nx">date</span><span class="p">}</span><span class="s2">일 </span><span class="p">${</span><span class="nx">day</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">hour</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">minute</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">second</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">ampm</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">);</span>
+
+  <span class="c1">// 1초마다 printNow 함수를 재귀 호출한다. 41.2.1절 "setTimeout / clearTimeout" 참고</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">printNow</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /><br /><br /></p>
+:ET

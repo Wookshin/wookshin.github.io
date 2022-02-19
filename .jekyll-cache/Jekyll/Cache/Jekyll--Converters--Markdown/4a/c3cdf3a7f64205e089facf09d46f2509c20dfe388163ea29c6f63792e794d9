@@ -1,0 +1,393 @@
+I"�y<p><br /></p>
+
+<h1 id="데이터-타입">데이터 타입</h1>
+
+<p><br />
+자바스크립트(ES6)는 7개의 데이터 타입을 제공합니다.<br />
+7개의 데이터 타입은 원시 타입(primitive type)과 객체 타입(object/reference type)으로 분류할 수 있습니다.</p>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th style="text-align: center">데이터 타입</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>원시 타입</td>
+      <td style="text-align: center">숫자(number) 타입</td>
+      <td>숫자. 정수와 실수 구분 없이 하나의 숫자 타입만 존재</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: center">문자열(string) 타입</td>
+      <td>문자열</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: center">불리던(boolean) 타입</td>
+      <td>논리적 참(true)과 거짓(false)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: center">undefined 타입</td>
+      <td>var 키워드로 선언된 변수에 암묵적으로 할당되는 값</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: center">null 타입</td>
+      <td>값이 없다는 것을 의도적으로 명시할 때 사용하는 값</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: center">심벌(symbol) 타입</td>
+      <td>ES6에서 추가된 7번째 타입</td>
+    </tr>
+    <tr>
+      <td>객체 타입</td>
+      <td style="text-align: center"> </td>
+      <td>객체, 함수, 배열 등</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="1-숫자-타입">1. 숫자 타입</h2>
+
+<p>자바스크립트에는 독특하게 하나의 숫자 타입만 존재합니다.<br />
+ECMAScript 사양에 따르면 숫자 타입의 값은 배정밀도 64비트 부동소수점 형식을 따릅니다.<br />
+즉, 모든 수를 실수로 처리하며, 정수만 표현하기 위한 데이터 타입이 별도로 존재하지 않습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 모두 숫자 타입입니다.</span>
+<span class="kd">var</span> <span class="nx">integer</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 정수</span>
+<span class="kd">var</span> <span class="nx">double</span> <span class="o">=</span> <span class="mf">10.12</span><span class="p">;</span> <span class="c1">// 실수</span>
+<span class="kd">var</span> <span class="nx">nagative</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span> <span class="c1">// 음의 정수</span>
+</code></pre></div></div>
+
+<p>정수, 실수, 2진수, 8진수, 16진수 리터럴은 모두 메모리에 배정밀도 64비트 부동소수점 형식의 2진수로 저장됩니다.<br />
+자바스크립트는 2진수, 8진수, 16진수를 표현하기 위한 데이터 타입을 제공하지 않기 때문에 이들 값을 참조하면 모두 10진수로 해석됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">binary</span> <span class="o">=</span> <span class="mb">0b01000001</span><span class="p">;</span> <span class="c1">// 2진수</span>
+<span class="kd">var</span> <span class="nx">octal</span> <span class="o">=</span> <span class="mo">0o101</span><span class="p">;</span> <span class="c1">// 8진수</span>
+<span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="mh">0x41</span><span class="p">;</span> <span class="c1">// 16진수</span>
+
+<span class="c1">// 표기법만 다를 뿐 모두 같은 값입니다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">binary</span><span class="p">);</span> <span class="c1">// 65</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">octal</span><span class="p">);</span> <span class="c1">// 65</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hex</span><span class="p">);</span> <span class="c1">// 65</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">binary</span> <span class="o">===</span> <span class="nx">octal</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">octal</span> <span class="o">==</span> <span class="nx">hex</span><span class="p">);</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>정수로 표시되는 수끼리 나누더라도 실수가 나올 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 숫자 타입은 모두 실수로 처리됩니다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mf">1.0</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1.5</span>
+</code></pre></div></div>
+
+<p>숫자 타입은 추가적으로 세 가지 특별한 값도 표현할 수 있습니다.</p>
+
+<ul>
+  <li>Infinity : 양의 무한대</li>
+  <li>-Infinity : 음의 무한대</li>
+  <li>Nan : 산술 연산 불가(not-a-number)</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 숫자 타입의 세 가지 특별한 값</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Infinity</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="o">-</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// -Infinity</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="dl">"</span><span class="s2">String</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="2-문자열-타입">2. 문자열 타입</h2>
+
+<p>문자열(string) 타입은 텍스트 데이터를 나타내는 데 사용합니다.<br />
+문자열은 0개 이상의 16비트 유니코드 문자(UTF-16)의 집합으로 전 세계 대부분의 문자를 표현할 수 있습니다.</p>
+
+<p>문자열은 작은따옴표(‘’), 큰따옴표(“”), 또는 백틱(``)으로 텍스트를 감쌉니다.<br />
+자바스크립트에서 가장 일반적인 표기법은 작은따옴표를 사용하는 것입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 문자열 타입</span>
+<span class="kd">var</span> <span class="nx">string</span><span class="p">;</span>
+<span class="nx">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">문자열</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 작은따옴표</span>
+<span class="nx">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">문자열</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 큰따옴표</span>
+<span class="nx">string</span> <span class="o">=</span> <span class="s2">`문자열`</span><span class="p">;</span> <span class="c1">// 백틱(ES6)</span>
+
+<span class="nx">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">작은따옴표로 감싼 문자열 내의 "큰따옴표"는 문자열로 인식됩니다.</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">큰따옴표로 감싼 문자열 내의 '작은따옴표'는 문자열로 인식됩니다.</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>자바스크립트의 문자열은 원시 타입이며, 변경 불가능한 값(immutable value)입니다.<br />
+이것은 문자열이 생성되면 그 문자열을 변경할 수 없다는 것을 의미합니다.</p>
+
+<p><br /></p>
+
+<h2 id="3-템플릿-리터럴">3. 템플릿 리터럴</h2>
+
+<p>ES6부터 템플릿 리터럴(template literal)이라고 하는 새로운 문자열 표기법이 도입되었습니다.<br />
+템플릿 리터럴은 멀티라인 문자열(multi-line string), 표현식 삽입(expression interpolation), 태그드 템플릿(tagged template) 등 편리한 문자열 처리 기능을 제공합니다.<br />
+템플릿 리터럴은 런타임에 일반 문자열로 변환되어 처리됩니다.</p>
+
+<p>템플릿 리터럴은 일반 문자열과 비슷해 보이지만 작은따옴표(‘’) 또는 큰따옴표(“”) 같은 일반적인 따옴표 대신 백틱(``)을 사용해 표현합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">template</span> <span class="o">=</span> <span class="s2">`Template literal`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">template</span><span class="p">);</span> <span class="c1">// Template literal</span>
+</code></pre></div></div>
+
+<h3 id="31-멀티라인-문자열">3.1 멀티라인 문자열</h3>
+
+<p>일반 문자열과 달리 템플릿 리터럴 내에서는 이스케이프 시퀀스를 사용하지 않고도 잘바꿈이 허용되며, 모든 공백도 있는 그대로 적용됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">template</span> <span class="o">=</span> <span class="s2">`&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;;
+
+console.log(template);
+</span></code></pre></div></div>
+
+<p>출력 결과는 다음과 같습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="4-불리턴-타입">4. 불리턴 타입</h2>
+
+<p>불리언 타입의 값은 논리적 참, 거짓을 나타내는 true와 false 뿐입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="5-undefined-타입">5. undefined 타입</h2>
+
+<p>undefined 타입의 값은 undefined가 유일합니다.</p>
+
+<p>var 키워드로 선언한 변수는 암묵적으로 undefined로 초기화됩니다.<br />
+다시 말해, 변수 선언에 의해 확보된 메모리 공간을 처음 할당이 이뤄질 때까지 빈 상태(대부분 비어 있지 않고 쓰레기 값이 들어있습니다)로 내버려두지 않고 자바스크립트 엔진이 undefined로 초기화합니다.<br />
+따라서 변수를 선언한 이후 값을 할당하지 않은 변수를 참조하면 undefined가 반환됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">foo</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="6-null-타입">6. null 타입</h2>
+
+<p>null 타입의 값은 null이 유일합니다.<br />
+자바스크립트는 대소문자를 구별하므로 null은 Null, NULL 등과 다릅니다.</p>
+
+<p>프로그래밍 언어에서 null은 변수에 값이 없다는 것을 의도적으로 명시(의도적 부재, intentional absence)할 때 사용합니다.<br />
+변수에 null을 할당하는 것은 변수가 이전에 참조하던 값을 더 이상 참조하지 않겠다는 의미입니다.<br />
+이는 이전에 할당되어 있던 값에 참조를 명시적으로 제거하는 것을 의미하며, 자바스크립트 엔진은 누구도 참조하지 않는 메모리 공간에 대해 가비지 콜렉션을 수행할 것입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// 이전 참조를 제거. foo 변수는 더 이상 'Lee'를 참조하지 않습니다.</span>
+<span class="c1">// 유용해 보이지는 않습니다. 변수의 스코프를 좁게 만들어 변수 자체를 재빨리 소멸시키는 편이 낫습니다.</span>
+<span class="nx">foo</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>함수가 유효한 값을 반환할 수 없는 경우 명시적으로 null을 반환하기도 합니다.<br />
+예를 들어, HTML 요소를 검색해 반환하는 document.querySelector 메서드는 조건에 부합하는 HTML 요소를 검색할 수 없는 경우 에러 대신 null을 반환합니다.</p>
+
+<p><br /></p>
+
+<h2 id="7-심벌-타입">7. 심벌 타입</h2>
+
+<p>심벌(symbol)은 ES6에서 추가된 7번째 타입으로, 변경 불가능한 원시 타입의 값입니다.<br />
+심벌 값은 다른 값과 중복되지 않는 유일무이한 값입니다.<br />
+따라서 주로 이름이 충돌할 위험이 없는 객체의 유일한 프로퍼티 키를 만들기 위해 사용합니다.</p>
+
+<p>심벌 이외의 원시 값은 리터럴을 통해 생성하지만 심벌은 Symbol 함수를 호출해 생성합니다.<br />
+이때 생성된 심벌 값은 외부에 노출되지 않으며, 다른 값과 절대 중복되지 않는 유일무이한 값입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 심벌 값 생성</span>
+<span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">key</span><span class="p">);</span> <span class="c1">// symbol</span>
+
+<span class="c1">// 객체 생성</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="c1">// 이름이 충돌한 위험이 없는 유일무이한 값인 심벌을 프로퍼티 키로 사용합니다.</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span> <span class="c1">// value</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="8-객체-타입">8. 객체 타입</h2>
+
+<p>자바스크립트의 데이터 타입은 크게 원시 타입과 객체 타입으로 분류합니다.<br />
+자바스크립트는 객체 기반의 언어이며, 자바스크립트를 이루고 있는 거의 모든 것이 객체입니다.<br />
+지금까지 살펴본 6가지 데이터 타입 이외의 값은 모두 객체 타입입니다.</p>
+
+<p><br /></p>
+
+<h2 id="9-데이터-타입의-필요성">9. 데이터 타입의 필요성</h2>
+
+<p>데이터 타입은 왜 필요할까요?</p>
+
+<h3 id="91-데이터-타입에-의한-메모리-공간의-확보와-참조">9.1 데이터 타입에 의한 메모리 공간의 확보와 참조</h3>
+
+<p>값은 메모리에 저장하고 참조할 수 있어야 합니다.<br />
+메모리에 값을 저장하려면 먼저 확보해야 할 메모리 공간의 크기를 결정해야 합니다.<br />
+다시 말해, 몇 바이트의 메모리 공간을 사용해야 낭비와 손실 없이 값을 저장할 수 있는지 알아야 합니다.<br />
+예를 들어, 다음과 같이 변수를 선언하고 숫자 값을 할당해 봅시다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위 코드가 실행되면 컴퓨터는 숫자 값 100을 저장하기 위해 메모리 공간을 확보한 다음, 확보된 메모리에 숫자 값 100을 2진수로 저장합니다.
+이러한 처리를 하려면 숫자 값을 저장할 때 확보해야 할 메모리 공간의 크기를 알아야 합니다.<br />
+자바스크립트 엔진은 데이터 타입, 즉 값의 종류에 따라 정해진 크기의 메모리 공간을 확보합니다.<br />
+즉, 변수에 할당되는 값의 데이터 타입에 따라 확보해야 할 메모리 공간의 크기가 결정됩니다.<br />
+위 예제의 경우 자바스크립트 엔진은 리터럴 100을 숫자 타입의 값으로 해석하고 숫자 타입의 값 100을 저장하기 위해 8바이트의 메모리 공간을 확보합니다.<br />
+그리고 100을 2진수로 저장합니다.</p>
+
+<p>이번에는 값을 참조하는 경우를 생각해봅시다.<br />
+식별자 score를 통해 숫자 타입의 값 100이 저장되어 있는 메모리 공간의 주소를 찾아갈 수 있습니다.<br />
+정확히 말하면 숫자 값 100이 저장되어 있는 메모리 공간의 선두 메모리 셀의 주소를 찾아갈 수 있습니다.</p>
+
+<p>이때 값을 참조하려면 한 번에 읽어 들여야 할 메모리 공간의 크기, 즉 메모리 셀의 개수(바이트 수)를 알아야 합니다.<br />
+score 변수의 경우, 저장되어 있는 값이 숫자 타입이므로 8바이트 단위로 읽어 들이지 않으면 값이 훼손됩니다.<br />
+그렇다면 컴퓨터는 한 번에 읽어 들여야 할 메모리 셀의 크기를 어떻게 알 수 있을까요?<br />
+score 변수에는 숫자 타입의 값이 할당되어 있으므로 자바스크립트 엔진은 score 변수를 숫자 타입으로 인식합니다.<br />
+숫자 타입은 8바이트 단위로 저장되므로 score 변수를 참조하면 8바이트 단위로 메모리 공간에 저장된 값을 읽어 들입니다.</p>
+
+<blockquote>
+  <p><strong>심벌 테이블</strong><br />
+컴파일러 또는 인터프리터는 심벌 테이블이라고 부르는 자료 구조를 통해 식별자를 키로 바인딩된 값의 메모리 주소, 데이터 타입, 스코프 등을 관리합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="92-데이터-타입에-의한-값의-해석">9.2 데이터 타입에 의한 값의 해석</h3>
+
+<p>그런데 아직 문제가 남아 있습니다.<br />
+메모리에서 읽어 들인 2진수를 어떻게 해석해야 하느냐입니다.</p>
+
+<p>모든 값은 데이터 타입을 가지며, 메모리에 2진수, 즉 비트의 나열로 저장됩니다.<br />
+메모리에 저장된 값은 데이터 타입에 따라 다르게 해석될 수 있습니다.<br />
+예를 들어, 메모리에 저장된 값 0100 0001을 숫자로 해석하면 65지만 문자열로 해석하면 ‘A’입니다.</p>
+
+<p>앞에서 살펴본 예제의 score 변수에 할당된 값은 숫자 타입의 값입니다.<br />
+따라서 score 변수를 참조하면 메모리 공간의 주소에서 읽어 들인 2진수를 숫자로 해석합니다.</p>
+
+<p>지금까지 살펴본 데이터 타입에 대해 정리해봅시다.<br />
+데이터 타입은 값의 종류를 말합니다.<br />
+자바스크립트의 모든 값은 데이터 타입을 갖습니다.<br />
+데이터 타입이 필요한 이유는 다음과 같습니다.</p>
+
+<ul>
+  <li>값을 저장할 때 확보해야 하는 메모리 공간의 크기를 결정하기 위해</li>
+  <li>값을 참조할 때 한 번에 읽어 들여야 할 메모리 공간의 크기를 결정하기 위해</li>
+  <li>메모리에서 읽어 들인 2진수를 어떻게 해석할지 결정하기 위해</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="10-동적-타이핑">10. 동적 타이핑</h2>
+
+<h3 id="101-동적-타입-언어와-정적-타입-언어">10.1 동적 타입 언어와 정적 타입 언어</h3>
+
+<p>C나 자바 같은 정적 타입(static/strong type) 언어는 변수를 선언할 때 변수에 할당할 수 있는 값의 종류, 즉 데이터 타입을 사전에 선언해야 합니다.<br />
+이를 명시적 타입 선언(explicite type declaration)이라고 합니다.</p>
+
+<p>정적 타입 언어는 변수의 타입을 변경할 수 없으며, 변수에 선언한 타입에 맞는 값만 할당할 수 있습니다.<br />
+정적 타입 언어는 컴파일 시점에 타입 체크(선언한 데이터 타입에 맞는 값을 할당했는지 검사하는 처리)를 수행합니다.<br />
+만약 타입 체크를 통과하지 못했다면 에러를 발생시키고 프로그램의 실행 자체를 막습니다.<br />
+이를 통해 타입의 일관성을 강제함으로써 더욱 안정적인 코드의 구현을 통해 런타임에 발생하는 에러를 줄입니다.<br />
+대표적인 정적 타입 언어로 C, C++, 자바, 코틀린, 고, 하스켈, 러스트, 스칼라 등이 있습니다.</p>
+
+<p>자바스크립트는 정적 타입 언어와 다르게 변수를 선언할 때 타입을 선언하지 않습니다.<br />
+다만 var, let, const 키워드를 사용해 변수를 선언할 뿐입니다.<br />
+자바스크립트의 변수는 정적 타입 언어와 같이 미리 선언한 데이터 타입의 값만 할당할 수 있는 것이 아닙니다.<br />
+어떠한 데이터 타입의 값이라도 자유롭게 할당 할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">var</span> <span class="nx">foo</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// undefined</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// number</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// string</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// boolean</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// object</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">();</span> <span class="c1">// 심벌</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// symbol</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">// 객체</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// object</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 배열</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// object</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span> <span class="c1">// 함수</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// function</span>
+</code></pre></div></div>
+
+<p>typeof 연산자로 변수를 연산하면 변수의 데이터 타입을 반환합니다.<br />
+정확히 말하면 변수의 데이터 타입을 반환하는 것이 아니라 변수에 할당된 값의 데이터 타입을 반환한 것입니다.</p>
+
+<p>자바스크립트의 변수는 선언이 아닌 할당에 의해 타입이 결정(타입 추론, type inference)됩니다.<br />
+그리고 재할당에 의해 변수의 타입은 언제든지 동적으로 변할 수 있습니다.<br />
+이러한 특징을 동적 타이핑(dynamic typing)이라 하며, 자바스크립트를 정적 타입 언어와 구별하기 위해 동적 타입(dynamic/weak type)언어라 합니다.<br />
+대표적인 동적 타입 언어로는 자바스크립트, 파이썬, PHP, 루비, 리스프, 펄 등이 있습니다.</p>
+
+<p>기본적으로 변수는 타입을 갖지 않습니다.<br />
+하지만 값은 타입을 갖습니다.<br />
+따라서 현재 변수에 할당되어 있는 값에 의해 변수의 타입이 동적으로 결정된다고 표현하는 것이 더 적절합니다.<br />
+변수는 값에 묶여 있는 값에 대한 별명이기 때문입니다.</p>
+
+<p><br /></p>
+
+<h3 id="102-동적-타입-언어와-변수">10.2 동적 타입 언어와 변수</h3>
+
+<p>안정적인 프로그램을 만들기 위해 변수를 사용하기 이전에 데이터 타입을 체크해야 하는 경우가 있는데 이는 매우 번거로울뿐더러 코드의 양도 증가합니다.<br />
+따라서 변수를 사용할 때 주의할 사항은 다음과 같습니다.</p>
+
+<ul>
+  <li>변수는 꼭 필요한 경우에 한해 제한적으로 사용합니다. 변수 값은 재할당에 의해 언제든지 변경될 수 있습니다. 이로 인해 동적 타입 언어인 자바스크립트는 타입을 잘못 예측해 오류가 발생할 가능성이 큽니다. 변수의 개수가 많으면 많을수록 오류가 발생할 확률도 높아집니다. 따라서 변수의 무분별한 남발은 금물이며, 피룡한 만큼 최소한으로 유지하도록 주의해야 합니다.</li>
+  <li>변수의 유효 범위(스코프)는 최대한 좁게 만들어 변수의 부작용을 억제해야 합니다. 변수의 유효 범위가 넓으면 넓을수록 변수로 인해 오류가 발생할 확률이 높아집니다.</li>
+  <li>전역 변수는 최대한 사용하지 않도록 합니다. 어디서든지 참조/변경 가능한 전역 변수는 의도치 않게 값이 변경될 가능성이 높고 다른 코드에 영향을 줄 가능성도 높습니다. 따라서 전역 변수는 프로그램의 복잡성을 증가시키고 처리 흐름을 추적하기 어렵게 만들고, 오류가 발생할 경우 오류의 원인을 특정하기 어렵게 만듭니다.</li>
+  <li>변수보다는 상수를 사용해 값의 변경을 억제합니다.</li>
+  <li>변수 이름은 변수의 목적이나 의미를 파악할 수 있도록 네이밍합니다. 변수 이름뿐 아니라 모든 식별자(변수, 함수, 클래스 이름 등)는 존재 이유를 파악할 수 있는 적절한 이름으로 지어야 합니다. 특히 식별자의 유효 범위가 넓을수록 명확한 이름을 명명하도록 노력합시다. 개발자의 의도를 나타내는 명확한 네이밍은 코드를 이해하기 쉽게 만드록, 이는 협업과 생산성 향상에 도움을 줍니다. 다시 말하지만 변수 이름은 첫아이 이름을 짓듯이 심사숙고해서 지어야 합니다.</li>
+</ul>
+
+<p><br /></p>
+
+<p>코드는 오해하지 않도록 작성해야 합니다.<br />
+오해는 커뮤니케이션을 어렵게 하는 대표적인 원인으로 생산성을 떨어뜨리는 것은 물론 팀의 사기까지 저하시킵니다.<br />
+코드는 동작하는 것만이 존재 목적이 아닙니다.<br />
+코드는 개발자를 위한 문서이기도 합니다.<br />
+따라서 사람이 이해할 수 있는 코드, 즉 가독성이 좋은 코드가 좋은 코드입니다.</p>
+
+<p><br />
+<br />
+<br /></p>
+:ET

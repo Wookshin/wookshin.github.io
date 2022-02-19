@@ -1,0 +1,301 @@
+I"{W<p><br /></p>
+
+<h1 id="strict-mode">strict mode</h1>
+
+<p><br /></p>
+
+<h2 id="1-strict-mode란">1. strict mode란?</h2>
+
+<p>아래 예제의 실행 결과는 무엇일까요?</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// ?</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><code class="language-html highlighter-rouge">foo</code> 함수 내에서 선언하지 않은 <code class="language-html highlighter-rouge">x</code> 변수에 값 <code class="language-html highlighter-rouge">10</code>을 할당했습니다.<br />
+이때 <code class="language-html highlighter-rouge">x</code> 변수를 찾아야 <code class="language-html highlighter-rouge">x</code>에 값을 할당할 수 있기 때문에 자바스크립트 엔진은 <code class="language-html highlighter-rouge">x</code> 변수가 어디에서 선언되었는지 스코프 체인을 통해 검색하기 시작합니다.</p>
+
+<p>자바스크립트 엔진은 먼저 <code class="language-html highlighter-rouge">foo</code> 함수의 스코프에서 <code class="language-html highlighter-rouge">x</code> 변수의 선언을 검색합니다.<br />
+<code class="language-html highlighter-rouge">foo</code> 함수의 스코프에는 <code class="language-html highlighter-rouge">x</code> 변수의 선언이 없으므로 검색해 실패할 것이고, 자바스크립트 엔진은 <code class="language-html highlighter-rouge">x</code> 변수를 검색하기 위해 <code class="language-html highlighter-rouge">foo</code> 함수 컨텍스트의 상위 스코프(위 예제의 경우 전역 스코프)에서 <code class="language-html highlighter-rouge">x</code> 변수의 선언을 검색합니다.</p>
+
+<p>전역 스코프에도 <code class="language-html highlighter-rouge">x</code> 변수의 선언이 존재하지 않기 때문에 ReferenceError를 발생시킬 것 같지만 자바스크립트 엔진은 암묵적으로 전역 객체에 <code class="language-html highlighter-rouge">x</code> 프로퍼티를 동적 생성합니다.<br />
+이때 전역 객체의 <code class="language-html highlighter-rouge">x</code> 프로퍼티는 마치 전역 변수처럼 사용할 수 있습니다.<br />
+이러한 현상을 <strong>암묵적 전역(implicit glogbal)</strong>이라 합니다.</p>
+
+<p>개발자 의도와는 상관없이 발생한 암묵적 전역은 오류를 발생시키는 원인이 될 가능성이 큽니다.<br />
+따라서 반드시 <code class="language-html highlighter-rouge">var</code>, <code class="language-html highlighter-rouge">let</code>, <code class="language-html highlighter-rouge">const</code> 키워드를 사용하여 변수를 선언한 다음 사용해야 합니다.</p>
+
+<p>하지만 오타나 문법 지식의 미비로 인한 실수는 언제나 발생합니다.<br />
+따라서 오류를 줄여 안정적인 코드를 생산하기 위해서는 좀 더 근본적인 접근이 필요합니다.<br />
+다시 말해, 잠재적인 오류를 발생시키기 어려운 개발 환경을 만들고 그 환경에서 개발하는 것이 좀 더 근본적인 해결책이라고 할 수 있습니다.</p>
+
+<p>이를 지원하기 위해 ES5부터 <code class="language-html highlighter-rouge">strict mode</code>(엄격 모드)가 추가되었씁니다.<br />
+<code class="language-html highlighter-rouge">strict mode</code>는 자바스크립트 언어의 문법을 좀 더 엄격히 적용하여 오류를 발생시킬 가능성이 높거나 자바스크립트 엔진의 최적화 작업에 문제를 일으킬 수 있는 코드에 대해 명시적인 에러를 발생시킵니다.</p>
+
+<p>ESLint 같은 린트 도구를 사용해도 <code class="language-html highlighter-rouge">strict mode</code>와 유사한 효과를 얻을 수 있습니다.<br />
+린트 도구는 정적 분석(static analysis) 기능을 통해 소스코드를 실행하기 전에 소스코드를 스캔하여 문법적 오류만이 아니라 잠재적 오류까지 찾아내고 오류의 원인을 리포팅해주는 유용한 도구입니다.</p>
+
+<p>린트 도구는 <code class="language-html highlighter-rouge">strict mode</code>가 제한하는 오류는 물론 코딩 컨벤션을 설정 파일 형태로 정의하고 강제할 수 있기 때문에 더욱 강력한 효과를 얻을 수 있습니다.</p>
+
+<p><code class="language-html highlighter-rouge">strict mode</code>의 적용 방법과 <code class="language-html highlighter-rouge">strict mode</code>가 발생시키는 에러에 대해 간략히 살펴봅시다.<br />
+참고로 ES6에서 도입된 클래스와 모듈은 기본적으로 <code class="language-html highlighter-rouge">strict mode</code>가 적용됩니다.</p>
+
+<p><br /><br /></p>
+
+<h2 id="2-strict-mode의-적용">2. strict mode의 적용</h2>
+
+<p><code class="language-html highlighter-rouge">strict mode</code>를 적용하려면 전역의 선두 또는 함수 몸체의 선두에 <code class="language-html highlighter-rouge">'use strict';</code>를 추가합니다.<br />
+전역의 선두에 추가하면 스크립트 전체에 strict mode가 적용됩니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// ReferenceError: x is not defined</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>함수 몸체의 선두에 추가하면 해당 함수와 중첩 함수에 <code class="language-html highlighter-rouge">strict mode</code>가 적용됩니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// ReferenceError: x is not defined</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>코드의 선두에 <code class="language-html highlighter-rouge">'use strict';</code>를 위치시키지 않으면 <code class="language-html highlighter-rouge">strict mode</code>가 제대로 동작하지 않습니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 에러를 발생시키지 않는다.</span>
+  <span class="p">(</span><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="3-전역에-strict-mode를-적용하는-것은-피하자">3. 전역에 strict mode를 적용하는 것은 피하자</h2>
+
+<p>전역에 적용한 <code class="language-html highlighter-rouge">strict mode</code>는 스크립트 단위로 적용됩니다.</p>
+
+<p><br /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 에러가 발생하지 않는다.</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 1</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+      <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// ReferenceError: y is not defined</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>위 예제와 같이 스크립트 단위로 적용된 <code class="language-html highlighter-rouge">strict mode</code>는 다른 스크립트에 영향을 주지 않고 해당 스크립트에 한정되어 적용됩니다.</p>
+
+<p>하지만 <code class="language-html highlighter-rouge">strict mode</code> 스크립트와 <code class="language-html highlighter-rouge">non-strict mode</code> 스크립트를 혼용하는 것은 오류를 발생시킬 수 있습니다.<br />
+특히 외부 서드파티 라이브러리를 사용하는 경우 라이브러리가 <code class="language-html highlighter-rouge">non-strict mode</code>인 경우도 있기 때문에 전역에 <code class="language-html highlighter-rouge">strict mode</code>를 적용하는 것은 바람직하지 않습니다.<br />
+이러한 경우 즉시 실행 함수로 스크립트 전체를 감싸서 스코프를 구분하고 즉시 실행 함수의 선두에 <code class="language-html highlighter-rouge">strict mode</code>를 적용합니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 즉시 실행 함수의 선두에 strict mode 적용</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">// Do something...</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="4-함수-단위로-strict-mode를-적용하는-것도-피하자">4. 함수 단위로 strict mode를 적용하는 것도 피하자</h2>
+
+<p>함수 단위로 <code class="language-html highlighter-rouge">strict mode</code>를 적용할 수도 있습니다.<br />
+그러나 어떤 함수는 <code class="language-html highlighter-rouge">strict mode</code>를 적용하고 어떤 함수는 <code class="language-html highlighter-rouge">strict mode</code>를 적용하지 않는 것은 바람직하지 않으며 모든 함수에 일일이 <code class="language-html highlighter-rouge">strict mode</code>를 적용하는 것은 번거로운 일입니다.</p>
+
+<p>그리고 <code class="language-html highlighter-rouge">strict mode</code>가 적용된 함수가 참조할 함수 외부의 컨텍스트에 <code class="language-html highlighter-rouge">strict mode</code>를 적용하지 않는다면 이 또한 문제가 발생할 수 있습니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// non-strict mode</span>
+  <span class="kd">var</span> <span class="nx">lеt</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 에러가 발생하지 않는다.</span>
+
+  <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="kd">let</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// SyntaxError: Unexpected strict mode reserved word</span>
+  <span class="p">}</span>
+  <span class="nx">foo</span><span class="p">();</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>따라서 <code class="language-html highlighter-rouge">strict mode</code>는 즉시 실행 함수로 감싼 스크립트 단위로 적용하는 것이 바람직합니다.</strong></p>
+
+<p><br /><br /></p>
+
+<h2 id="5-strict-mode가-발생시키는-에러">5. strict mode가 발생시키는 에러</h2>
+
+<p>다음은 <code class="language-html highlighter-rouge">strict mode</code>를 적용했을 때 에러가 발생하는 대표적인 사례입니다.</p>
+
+<p><br /></p>
+
+<h3 id="51-암묵적-전역">5.1 암묵적 전역</h3>
+
+<p>선언하지 않은 변수를 참조하면 <code class="language-html highlighter-rouge">ReferenceError</code>가 발생합니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// ReferenceError: x is not defined</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="52-변수-함수-매개변수의-삭제">5.2 변수, 함수, 매개변수의 삭제</h3>
+
+<p><code class="language-html highlighter-rouge">delete</code> 연산자로 변수, 함수, 매개변수를 삭제하면 <code class="language-html highlighter-rouge">SyntaxError</code>가 발생합니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">delete</span> <span class="nx">x</span><span class="p">;</span>
+  <span class="c1">// SyntaxError: Delete of an unqualified identifier in strict mode.</span>
+
+  <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="nx">a</span><span class="p">;</span>
+    <span class="c1">// SyntaxError: Delete of an unqualified identifier in strict mode.</span>
+  <span class="p">}</span>
+  <span class="k">delete</span> <span class="nx">foo</span><span class="p">;</span>
+  <span class="c1">// SyntaxError: Delete of an unqualified identifier in strict mode.</span>
+<span class="p">}());</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="53-매개변수-이름의-중복">5.3 매개변수 이름의 중복</h3>
+
+<p>중복된 매개변수 이름을 사용하면 <code class="language-html highlighter-rouge">SyntaxError</code>가 발생합니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">//SyntaxError: Duplicate parameter name not allowed in this context</span>
+  <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">x</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="54-with-문의-사용">5.4 with 문의 사용</h3>
+
+<p><code class="language-html highlighter-rouge">with</code>문을 사용하면 <code class="language-html highlighter-rouge">SyntaxError</code>가 발생합니다.<br />
+<code class="language-html highlighter-rouge">with</code> 문은 전달된 객체를 스코프 체인에 추가합니다.<br />
+<code class="language-html highlighter-rouge">with</code> 문은 동일한 객체의 프로퍼티를 반복해서 사용할 때 객체 이름을 생략할 수 있어서 코드가 간단해지는 효과가 있지만 성능과 가독성이 나빠지는 문제가 있습니다.<br />
+<code class="language-html highlighter-rouge">with</code> 문은 사용하지 않는 것이 좋습니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">// SyntaxError: Strict mode code may not include a with statement</span>
+  <span class="kd">with</span> <span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="6-strict-mode-적용에-의한-변화">6. strict mode 적용에 의한 변화</h2>
+
+<h3 id="61-일반-함수의-this">6.1 일반 함수의 this</h3>
+
+<p><code class="language-html highlighter-rouge">strict mode</code>에서 함수를 일반 함수로서 호출하면 <code class="language-html highlighter-rouge">this</code>에 <code class="language-html highlighter-rouge">undefined</code>가 바인딩됩니다.<br />
+생성자 함수가 아닌 일반 함수 내부에서는 <code class="language-html highlighter-rouge">this</code>를 사용할 필요가 없기 때문입니다.<br />
+이때 에러는 발생하지 않습니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// undefined</span>
+  <span class="p">}</span>
+  <span class="nx">foo</span><span class="p">();</span>
+
+  <span class="kd">function</span> <span class="nx">Foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// Foo</span>
+  <span class="p">}</span>
+  <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="62-arguments-객체">6.2 arguments 객체</h3>
+
+<p><code class="language-html highlighter-rouge">strict mode</code>에서는 매개변수에 전달된 인수를 재할당하여 변경해도 <code class="language-html highlighter-rouge">arguments</code> 객체에 반영되지 않습니다.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+  <span class="c1">// 매개변수에 전달된 인수를 재할당하여 변경</span>
+  <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+  <span class="c1">// 변경된 인수가 arguments 객체에 반영되지 않는다.</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span> <span class="c1">// { 0: 1, length: 1 }</span>
+<span class="p">})(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /><br /><br /></p>
+:ET

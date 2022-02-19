@@ -1,0 +1,325 @@
+I"�<p><br /></p>
+
+<h1 id="디스트럭처링">디스트럭처링</h1>
+
+<p>디스트럭처링 할당(destructuring assignment, 구조 분해 할당)은 구조화된 배열과 같은 이터러블 또는 객체를 destructuring(비구조화, 구조 파괴)하여 1개 이상의 변수에 개별적으로 할당하는 것을 말합니다.<br />
+배열과 같은 이터러블 또는 객체 리터럴에서 필요한 값만 추출하여 변수에 할당할 때 유용합니다.</p>
+
+<p><br /></p>
+
+<h2 id="1-배열-디스트럭처링-할당">1. 배열 디스트럭처링 할당</h2>
+
+<p>ES5에서 구조화된 배열을 디스트럭처링하여 1개 이상의 변수에 할당하는 방법은 다음과 같습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// ES5</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">);</span> <span class="c1">// 1 2 3</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>ES6의 배열 디스트럭처링 할당은 배열의 각 요소를 배열로부터 추출하여 1개 이상의 변수에 할당합니다.<br />
+이때 <strong>배열 디스트럭처링 할당의 대상(할당문의 우변)은 이터러블이어야 하며, 할당 기준은 배열의 인덱스</strong> 입니다.<br />
+즉, 순서대로 할당됩니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// ES6 배열 디스트럭처링 할당</span>
+<span class="c1">// 변수 one, two, three를 선언하고 배열 arr을 디스트럭처링하여 할당한다.</span>
+<span class="c1">// 이때 할당 기준은 배열의 인덱스다.</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">);</span> <span class="c1">// 1 2 3</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당을 위해서는 할당 연산자 왼쪽에 값을 할당받을 변수를 선언해야 합니다.<br />
+이때 변수를 배열 리터럴 형태로 선언합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이때 우변에 이터러블을 할당하지 않으면 에러가 발생합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">];</span> <span class="c1">// SyntaxError: Missing initializer in destructuring declaration</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">// TypeError: {} is not iterable</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당의 변수 선언문은 다음처럼 선언과 할당을 분리할 수도 있습니다.<br />
+단, 이 경우 const 키워드로 변수를 선언할 수 없으므로 권정하지 않습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">let</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당의 기준은 배열의 인덱스입니다.<br />
+즉, 순서대로 할당됩니다.<br />
+이때 변수의 개수와 이터러블의 요소 개수가 반드시 일치할 필요는 없습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span> <span class="c1">// 1 2</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span> <span class="c1">// 1 undefined</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">e</span><span class="p">,</span> <span class="nx">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">f</span><span class="p">);</span> <span class="c1">// 1 2</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">g</span><span class="p">,</span> <span class="p">,</span> <span class="nx">h</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">,</span> <span class="nx">h</span><span class="p">);</span> <span class="c1">// 1 3</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당을 위한 변수에 기본값을 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// 기본값</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span> <span class="c1">// 1 2 3</span>
+
+<span class="c1">// 기본값보다 할당된 값이 우선한다.</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">e</span><span class="p">,</span> <span class="nx">f</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">);</span> <span class="c1">// 1 2 3</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당은 배열과 같은 이터러블에서 필요한 요소만 추출하여 변수에 할당하고 싶을 때 유용합니다.<br />
+다음 예제는 URL을 파싱하여 protocol, host, path 프로퍼티를 갖는 객체를 생성해 반환합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// url을 파싱하여 protocol, host, path 프로퍼티를 갖는 객체를 생성해 반환한다.</span>
+<span class="kd">function</span> <span class="nx">parseURL</span><span class="p">(</span><span class="nx">url</span> <span class="o">=</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// '://' 앞의 문자열(protocol)과 '/' 이전의 '/'으로 시작하지 않는 문자열(host)과 '/' 이후의 문자열(path)을 검색한다.</span>
+  <span class="kd">const</span> <span class="nx">parsedURL</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^</span><span class="se">(\w</span><span class="sr">+</span><span class="se">)</span><span class="sr">:</span><span class="se">\/\/([^/]</span><span class="sr">+</span><span class="se">)\/(</span><span class="sr">.*</span><span class="se">)</span><span class="sr">$/</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parsedURL</span><span class="p">);</span>
+  <span class="cm">/*
+  [
+    'https://developer.mozilla.org/ko/docs/Web/JavaScript',
+    'https',
+    'developer.mozilla.org',
+    'ko/docs/Web/JavaScript',
+    index: 0,
+    input: 'https://developer.mozilla.org/ko/docs/Web/JavaScript',
+    groups: undefined
+  ]
+  */</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">parsedURL</span><span class="p">)</span> <span class="k">return</span> <span class="p">{};</span>
+
+  <span class="c1">// 배열 디스트럭처링 할당을 사용하여 이터러블에서 필요한 요소만 추출한다.</span>
+  <span class="kd">const</span> <span class="p">[,</span> <span class="nx">protocol</span><span class="p">,</span> <span class="nx">host</span><span class="p">,</span> <span class="nx">path</span><span class="p">]</span> <span class="o">=</span> <span class="nx">parsedURL</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">protocol</span><span class="p">,</span> <span class="nx">host</span><span class="p">,</span> <span class="nx">path</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">parsedURL</span> <span class="o">=</span> <span class="nx">parseURL</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://developer.mozilla.org/ko/docs/Web/JavaScript</span><span class="dl">"</span>
+<span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parsedURL</span><span class="p">);</span>
+<span class="cm">/*
+{
+  protocol: 'https',
+  host: 'developer.mozilla.org',
+  path: 'ko/docs/Web/JavaScript'
+}
+*/</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당을 위한 변수에 Rest 파라미터와 유사하게 <strong>REST 요소(Rest element) …</strong> 을 사용할 수 있습니다.<br />
+Rest 요소는 Rest 파라미터와 마찬가지로 반드시 마지막에 위치해야 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// Rest 요소</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="p">...</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 1 [ 2, 3 ]</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="2-객체-디스트럭처링-할당">2. 객체 디스트럭처링 할당</h2>
+
+<p>ES5에서 객체의 각 프로퍼티를 객체로부터 디스트럭처링하여 변수에 할당하기 위해서는 프로퍼티 키를 사용해야 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// ES5</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span> <span class="na">firstName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ungmo</span><span class="dl">"</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">firstName</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">);</span> <span class="c1">// Ungmo Lee</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>ES6의 객체 디스트럭처링 할당은 객체의 각 프로퍼티를 객체로부터 추출하여 1개 이상의 변수에 할당합니다.<br />
+이때 객체 디스트럭처링 할당의 대상(할당문의 우변)은 객체이어야 하며, <strong>할당 기준은 프로퍼티 키입니다.</strong><br />
+즉, 순서는 의미가 없으며 선언된 변수 이름과 프로퍼티 키가 일치하면 할당됩니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span> <span class="na">firstName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ungmo</span><span class="dl">"</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="c1">// ES6 객체 디스트럭처링 할당</span>
+<span class="c1">// 변수 lastName, firstName을 선언하고 user 객체를 디스트럭처링하여 할당한다.</span>
+<span class="c1">// 이때 프로퍼티 키를 기준으로 디스트럭처링 할당이 이루어진다. 순서는 의미가 없다.</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">firstName</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">);</span> <span class="c1">// Ungmo Lee</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열 디스트럭처링 할당과 마찬가지로 객체 디스트럭처링 할당을 위해서는 할당 연산자 왼쪽에 프로퍼티 값을 할당받을 변수를 선언해야 합니다.<br />
+이때 변수를 객체 리터럴 형태로 선언합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">firstName</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="na">firstName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ungmo</span><span class="dl">"</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이때 우변에 객체 또는 객체로 평가될 수 있는 표현식(문자열, 숫자, 배열 등)을 할당하지 않으면 에러가 발생합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">firstName</span> <span class="p">};</span>
+<span class="c1">// SyntaxError: Missing initializer in destructuring declaration</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">firstName</span> <span class="p">}</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="c1">// TypeError: Cannot destructure property 'lastName' of 'null' as it is null.</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>위 예제에서 객체 리터럴 형태로 선언한 변수는 lastName, firstName 입니다.<br />
+이는 프로퍼티 축약 표현을 통해 선언한 것입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">firstName</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+<span class="c1">// 위와 아래는 동치다.</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="na">lastName</span><span class="p">:</span> <span class="nx">lastName</span><span class="p">,</span> <span class="na">firstName</span><span class="p">:</span> <span class="nx">firstName</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>따라서 객체의 프로퍼티 키와 다른 변수 이름으로 프로퍼티 값을 할당받으려면 다음과 같이 변수를 선언합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span> <span class="na">firstName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ungmo</span><span class="dl">"</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="c1">// 프로퍼티 키를 기준으로 디스트럭처링 할당이 이루어진다.</span>
+<span class="c1">// 프로퍼티 키가 lastName인 프로퍼티 값을 ln에 할당하고,</span>
+<span class="c1">// 프로퍼티 키가 firstName인 프로퍼티 값을 fn에 할당한다.</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="na">lastName</span><span class="p">:</span> <span class="nx">ln</span><span class="p">,</span> <span class="na">firstName</span><span class="p">:</span> <span class="nx">fn</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">ln</span><span class="p">);</span> <span class="c1">// Ungmo Lee</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>객체 디스트럭처링 할당을 위한 변수에 기본값을 설정할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Ungmo</span><span class="dl">"</span><span class="p">,</span> <span class="nx">lastName</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="na">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span> <span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">);</span> <span class="c1">// Ungmo Lee</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="na">firstName</span><span class="p">:</span> <span class="nx">fn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Ungmo</span><span class="dl">"</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="nx">ln</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="na">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span> <span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">ln</span><span class="p">);</span> <span class="c1">// Ungmo Lee</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>객체 디스트럭처링 할당은 객체에서 프로퍼티 키로 필요한 프로퍼티 값만 추출하여 변수에 할당하고 싶을 때 유용합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// String 래퍼 객체로부터 length 프로퍼티만 추출한다.</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">length</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">str</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// 5</span>
+
+<span class="kd">const</span> <span class="nx">todo</span> <span class="o">=</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HTML</span><span class="dl">"</span><span class="p">,</span> <span class="na">completed</span><span class="p">:</span> <span class="kc">true</span> <span class="p">};</span>
+<span class="c1">// todo 객체로부터 id 프로퍼티만 추출한다.</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">todo</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>객체 디스트럭처링 할당은 객체를 인수로 전달받는 함수의 매개변수에도 사용할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">function</span> <span class="nx">printTodo</span><span class="p">(</span><span class="nx">todo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="s2">`할일 </span><span class="p">${</span><span class="nx">todo</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span><span class="s2">은 </span><span class="p">${</span><span class="nx">todo</span><span class="p">.</span><span class="nx">completed</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">완료</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">비완료</span><span class="dl">"</span><span class="p">}</span><span class="s2"> 상태입니다.`</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printTodo</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HTML</span><span class="dl">"</span><span class="p">,</span> <span class="na">completed</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="c1">// 할일 HTML은 완료 상태입니다.</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>위 예제에서 객체를 인수로 전달받는 매개변수 todo 에 객체 디스트럭처링 할당을 사용하면 좀 더 간단하고 가독성 좋게 표현할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">function</span> <span class="nx">printTodo</span><span class="p">({</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">completed</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`할일 </span><span class="p">${</span><span class="nx">content</span><span class="p">}</span><span class="s2">은 </span><span class="p">${</span><span class="nx">completed</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">완료</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">비완료</span><span class="dl">"</span><span class="p">}</span><span class="s2"> 상태입니다.`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printTodo</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HTML</span><span class="dl">"</span><span class="p">,</span> <span class="na">completed</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="c1">// 할일 HTML은 완료 상태입니다.</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>배열의 요소가 객체인 경우 배열 디스트럭처링 할당과 객체 디스트럭처링 할당을 혼용할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">todos</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HTML</span><span class="dl">"</span><span class="p">,</span> <span class="na">completed</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CSS</span><span class="dl">"</span><span class="p">,</span> <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">JS</span><span class="dl">"</span><span class="p">,</span> <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="c1">// todos 배열의 두 번째 요소인 객체로부터 id 프로퍼티만 추출한다.</span>
+<span class="kd">const</span> <span class="p">[,</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}]</span> <span class="o">=</span> <span class="nx">todos</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span> <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>중첩 객체의 경우는 다음과 같이 사용합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lee</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">address</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">zipCode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">03068</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">city</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Seoul</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="c1">// address 프로퍼티 키로 객체를 추출하고 이 객체의 city 프로퍼티 키로 값을 추출한다.</span>
+<span class="kd">const</span> <span class="p">{</span>
+  <span class="na">address</span><span class="p">:</span> <span class="p">{</span> <span class="nx">city</span> <span class="p">},</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">city</span><span class="p">);</span> <span class="c1">// 'Seoul'</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>객체 디스트럭처링 할당을 위한 변수에 Rest 파라미터나 Rest 요소와 유사하게 <strong>Rest 프로퍼티 …</strong> 을 사용할 수 있습니다.<br />
+Rest 프로퍼티는 Rest 파라미터나 Rest 요소와 마찬가지로 반드시 마지막에 위치해야 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// Rest 프로퍼티</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">rest</span><span class="p">);</span> <span class="c1">// 1 { y: 2, z: 3 }</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>Rest 프로퍼티는 스프레드 프로퍼티와 함께 2022년 1월 현재 TC39 프로세스의 stage 4(Finished) 단계에 제안되어 있습니다.</p>
+
+<p><br /><br /><br /><br /><br /></p>
+:ET
