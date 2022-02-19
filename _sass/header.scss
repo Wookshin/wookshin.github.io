@@ -1,0 +1,75 @@
+/* size */
+$max-width: 1012px;
+$base-left-right-margin: 2rem;
+$base-padding: 1.6rem;
+$base-font-size: 3rem;
+
+/* color */
+$base-color: cadetblue;
+
+header {
+  display: flex;
+  font-family: "Hanna", sans-serif;
+  font-size: calc(#{$base-font-size} + 1vw);
+  max-width: $max-width;
+  width: 100%;
+  margin: $base-left-right-margin auto;
+  padding: 0 $base-padding;
+
+  .logo {
+    letter-spacing: -5px;
+    width: 40%;
+  }
+
+  .logo:hover,
+  .fab:hover,
+  .fas:hover,
+  .far:hover,
+  .selected {
+    color: $base-color;
+    cursor: pointer;
+  }
+
+  .main-features {
+    width: 100%;
+    padding-left: $base-padding;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    font-size: $base-font-size;
+    align-items: center;
+
+    .main-tags {
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      margin-left: 1.4rem;
+    }
+
+    .fab {
+      font-size: calc(#{$base-font-size} + 0.5rem);
+    }
+
+    .fas {
+      vertical-align: middle;
+    }
+
+    .fa-moon,
+    .fa-th-large {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 534px) {
+  header {
+    flex-wrap: wrap;
+
+    .logo {
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+  }
+}
