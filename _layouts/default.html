@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>욱신 블로그 | {{ page.title }}</title>
+    <meta name="description" content="Wookshin's IT Blog" />
+    <meta name="author" content="Wookshin" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <script defer src="/assets/js/firstLoad.js"></script>
+    <link rel="stylesheet" href="/assets/css/default.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <script defer src="/assets/js/header.js"></script>
+    <script
+      src="https://kit.fontawesome.com/01ef6b277a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    {% include header.html %} {{ content }} {% include analytics.html %}
+  </body>
+</html>

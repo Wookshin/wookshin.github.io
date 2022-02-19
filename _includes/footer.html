@@ -1,0 +1,11 @@
+<div id="flick" class="flicking-viewport">
+  <div class="flicking-camera">
+    {% for post in site.posts %}
+      <div class="flicking-panel">
+        <a class="title" href="{{ post.url }}" class="title">{{ post.title }}</a>
+        <div class="subtitle">{{ post.subtitle }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+  
