@@ -76,10 +76,10 @@ tags: [etc]
 <br/>
 
 참고자료 :  
-*https://nykim.work/81*  
-*https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC*  
-*https://webclub.tistory.com/607*  
-*https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path*  
+- https://nykim.work/81
+- https://blog.eunsatio.io/develop/JavaScript-window.requestAnimationFrame-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC 
+- https://webclub.tistory.com/607
+- https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path
 
 <br/><br/>
 
@@ -91,7 +91,8 @@ tags: [etc]
 <br/>
 
 참고자료 :   
-*https://okayoon.tistory.com/entry/%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95cross-browsing*
+
+- https://okayoon.tistory.com/entry/%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95cross-browsing
 
 <br/><br/>
 
@@ -135,7 +136,8 @@ OPTIONS method에는 Access-Control-Request-Method, Access-Control-Request-Heade
 <br/>
 
 참고자료 :  
-*https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS*
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
 <br/><br/>
 
@@ -184,15 +186,14 @@ HTTP는 **웹에서 이루어지는 모든 데이터 교환의 기초**이며, *
 - 서버에 의해 전송된 응답을 읽어들입니다.
 - 연결을 닫거나 다른 요청들을 위해 재사용합니다.
 
-<br/>
-
 HTTP는 사용이 쉬운 확장 가능한 프로토콜입니다.  
 헤더를 쉽게 추가하는 능력을 지닌 클라이언트-서버 구조는 HTTP가 웹의 확장된 수용력과 함께 발전할 수 있게 합니다.
 
 <br/>
 
 참고자료 :  
-*https://developer.mozilla.org/ko/docs/Web/HTTP/Overview*
+
+- https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
 
 <br/><br/>
 
@@ -207,7 +208,8 @@ HTTP는 사용이 쉬운 확장 가능한 프로토콜입니다.
 <br/>
 
 참고자료 :  
-*http://blog.wishket.com/http-vs-https-%EC%B0%A8%EC%9D%B4-%EC%95%8C%EB%A9%B4-%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%9D%98-%EB%A0%88%EB%B2%A8%EC%9D%B4-%EB%B3%B4%EC%9D%B8%EB%8B%A4/*
+
+- http://blog.wishket.com/http-vs-https-%EC%B0%A8%EC%9D%B4-%EC%95%8C%EB%A9%B4-%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%9D%98-%EB%A0%88%EB%B2%A8%EC%9D%B4-%EB%B3%B4%EC%9D%B8%EB%8B%A4/
 
 <br/><br/>
 
@@ -259,8 +261,9 @@ https는 대칭키와 공개키(비대칭키) 방식을 전부 사용하는 하�
 <br/>
 
 참고자료 :  
-*https://mysterico.tistory.com/30*
-*https://bravenamme.github.io/2019/12/03/https-2/*
+
+- https://mysterico.tistory.com/30
+- https://bravenamme.github.io/2019/12/03/https-2/
 
 <br/><br/>
 
@@ -286,7 +289,8 @@ HTTP2는 성능 뿐만 아니라 속도면에서도 월등한 녀석입니다.
 <br/>
 
 참고자료 :  
-*https://medium.com/@shlee1353/http1-1-vs-http2-0-%EC%B0%A8%EC%9D%B4%EC%A0%90-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-5727b7499b78*
+
+- https://medium.com/@shlee1353/http1-1-vs-http2-0-%EC%B0%A8%EC%9D%B4%EC%A0%90-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-5727b7499b78
 
 <br/><br/>
 
@@ -313,7 +317,8 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 <br/>
 
 참고자료 :  
-*https://mysterico.tistory.com/29?category=938083*
+
+- https://mysterico.tistory.com/29?category=938083
 
 <br/><br/>
 
@@ -352,7 +357,8 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 <br/>
 
 참고자료 :  
-*https://knoc-story.tistory.com/27*
+
+- https://knoc-story.tistory.com/27
 
 <br/>
 
@@ -438,7 +444,8 @@ TCP는 UDP와 달리 연결지향 프로토콜이며 서버와 클라이언트�
 <br/>
 
 참고자료 :  
-*https://www.geeksforgeeks.org/difference-between-functional-programming-and-object-oriented-programming/*
+
+- https://www.geeksforgeeks.org/difference-between-functional-programming-and-object-oriented-programming/
 
 <br/><br/>
 
@@ -743,9 +750,13 @@ map은 배열의 각 요소를 순회하며 요소를 변형시켜 같은 사이
 
 이 문제를 해결하는 방법으로는 모듈의 Dependency 순서를 명확히 지정하는 것이고, 좀 복잡하고 Dependency가 많다면 별도의 모듈을 Import하는 파일을 만들어서 해당 파일 내부에서 모듈 Import를 관리하는 것도 하나의 방법입니다.
 
+<br/>
+
 참조자료 :  
-*https://ljs0705.medium.com/js-%EB%AA%A8%EB%93%88-%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC-%EC%88%9C%ED%99%98-%EC%B0%B8%EC%A1%B0-%EB%AC%B8%EC%A0%9C-a9e0c90c07e5*  
-*https://velog.io/@lafael/JavaScript-%EB%AA%A8%EB%93%88-%EB%8F%99%EC%9E%91-%EB%B0%A9%EC%8B%9D-%EB%B0%8F-%EC%88%9C%ED%99%98-%EC%B0%B8%EC%A1%B0-%EB%AC%B8%EC%A0%9C*
+
+- https://ljs0705.medium.com/js-%EB%AA%A8%EB%93%88-%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC-%EC%88%9C%ED%99%98-%EC%B0%B8%EC%A1%B0-%EB%AC%B8%EC%A0%9C-a9e0c90c07e5
+
+- https://velog.io/@lafael/JavaScript-%EB%AA%A8%EB%93%88-%EB%8F%99%EC%9E%91-%EB%B0%A9%EC%8B%9D-%EB%B0%8F-%EC%88%9C%ED%99%98-%EC%B0%B8%EC%A1%B0-%EB%AC%B8%EC%A0%9C
 
 <br/><br/>
 
@@ -1009,7 +1020,8 @@ Class를 통해 기존 프로토타입 기반 객체지향 프로그래밍보다
 <br/>
 
 참고자료:  
-*https://2ality.com/2016/10/rest-spread-properties.html#spread-defines-properties-objectassign-sets-them*
+
+- https://2ality.com/2016/10/rest-spread-properties.html#spread-defines-properties-objectassign-sets-them
 
 <br/><br/>
 
@@ -1305,12 +1317,17 @@ ES는 ECMA Script 와 동일하며, ECMA Script란 ECMA-262 기술 규격에 정
 
 ### 9. Webpack이란?
 
-**Webpack은 여러 개의 Javascript 파일들을 하나의 파일로 묶어주는 모듈 Bundler 입니다**.  
+**Webpack은 여러 개의 Javascript 파일들을 하나의 파일로 묶어주는 모듈 Bundler 입니다.**
+
 기존에 Javascript 파일이 각각 분리되어 있는 경우 HTML에 Import 하는 과정에서 Script 태그를 이용해 Dependency 관리가 매우 어렵다는 단점이 있습니다.  
 또한 스크립트 파일끼리 데이터 교환도 전역 변수를 사용해야하는 등 여러 제약 사항이 많습니다.  
 그렇다고 하나의 Javascript 파일에 모든 Javascript 소스를 합치면 코드가 몇 천 줄이 넘어가기 때문에 개발할 때 유지보수가 매우 어렵다는 단점이 있습니다.
 
 하지만 Webpack을 사용하게 되면 이러한 단점들을 극복이 가능하며, 각종 플러그인이나 최신 문법 등 개발할 때 유용한 기능들을 다양하게 사용할 수 있습니다.
+
+<br/>
+
+참고자료 :  
 
 - https://velog.io/@lafael/Webpack%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0
   
@@ -1318,30 +1335,28 @@ ES는 ECMA Script 와 동일하며, ECMA Script란 ECMA-262 기술 규격에 정
 
 ### 10. 패키지매니저로 어떤거 사용? npm과 yarn은 어떤게 다른가?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 11. 적응형과 반응형의 차이를 아는가? - package.json파일의 역할을?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 12. package.json에서 dependencies와 devDependencies의 차이는?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 13. 프로세스와 스레드의 차이
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 14. CSR과 SSR의 차이?
 
-SSR이란 단어 그대로 서버에서 렌더링 작업을 하는것을 의미합니다.  
+SSR(Server Side Rendering)이란 단어 그대로 서버에서 렌더링 작업을 하는것을 의미합니다.
+
 기존에 존재하던 방식으로 사용자가 웹페이지에 접근할 때 서버에서 페이지에 대한 요청을 하며 서버에서는 html, view와 같은 리소스들을 어떻게 보여질지 해석하고 렌더링하여 사용자에게 반환합니다.
 
-CSR이란 최초에 1번 서버에서 전체 페이지를 로딩하여 보여주고 이후에는 사용자의 요청이 올 때마다, 리소스를 서버에서 제공한후 클라이언트가 해석하고 렌더링을 하는 방식입니다.  
+CSR이란 최초에 1번 서버에서 전체 페이지를 로딩하여 보여주고 이후에는 사용자의 요청이 올 때마다, 리소스를 서버에서 제공한 후 클라이언트가 해석하고 렌더링을 하는 방식입니다.
+
 Angular js, Backbone js 같이 SPA개발이 쉬운 js프레임워크가 등장했습니다.
 
 **1) 초기로딩 속도**
@@ -1359,84 +1374,85 @@ Angular js, Backbone js 같이 SPA개발이 쉬운 js프레임워크가 등장�
 - SSR : HTML에 대한 정보가 처음에 포함되어 있어 데이터를 수집할 수 있습니다.
 - CSR : 맨 처음 HTML 파일이 비어 있어, 크롤러가 데이터를 수집할 수 없습니다. (단, 구글 제외)
 
-<br/>  
+<br/>
+
+참고 자료 :  
  - https://velog.io/@qkrdudgh052/SSR-CSR-%EC%B0%A8%EC%9D%B4  
  - https://velog.io/@namezin/CSR-SSR  
  - https://www.sarah-note.com/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/posting2/  
-<br/>
-<br/>
+
+<br/><br/>
 
 ### 16. DOM을 건드리는 방식과 아닌 방식들의 차이
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 17. 반응형 프로그래밍?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 18. Call by value & call by ref
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 20. inline vs inline block ?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 21. vue와 React의 차이?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 22. 가상돔 (virtual DOM)
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 23. AMD와 Common JS의 차이
 
 자바스크립트는 웹페이지의 단순한 보조 기능을 처리하기 위한 용도를 목적으로 태어났습니다.  
-이러한 태생적 한계로 인해 다른 프로그래밍 언어와 비교할 때 부족한 부분들이 존재합니다.  
-**대표적인 것이 모듈 시스템을 지원하지 않는다는 것입니다.**  
+이러한 태생적 한계로 인해 다른 프로그래밍 언어와 비교할 때 부족한 부분들이 존재합니다.
+
+**대표적인 것이 모듈 시스템을 지원하지 않는다는 것입니다.**
+
 다시 말해, 자바스크립트는 모듈이 성립하기 위해 필요한 파일 스코프와 import export를 지원하지 않았습니다.
 
 자바스크립트 파일을 여러 개의 파일로 분리하여 script 태그로 로드해도 분리된 자바스크립트 파일들은 결국 하나의 자바스크립트 파일 내에 있는 것처럼 동작했습니다.  
 **즉, 모든 자바스크립트 파일은 하나의 전역을 공유합니다. 따라서 자바스크립트 파일들의 전역 변수가 중복되는 등의 문제가 발생할 수 있습니다.**
 
-자바스크립트를 클라이언트 사이드, 즉 브라우저 환경에 국한하지 않고 범용적으로 사용하려는 움직임이 생기면서 모듈 시스템은 반드시 해결해야 하는 핵심 과제가 되었습니다.  
-이런 상황에서 제안된 것이 CommonJS와 AMD 입니다.  
-이로써 자바스크립트의 모듈 시스템은 크게 CommonJS와 AMD 진영으로 나뉘게 되었고 브라우저 환경에서 모듈을 사용하기 위해서는 CommonJS 또는 AMD를 구현한 모듈 로더 라이브러리를 사용해야 하는 상황이 되었습니다.  
-자바스크립트 런타임 환경인 Node.js는 모듈 시스템의 사실상 표준인 COmmonJS를 채택했고 독자적인 진화를 거쳐, 현재는 CommonJS 사양과 100% 동일하지는 않지만 기본적으로 CommonJS 사양을 따르고 있습니다.  
-즉, Node.js는 ECMAScript 표준 사양은 아니지만 모듈 시스템을 지원합니다. 따라서 NOde.js 환경에서는 파일별로 독립적인 파일 스코프(모듈 스코프)를 갖습니다.
+자바스크립트를 클라이언트 사이드, 즉 브라우저 환경에 국한하지 않고 범용적으로 사용하려는 움직임이 생기면서 모듈 시스템은 반드시 해결해야 하는 핵심 과제가 되었습니다.
+
+이런 상황에서 제안된 것이 CommonJS와 AMD 입니다.
+
+이로써 자바스크립트의 모듈 시스템은 크게 CommonJS와 AMD 진영으로 나뉘게 되었고 브라우저 환경에서 모듈을 사용하기 위해서는 CommonJS 또는 AMD를 구현한 모듈 로더 라이브러리를 사용해야 하는 상황이 되었습니다.
+
+자바스크립트 런타임 환경인 Node.js는 모듈 시스템의 사실상 표준인 COmmonJS를 채택했고 독자적인 진화를 거쳐, 현재는 CommonJS 사양과 100% 동일하지는 않지만 기본적으로 CommonJS 사양을 따르고 있습니다.
+
+즉, Node.js는 ECMAScript 표준 사양은 아니지만 모듈 시스템을 지원합니다. 따라서 Node.js 환경에서는 파일별로 독립적인 파일 스코프(모듈 스코프)를 갖습니다.
 
 **두 가지 모두 ES2015가 등장하기 전까지 JavaScript에 기본적으로 존재하지 않는 모듈 시스템을 구현하는 방법입니다.**
 
-CommonJS는 동기식인 반면 AMD(Asynchronous Module Definition - 비동기식 모듈 정의)는 분명히 비동기식입니다.  
-CommonJS는 서버사이드 개발을 염두에 두고 설계되었으며, AMD는 모듈의 비동기 로딩을 지원하므로 브라우저용으로 더 많이 사용됩니다.  
-AMD은 구문이 매우 장황하고, CommonJS은 다른 언어처럼 import 문을 작성하는 스타일에 더 가깝습니다.  
+CommonJS는 동기식인 반면 AMD(Asynchronous Module Definition - 비동기식 모듈 정의)는 분명히 비동기식입니다.
+
+CommonJS는 서버사이드 개발을 염두에 두고 설계되었으며, AMD는 모듈의 비동기 로딩을 지원하므로 브라우저용으로 더 많이 사용됩니다.
+AMD은 구문이 매우 장황하고, CommonJS은 다른 언어처럼 import 문을 작성하는 스타일에 더 가깝습니다.
+
 대부분의 경우 AMD를 필요로 하지 않습니다.  
 모든 JavaScript를 연결된 하나의 번들 파일로 제공하면 비동기 로딩 속성의 이점을 누릴 수 없기 때문입니다.  
 또한 CommonJS 구문은 모듈 작성의 노드 스타일에 가깝고 클라이언트 사이드와 서버사이드 JavaScript 개발 사이를 전환할 때 문맥 전환 오버 헤드가 적습니다.
 
 ES2015 모듈이 동기식 및 비동기식 로딩을 모두 지원하는 것이 반가운 것은 마침내 하나의 접근 방식만 고수할 수 있다는 점입니다.  
 브라우저와 노드에서 완전히 작동되지는 않지만, 언제나 트랜스파일러를 사용하여 코드를 변환할 수 있습니다.
-<br/>
-<br/>
+
+<br/><br/>
 
 ### 24. Prettier가 무엇인가요?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 25. Babel이란 무엇인가요?
 
-<br/>
-<br/>
+<br/><br/>
 
 ### 20. 크롬 정도의 브라우저를 제외하곤 ES6 스펙에 대한 지원이 완벽하지 않다. 해결방법은 무엇인가
 
-<br/>
-<br/>
+<br/><br/>
