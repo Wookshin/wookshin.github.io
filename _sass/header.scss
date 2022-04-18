@@ -2,7 +2,11 @@
 $max-width: 1440px;
 $base-left-right-margin: 2rem;
 $base-padding: 1.6rem;
-$base-font-size: 3rem;
+$font-size-primary: 3rem;
+$font-size-secondary: 2.5rem;
+$font-size-third: 2rem;
+$font-size-fourth: 1.5rem;
+$font-size-fifth: 1rem;
 $top-logo-font-size: 3.5rem;
 $gutter: 1.6rem;
 $top-nav-height: 7rem;
@@ -12,9 +16,10 @@ $top-logo-width: 140px;
 $base-color: #56d1d5;
 $border-primary: #52525e;
 $text-secondary: #CFCFD8;
+$background-primary: #15141a; 
 
 .top-navigation {
-  background-color: #15141a;
+  background-color: $background-primary;
   font-family: "Hanna", sans-serif;
   font-size: $top-logo-font-size;
   width: 100%;
@@ -68,13 +73,64 @@ $text-secondary: #CFCFD8;
         grid-gap: 1.6rem;
         padding: 0;
 
-        .main-meun--item {
+        .top-level-entry-container {
           cursor: pointer;
+          position: relative;
+
+          .top-level-entry:hover {
+            color: $base-color;
+            transition: all 0.3s ease;
+          }
+
+          .submenu.hidden {
+            display: none;
+          }
+
+          .submenu {
+            display: none;
+            font-size: $font-size-fourth ;
+            background-color: $background-primary;
+            position: absolute;
+            list-style: none;
+            top: calc(100% + 4px);
+            padding: 0.8rem;
+            max-width: 30rem;
+            width: max-content;
+            border: 1px solid $border-primary;
+            border-radius: 4px;
+            box-shadow: 0px 1px 6px rgba(251,251,254,0.2);
+            z-index: 200;
+
+            .submenu-item {
+              width: 100%;
+              padding: 0.5rem;
+              padding-right: 2rem;
+            }
+
+            .submenu-item:hover {
+              color: $base-color;
+              transition: all 0.3s ease;
+            }
+            /*
+              Creates a space between the top-level menu and the submenu that
+              keeps the menu open when the cursor moves to the menu
+            */
+            &:before {
+              content: "";
+              display: block;
+              height: 8px;
+              left: 0;
+              position: absolute;
+              top: -8px;
+              width: 100%;
+            }
+          }
         }
 
-        .main-meun--item:hover {
-          color: $base-color;
-          transition: all 0.3s ease;
+        .top-level-entry-container:hover, .top-level-entry-container:focus-within {
+            .submenu {
+              display: block;
+            }
         }
       }
     }
@@ -97,7 +153,7 @@ $text-secondary: #CFCFD8;
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
-    font-size: $base-font-size;
+    font-size: $font-size-primary;
     align-items: center;
 
     .main-tags {
@@ -110,7 +166,7 @@ $text-secondary: #CFCFD8;
     }
 
     .fab {
-      font-size: calc(#{$base-font-size} + 0.5rem);
+      font-size: calc(#{$font-size-primary} + 0.5rem);
     }
 
     .fas {
@@ -134,3 +190,4 @@ $text-secondary: #CFCFD8;
     }
   }
 }
+
