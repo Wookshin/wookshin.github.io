@@ -11,13 +11,21 @@ $table-even-color: #cceaeb;
 $table-dark-even-color: #333c3c;
 $base-dark-color: #e0e0e0;
 $base-dark-background-color: #15141a;
+$border-color-primary: #52525e;
 
 /* size */
 $max-width: 1012px;
-$base-font-size: 1rem;
 $base-font-weight: 600;
 $base-padding-size: 1rem;
 $base-margin-size: 1rem;
+$gutter: 1.6rem;
+
+/* font-size */
+$font-size-primary: 3.5rem;
+$font-size-secondary: 2.5rem;
+$font-size-third: 2rem;
+$font-size-fourth: 1.5rem;
+$font-size-fifth: 1rem;
 
 $highlight-font-family: "Roboto Mono";
 
@@ -29,14 +37,52 @@ body {
   display: none !important;
 }
 
+.article-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: $gutter;
+
+  .toc {
+    flex: 0 1 25rem;
+    font-size: $font-size-third;
+    font-weight: bold;
+    padding-top: 5rem;
+    
+    .document-toc-container {
+      position: sticky;
+      top: 5rem;
+
+      ul {
+        padding: 0;
+
+        li {
+          cursor: pointer;
+          font-size: $font-size-fourth;
+          list-style: none;
+          font-weight: lighter;
+          padding: 0.8rem 2rem;
+          border-left: 3px solid $border-color-primary;
+          transition: all 0.3s ease;
+        }
+
+        li.focus {
+          background-color: rgba(95, 158, 160, 0.15);
+          color: white;
+          border-left: 3px solid cadetblue;
+        }
+      }
+    }
+  }
+}
+
 .md-container {
+  flex: 1 1;
   max-width: $max-width;
   width: 100%;
-  margin: 0 auto;
   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  font-size: calc(#{$base-font-size} * 1.6);
+  font-size: calc(#{$font-size-fifth} * 1.6);
   line-height: 1.5;
   color: $base-font-color;
   background-color: $base-background-color;
@@ -44,34 +90,34 @@ body {
   padding: 0 calc(#{$base-padding-size} * 1.6);
 }
 
-@media screen and (min-width: 1000px) {
-  header,
-  .md-container {
-    width: 90%;
+@media screen and (max-width: 1200px) {
+  .toc {
+    display: none;
   }
 }
+
 
 h1 {
   margin: 0.67em 0;
   padding-bottom: 0.3em;
-  font-size: calc(#{$base-font-size} * 4);
+  font-size: calc(#{$font-size-fifth} * 4);
   border-bottom: 3px solid $base-color;
 }
 
 h2 {
   padding-bottom: 0.3em;
-  font-size: calc(#{$base-font-size} * 3);
+  font-size: calc(#{$font-size-fifth} * 3);
   border-bottom: 2px solid $base-color;
 }
 
 h3 {
-  font-size: calc(#{$base-font-size} * 2.2);
+  font-size: calc(#{$font-size-fifth} * 2.2);
   border-bottom: 1px solid $base-color;
   padding-bottom: 0.3em;
 }
 
 h4 {
-  font-size: calc(#{$base-font-size} * 1.9);
+  font-size: calc(#{$font-size-fifth} * 1.9);
   color: $base-color;
 }
 

@@ -4,6 +4,9 @@
 - name: CSS Triggers
   url: https://csstriggers.com/
   tag: css
-- name: Refactoring Guru (리팩토링 좋은 설명과 예제)
+- name: Refactoring Guru (리팩토링의 좋은 설명과 예제)
   url: https://refactoring.guru/
   tag: common
+- name: liquid 에서 where 사용방법(공식문서)
+  url: https://shopify.github.io/liquid/filters/where/
+  tag: ruby
