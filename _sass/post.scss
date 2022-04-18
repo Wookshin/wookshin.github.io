@@ -10,7 +10,7 @@ $table-dark-th-color: #083032;
 $table-even-color: #cceaeb;
 $table-dark-even-color: #333c3c;
 $base-dark-color: #e0e0e0;
-$base-dark-background-color: #121212;
+$base-dark-background-color: #15141a;
 
 /* size */
 $max-width: 1012px;
@@ -113,49 +113,27 @@ img {
   max-width: 100%;
 }
 
-.arrow {
-  display: inline-block;
+/* Arrow up */
+.arrow-up {
   position: fixed;
-  -webkit-backface-visibility: hidden;
-  top: 88%;
-  left: 88%;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  text-align: center;
+  background-color: $base-color;
+  color: white;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in;
+  border: none;
 }
 
-.up:hover,
-.down:hover {
-  border-color: $hover-color;
-}
-
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  border: solid $base-color;
-  border-width: 0 8px 8px 0;
-  padding: calc(#{$base-padding-size} * 0.8);
-}
-
-.upup {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  border: solid $base-color;
-  border-width: 0 8px 8px 0;
-  padding: calc(#{$base-padding-size} * 0.8);
-}
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  border: solid $base-color;
-  border-width: 0 8px 8px 0;
-  padding: calc(#{$base-padding-size} * 0.8);
-}
-
-.downdown {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  border: solid $base-color;
-  border-width: 0 8px 8px 0;
-  padding: calc(#{$base-padding-size} * 0.8);
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .highlight {
