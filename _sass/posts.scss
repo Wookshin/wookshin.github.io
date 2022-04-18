@@ -5,14 +5,18 @@ $text-color-third: #5b5b66;
 $background-color-primary: #15141a;
 
 /* size */
-$base-font-size: 1rem;
+$font-size-primary: 4rem;
+$font-size-secondary: 3rem;
+$font-size-third: 2rem;
+$font-size-fourth: 1.5rem;
+$font-size-fifth: 1rem;
 $base-outline-size: 3px;
 $base-padding: 1rem;
 $base-margin: 1rem;
 $max-width: 1012px;
 
 body {
-  font-size: $base-font-size;
+  font-size: $font-size-fifth;
   font-family: "Hanna", sans-serif;
   margin: 0;
 
@@ -52,13 +56,13 @@ body {
     .title {
       text-decoration: none;
       color: $text-color-secondary;
-      font-size: calc(#{$base-font-size} * 3);
+      font-size: $font-size-secondary;
       letter-spacing: -1px;
     }
 
     .subtitle {
       color: $text-color-third;
-      font-size: calc(#{$base-font-size} * 1.5);
+      font-size: $font-size-fourth;
       margin-top: $base-margin;
       margin-bottom: calc(#{$base-margin} * 2);
     }
@@ -66,9 +70,22 @@ body {
     .date,
     .readtime {
       color: $text-color-third;
-      font-size: calc(#{$base-font-size} * 1.5);
+      font-size: $font-size-fourth;
       margin-top: calc(#{$base-margin} * 1.5);
     }    
+  }
+
+  .post.link {
+    padding: 2rem 0;
+
+    .title {
+      font-size: $font-size-third;
+    }
+
+    .subtitle {
+      font-size: $font-size-fourth;
+      margin-bottom: 0;
+    }
   }
 }
 
