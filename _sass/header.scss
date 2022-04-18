@@ -1,33 +1,160 @@
 /* size */
-$max-width: 1012px;
+$max-width: 1440px;
 $base-left-right-margin: 2rem;
 $base-padding: 1.6rem;
-$base-font-size: 3rem;
+$font-size-primary: 3rem;
+$font-size-secondary: 2.5rem;
+$font-size-third: 2rem;
+$font-size-fourth: 1.5rem;
+$font-size-fifth: 1rem;
+$top-logo-font-size: 3.5rem;
+$gutter: 1.6rem;
+$top-nav-height: 7rem;
+$top-logo-width: 140px;
 
 /* color */
-$base-color: cadetblue;
+$base-color: #56d1d5;
+$border-primary: #52525e;
+$text-secondary: #CFCFD8;
+$background-primary: #15141a; 
 
-header {
-  display: flex;
+a {
+  text-decoration: none;
+  color: $text-secondary;
+}
+
+.top-navigation {
+  background-color: $background-primary;
   font-family: "Hanna", sans-serif;
-  font-size: calc(#{$base-font-size} + 1vw);
-  max-width: $max-width;
+  font-size: $top-logo-font-size;
   width: 100%;
-  margin: $base-left-right-margin auto;
-  padding: 0 $base-padding;
+  position: relative;
+  border-bottom: 1px solid $border-primary;
 
-  .logo {
-    letter-spacing: -5px;
-    width: 40%;
+  .top-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    max-width: $max-width;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    grid-gap: $gutter;
+    gap: $gutter;
+
+    .top-navigation-wrap {
+      display: flex;
+      height: $top-nav-height;
+      flex: 0 1 $top-logo-width;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-navigation-main {
+      display: flex;
+      align-items: center;
+      flex: 1 1;
+      flex-direction: row;
+      justify-content: space-between;
+      grid-gap: $gutter;
+      gap: $gutter;
+      width: 100%;
+      position: static;
+      top: inherit;
+      left: inherit;
+      padding: 0;
+      font-size: 2.5rem;
+      color: $text-secondary;
+
+      ul.main-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        list-style: none;
+        max-width: 310px;
+        width: 100%;
+        grid-gap: 1.6rem;
+        padding: 0;
+
+        .top-level-entry-container {
+          cursor: pointer;
+          position: relative;
+
+          .top-level-entry:hover {
+            color: $base-color;
+            transition: all 0.3s ease;
+          }
+
+          .submenu.hidden {
+            display: none;
+          }
+
+          .submenu {
+            display: none;
+            font-size: $font-size-fourth ;
+            background-color: $background-primary;
+            position: absolute;
+            list-style: none;
+            top: calc(100% + 4px);
+            padding: 0.8rem;
+            max-width: 30rem;
+            width: max-content;
+            border: 1px solid $border-primary;
+            border-radius: 4px;
+            box-shadow: 0px 1px 6px rgba(251,251,254,0.2);
+            z-index: 200;
+
+            .submenu-item {
+              width: 100%;
+
+              a {
+                display: block;
+                padding: 0.5rem;
+                padding-right: 2rem;
+              }
+
+              a:hover {
+                color: $base-color;
+                transition: all 0.3s ease;
+              }
+            }
+            /*
+              Creates a space between the top-level menu and the submenu that
+              keeps the menu open when the cursor moves to the menu
+            */
+            &:before {
+              content: "";
+              display: block;
+              height: 8px;
+              left: 0;
+              position: absolute;
+              top: -8px;
+              width: 100%;
+            }
+          }
+        }
+
+        .top-level-entry-container:hover, .top-level-entry-container:focus-within {
+            .submenu {
+              display: block;
+            }
+        }
+      }
+    }
   }
 
-  .logo:hover,
-  .fab:hover,
-  .fas:hover,
-  .far:hover,
-  .selected {
+  .logo {
+    letter-spacing: -3px;
     color: $base-color;
     cursor: pointer;
+  }
+
+  .main-theme:hover {
+    color: $base-color;
+    cursor: pointer;
+    transition: all 0.3 ease;
   }
 
   .main-features {
@@ -36,7 +163,7 @@ header {
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
-    font-size: $base-font-size;
+    font-size: $font-size-primary;
     align-items: center;
 
     .main-tags {
@@ -49,7 +176,7 @@ header {
     }
 
     .fab {
-      font-size: calc(#{$base-font-size} + 0.5rem);
+      font-size: calc(#{$font-size-primary} + 0.5rem);
     }
 
     .fas {
@@ -73,3 +200,4 @@ header {
     }
   }
 }
+

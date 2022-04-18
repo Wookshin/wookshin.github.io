@@ -1,8 +1,8 @@
 /* color */
-$base-color: cadetblue;
-$base-sub-color: #808080;
-$base-dark-color: #e0e0e0;
-$base-dark-background-color: #121212;
+$text-primary: cadetblue;
+$text-secondary: black;
+$text-third: #5b5b66;
+$dark-background: #15141a;
 
 /* size */
 $base-font-size: 1rem;
@@ -14,6 +14,7 @@ $max-width: 1012px;
 body {
   font-size: $base-font-size;
   font-family: "Hanna", sans-serif;
+  margin: 0;
 
   .hidden {
     display: none !important;
@@ -45,18 +46,18 @@ body {
   }
 
   .post {
-    border-bottom: $base-sub-color 1px dotted;
+    border-bottom: $text-secondary 1px dotted;
     padding: calc(#{$base-padding} * 4) 0;
 
     .title {
       text-decoration: none;
-      color: black;
+      color: $text-secondary;
       font-size: calc(#{$base-font-size} * 3);
       letter-spacing: -1px;
     }
 
     .subtitle {
-      color: $base-sub-color;
+      color: $text-third;
       font-size: calc(#{$base-font-size} * 1.5);
       margin-top: $base-margin;
       margin-bottom: calc(#{$base-margin} * 2);
@@ -64,7 +65,7 @@ body {
 
     .date,
     .readtime {
-      color: $base-sub-color;
+      color: $text-third;
       font-size: calc(#{$base-font-size} * 1.5);
       margin-top: calc(#{$base-margin} * 1.5);
     }
@@ -73,110 +74,35 @@ body {
   .post:hover {
     cursor: pointer;
     .title {
-      color: $base-color;
-    }
-  }
-}
-
-.box {
-  .posts {
-    max-width: $max-width;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 calc(#{$base-padding} * 1.6);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .post {
-    width: 30rem;
-    padding: calc(#{$base-padding} * 2);
-    margin: calc(#{$base-margin} * 2) $base-margin calc(#{$base-margin} * 2)
-      $base-margin;
-    background: rgb(248, 249, 250);
-    display: flex;
-    flex-direction: column;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 1rem 1px grey;
-
-    .title {
-      text-decoration: none;
-      color: black;
-      font-size: calc(#{$base-font-size} * 2.3);
-      letter-spacing: -1px;
-    }
-
-    .subtitle {
-      color: $base-sub-color;
-      font-size: calc(#{$base-font-size} * 1.2);
-      margin-top: $base-margin;
-      margin-bottom: calc(#{$base-margin} * 2);
-      flex: 1 1 0%;
-    }
-
-    .date,
-    .readtime {
-      color: $base-sub-color;
-      font-size: calc(#{$base-font-size} * 1.2);
-      margin-top: calc(#{$base-margin} * 1.5);
-    }
-  }
-
-  .post:hover {
-    outline: $base-outline-size $base-color solid;
-    border-radius: 1rem;
-    cursor: pointer;
-    .title {
-      color: $base-color;
-    }
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1027px) {
-    .post {
-      width: calc(50% - 2rem);
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    .post {
-      width: 100%;
+      color: $text-primary;
+      transition: all 0.3s ease;
     }
   }
 }
 
 .dark {
-  background-color: $base-dark-background-color !important;
-  color: $base-dark-color;
-
+  $text-primary: #56d1d5;
+  $text-secondary: white;
+  $text-third: #CFCFD8;
+  background-color: $dark-background !important;
+    
   .list {
     .post {
+      border-bottom: $text-secondary 1px dotted;
+
       .title {
-        color: $base-dark-color;
+        color: $text-secondary;
       }
     }
 
     .post:hover {
       .title {
-        color: $base-color;
-      }
-    }
-  }
-
-  .box {
-    .post {
-      background-color: $base-dark-background-color !important;
-
-      .title {
-        color: $base-dark-color;
+        color: $text-primary;
       }
     }
 
-    .post:hover {
-      outline: $base-outline-size $base-color solid;
-      .title {
-        color: $base-color;
-      }
+    .subtitle, .date, .readtime {
+      color: $text-third;
     }
   }
 }
