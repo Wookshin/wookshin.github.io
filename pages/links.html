@@ -1,0 +1,14 @@
+---
+layout: default
+title: 즐겨찾기 태그
+---
+<div class="display list">
+  <div class="posts">
+    {% for link in site.data.links %}
+      <a href="{{ link.url }}" target="_blank" class="post link">
+        <div class="title">{{ link.name }}</div>
+        <div class="subtitle">{{ link.url }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

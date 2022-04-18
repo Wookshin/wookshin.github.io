@@ -1,0 +1,9 @@
+- name: Lazy Loading 개념과 예제
+  url: https://imagekit.io/blog/lazy-loading-images-complete-guide/
+  tag: css
+- name: CSS Triggers
+  url: https://csstriggers.com/
+  tag: css
+- name: Refactoring Guru (리팩토링 좋은 설명과 예제)
+  url: https://refactoring.guru/
+  tag: common
