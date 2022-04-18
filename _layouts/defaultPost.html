@@ -36,12 +36,12 @@
       href="https://unpkg.com/@egjs/flicking/dist/flicking.css"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="/assets/css/footer-nav.css" />
     <script
       src="https://kit.fontawesome.com/01ef6b277a.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="/assets/js/footer.js"></script>
+    <script defer src="/assets/js/footer-nav.js"></script>
   </head>
   <body>
     {% include header.html %}
@@ -50,6 +50,7 @@
       <i class="fas fa-arrow-up"></i>
     </button>
     <div class="md-container">{{ content }}</div>
-    {% include footer.html %} {% include analytics.html %}
+    {% include footer-nav.html %} 
+    {% include analytics.html %}
   </body>
 </html>

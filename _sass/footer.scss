@@ -1,51 +1,49 @@
-/* color */
-$base-color: black;
-$base-sub-color: gray;
-$base-background-color: #f8f9fa;
-$base-hover-color: cadetblue;
+$font-size-primary: 4rem;
+$font-size-secondary: 2.5rem;
+$font-size-third: 2rem;
+$font-size-fourth: 1.5rem;
+$font-size-fifth: 1rem;
 
-/* size */
-$max-width: 1012px;
-$base-margin-size: 1rem;
-$base-padding-size: 1rem;
-$base-font-size: 1rem;
-$base-border-radius: 1rem;
+$base-color: #56d1d5;
+$background-primary: #23222b;
+$text-color-secondary: #cfcfd8;
+$border-primary: #52525e;
 
-#flick {
-  max-width: $max-width;
-  width: 100%;
-  margin: 0 auto;
+#contact {
+  background-color: $background-primary;
+  padding: 100px 50px;
+  text-align: center;
 }
 
-.flicking-panel {
+.contact__title {
+  margin: 32px 0;
+  font-size: $font-size-primary;
+  color: $text-color-secondary;  
+  font-weight: lighter;
+}
+
+.contact__email {
+  font-size: $font-size-secondary;
+  color: $text-color-secondary;
+  font-weight: lighter;
+}
+
+.contact__rights {
+  font-size: $font-size-fourth;
+  color: $text-color-secondary;
+  font-weight: lighter;
+}
+
+.contact__links {
+  font-size: $font-size-primary;
+  margin: 24px 0;
+}
+
+.contact__links i {
+  transition: all 300ms ease;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
   color: $base-color;
-  margin: $base-margin-size calc(#{$base-margin-size} * 2)
-    calc(#{$base-margin-size} * 5) $base-margin-size;
-  background-color: $base-background-color;
-  padding: calc(#{$base-padding-size} * 3) calc(#{$base-padding-size} * 2)
-    $base-padding-size calc(#{$base-padding-size} * 2);
-  font-family: "Hanna";
-  font-size: calc(#{$base-font-size} * 2.5);
-  border-radius: $base-border-radius;
-  box-shadow: 0px 1px 6px rgba(251,251,254,0.2);
-
-  .title {
-    text-decoration: none;
-    color: $base-color;
-    font-size: calc(#{$base-font-size} * 2.3);
-    letter-spacing: -1px;
-  }
-
-  .subtitle {
-    color: $base-sub-color;
-    font-size: calc(#{$base-font-size} * 1.2);
-    margin-top: $base-margin-size;
-    margin-bottom: calc(#{$base-margin-size} * 2);
-  }
-}
-
-.flicking-panel:hover {
-  outline: 3px $base-hover-color solid;
-  cursor: pointer;
-  border-radius: $base-border-radius;
 }
