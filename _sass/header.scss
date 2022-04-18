@@ -67,6 +67,15 @@ $text-secondary: #CFCFD8;
         width: 100%;
         grid-gap: 1.6rem;
         padding: 0;
+
+        .main-meun--item {
+          cursor: pointer;
+        }
+
+        .main-meun--item:hover {
+          color: $base-color;
+          transition: all 0.3s ease;
+        }
       }
     }
   }
@@ -76,13 +85,10 @@ $text-secondary: #CFCFD8;
     color: $base-color;
   }
 
-  .logo:hover,
-  .fab:hover,
-  .fas:hover,
-  .far:hover,
-  .selected {
+  .main-theme:hover {
     color: $base-color;
     cursor: pointer;
+    transition: all 0.3 ease;
   }
 
   .main-features {

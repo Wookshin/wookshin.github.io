@@ -1,8 +1,8 @@
 /* color */
-$base-color: #56d1d5;
-$base-sub-color: #5b5b66;
-$base-dark-color: #e0e0e0;
-$base-dark-background-color: #15141a;
+$text-primary: cadetblue;
+$text-secondary: black;
+$text-third: #5b5b66;
+$dark-background: #15141a;
 
 /* size */
 $base-font-size: 1rem;
@@ -46,18 +46,18 @@ body {
   }
 
   .post {
-    border-bottom: $base-sub-color 1px dotted;
+    border-bottom: $text-secondary 1px dotted;
     padding: calc(#{$base-padding} * 4) 0;
 
     .title {
       text-decoration: none;
-      color: black;
+      color: $text-secondary;
       font-size: calc(#{$base-font-size} * 3);
       letter-spacing: -1px;
     }
 
     .subtitle {
-      color: $base-sub-color;
+      color: $text-third;
       font-size: calc(#{$base-font-size} * 1.5);
       margin-top: $base-margin;
       margin-bottom: calc(#{$base-margin} * 2);
@@ -65,7 +65,7 @@ body {
 
     .date,
     .readtime {
-      color: $base-sub-color;
+      color: $text-third;
       font-size: calc(#{$base-font-size} * 1.5);
       margin-top: calc(#{$base-margin} * 1.5);
     }
@@ -74,31 +74,35 @@ body {
   .post:hover {
     cursor: pointer;
     .title {
-      color: $base-color;
+      color: $text-primary;
+      transition: all 0.3s ease;
     }
   }
 }
 
 .dark {
-  $base-sub-color: #CFCFD8;
-  background-color: $base-dark-background-color !important;
-  color: $base-dark-color;
-
+  $text-primary: #56d1d5;
+  $text-secondary: white;
+  $text-third: #CFCFD8;
+  background-color: $dark-background !important;
+    
   .list {
     .post {
+      border-bottom: $text-secondary 1px dotted;
+
       .title {
-        color: $base-dark-color;
+        color: $text-secondary;
       }
     }
 
     .post:hover {
       .title {
-        color: $base-color;
+        color: $text-primary;
       }
     }
 
     .subtitle, .date, .readtime {
-      color: $base-sub-color;
+      color: $text-third;
     }
   }
 }

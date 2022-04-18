@@ -21,6 +21,10 @@ $base-margin-size: 1rem;
 
 $highlight-font-family: "Roboto Mono";
 
+body {
+  margin: 0;
+}
+
 .hidden {
   display: none !important;
 }
