@@ -1,10 +1,11 @@
 ---
 layout: default
-title: 대문
+title: HTML 태그
 ---
 <div class="display list">
   <div class="posts">
-    {% for post in site.posts %}
+    {% assign available_posts = site.posts | where: "tags", "html" %}
+    {% for post in available_posts %}
       <a href="{{ post.url }}" class="post">
         <div class="title">{{ post.title }}</div>
         <div class="subtitle">{{ post.subtitle }}</div>

@@ -1,0 +1,16 @@
+---
+layout: default
+title: HTML 태그
+---
+<div class="display list">
+  <div class="posts">
+    {% assign available_posts = site.posts | where: "tags", "css" %}
+    {% for post in available_posts %}
+    <a href="{{ post.url }}" class="post">
+      <div class="title">{{ post.title }}</div>
+      <div class="subtitle">{{ post.subtitle }}</div>
+      <div><span class="date">{{ post.date  | date: "%b %d, %Y" }}</span> ㆍ  <span class="readtime">{{ post.readtime }} read</span></div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

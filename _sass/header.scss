@@ -18,6 +18,11 @@ $border-primary: #52525e;
 $text-secondary: #CFCFD8;
 $background-primary: #15141a; 
 
+a {
+  text-decoration: none;
+  color: $text-secondary;
+}
+
 .top-navigation {
   background-color: $background-primary;
   font-family: "Hanna", sans-serif;
@@ -61,7 +66,7 @@ $background-primary: #15141a;
       left: inherit;
       padding: 0;
       font-size: 2.5rem;
-      color: #CFCFD8;
+      color: $text-secondary;
 
       ul.main-menu {
         display: flex;
@@ -103,13 +108,17 @@ $background-primary: #15141a;
 
             .submenu-item {
               width: 100%;
-              padding: 0.5rem;
-              padding-right: 2rem;
-            }
 
-            .submenu-item:hover {
-              color: $base-color;
-              transition: all 0.3s ease;
+              a {
+                display: block;
+                padding: 0.5rem;
+                padding-right: 2rem;
+              }
+
+              a:hover {
+                color: $base-color;
+                transition: all 0.3s ease;
+              }
             }
             /*
               Creates a space between the top-level menu and the submenu that
@@ -139,6 +148,7 @@ $background-primary: #15141a;
   .logo {
     letter-spacing: -3px;
     color: $base-color;
+    cursor: pointer;
   }
 
   .main-theme:hover {
