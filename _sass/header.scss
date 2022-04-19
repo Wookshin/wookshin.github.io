@@ -133,13 +133,38 @@ a {
 
               a {
                 display: block;
-                padding: 0.5rem;
-                padding-right: 2rem;
+                padding: 0.8rem 0.5rem;
+
+                .submenu-item__name {
+                  position: relative;
+
+                  .post-count {
+                    background-color: $base-color-primary;
+                    border-radius: 50%;
+                    color: white;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -30px;
+                    right: -20px;
+                    font-size: $font-size-fifth;
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                  }
+                }
               }
 
               a:hover {
                 color: $base-color-primary;
                 transition: all 0.3s ease;
+
+                & .post-count {
+                  opacity: 1;
+                  top: -10px;
+                }
               }
             }
 
@@ -150,11 +175,12 @@ a {
             &:before {
               content: "";
               display: block;
-              height: 8px;
-              left: 0;
+              height: 120%;
+              left: -20%;
               position: absolute;
-              top: -8px;
-              width: 100%;
+              top: -12px;
+              width: 140%;
+              z-index: -1;
             }
           }
         }

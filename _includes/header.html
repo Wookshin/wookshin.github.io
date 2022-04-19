@@ -10,19 +10,59 @@
             <a class="top-level-entry" href="/">태그</a>
             <ul class="submenu tag">
               <li class="submenu-item">
-                <a href="/pages/html">HTML</a>
+                <a href="/pages/html">
+                  <span class="submenu-item__name">
+                    HTML
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "html" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
               </li>
               <li class="submenu-item">
-                <a href="/pages/css">CSS</a>
+                <a href="/pages/css">
+                  <span class="submenu-item__name">
+                    CSS
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "css" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
               </li>
               <li class="submenu-item">
-                <a href="/pages/javascript">JAVSCRIPT</a>
+                <a href="/pages/javascript">
+                  <span class="submenu-item__name">
+                    JAVASCRIPT
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "javascript" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
               </li>
               <li class="submenu-item">
-                <a href="/pages/tool">TOOL</a>
+                <a href="/pages/tool">
+                  <span class="submenu-item__name">
+                    TOOL
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "tool" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
               </li>
               <li class="submenu-item">
-                <a href="/pages/etc">ETC</a>
+                <a href="/pages/etc">
+                  <span class="submenu-item__name">
+                    ETC
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "etc" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
               </li>
             </ul>
           </li>
