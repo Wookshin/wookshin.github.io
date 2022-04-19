@@ -66,8 +66,8 @@ body {
         }
 
         li.focus {
-          background-color: rgba(95, 158, 160, 0.15);
-          color: white;
+          background-color: rgba(95, 158, 160, 0.3);
+          color: black;
           border-left: 3px solid cadetblue;
         }
       }
@@ -237,11 +237,16 @@ code {
     background-color: $table-dark-even-color;
   }
 
-  .flicking-panel {
-    background-color: $base-dark-background-color !important;
+  
+  .article-wrapper .toc .document-toc-container ul {
+    li {
+      border-left: 3px solid $border-color-primary;
+    }
 
-    .title {
-      color: $base-dark-color;
+    li.focus {
+      background-color: rgba(95, 158, 160, 0.15);
+      color: white;
+      border-left: 3px solid cadetblue;
     }
   }
 }

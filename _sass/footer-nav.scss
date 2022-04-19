@@ -1,51 +1,71 @@
 /* color */
-$base-color: black;
-$base-sub-color: gray;
-$base-background-color: #f8f9fa;
-$base-hover-color: cadetblue;
+$border-color-primary: #dbdfe4;
+$background-color-primary: #397576;
+$font-color-primary: white;
+$font-color-secondary: #e9e9e9;
 
 /* size */
-$max-width: 1012px;
-$base-margin-size: 1rem;
-$base-padding-size: 1rem;
-$base-font-size: 1rem;
-$base-border-radius: 1rem;
+$max-width: 1000px;
 
 #flick {
   max-width: $max-width;
-  width: 100%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 20px auto;
+  border: 2px solid $border-color-primary;
+  padding: 1rem;
+  border-radius: 5px;
+
+  .flicking-panel {
+    cursor: pointer;
+    color: $background-color-primary;
+    margin: 20px;
+    background-color: $background-color-primary;
+    padding: 3rem 2rem 1rem 2rem;
+    font-family: "Hanna";
+    font-size: 2.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    .title {
+      text-decoration: none;
+      color: $font-color-primary;
+      font-size: 2.3rem;
+      letter-spacing: -1px;
+    }
+  
+    .subtitle {
+      color: $font-color-secondary;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
 }
 
-.flicking-panel {
-  color: $base-color;
-  margin: $base-margin-size calc(#{$base-margin-size} * 2)
-    calc(#{$base-margin-size} * 5) $base-margin-size;
-  background-color: $base-background-color;
-  padding: calc(#{$base-padding-size} * 3) calc(#{$base-padding-size} * 2)
-    $base-padding-size calc(#{$base-padding-size} * 2);
-  font-family: "Hanna";
-  font-size: calc(#{$base-font-size} * 2.5);
-  border-radius: $base-border-radius;
-  box-shadow: 0px 1px 6px rgba(251,251,254,0.2);
+.dark {
+  /* color */
+  $border-color-primary: #6C6F73;
+  $background-color-primary: #1f5e60;
+  $font-color-primary: white;
+  $font-color-secondary: #CFCFD8;
+  
+  #flick {
+    border-color: $border-color-primary;
 
-  .title {
-    text-decoration: none;
-    color: $base-color;
-    font-size: calc(#{$base-font-size} * 2.3);
-    letter-spacing: -1px;
+    .flicking-panel {
+      background-color: $background-color-primary;
+
+      .title {
+        color: $font-color-primary;
+      }
+
+      .subtitle {
+        color: $font-color-secondary;
+      }
+    }
   }
-
-  .subtitle {
-    color: $base-sub-color;
-    font-size: calc(#{$base-font-size} * 1.2);
-    margin-top: $base-margin-size;
-    margin-bottom: calc(#{$base-margin-size} * 2);
-  }
-}
-
-.flicking-panel:hover {
-  outline: 3px $base-hover-color solid;
-  cursor: pointer;
-  border-radius: $base-border-radius;
 }
