@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToC Example</title>
+    <style>
+      main {
+        display: flex;
+      }
+      article {
+        min-width: 1000px;
+      }
+      h1 {
+        background-color: cadetblue;
+      }
+      h2 {
+        background-color: aquamarine;
+      }
+      p {
+        background-color: beige;
+        height: 2000px;
+      }
+      .toc {
+        position: sticky;
+        top: 100px;
+      }
+      .toc-title {
+        padding-left: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: cadetblue;
+      }
+      .toc-item {
+        padding: 5px 10px;
+        list-style: none;
+        font-size: 15px;
+        color: black;
+        border-left: 3px solid rgb(171, 171, 171);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>코끼리 위키백과</h1>
+        <p>코끼리(elephant, 象)는 장비목에서 유일하게 현존하는 코끼리과를 구성하는 동물들의 총칭이다.</p>
+
+        <h2>1. 어원</h2>
+        <p>‘코끼리’는 ‘코가 긴 것, 코가 긴 짐승’이라는 뜻으로 ‘고ㅎ + 길- + -이’의 구성으로 만들어진 것이다.</p>
+
+        <h2>2. 코끼리의 몸</h2>
+        <h3>다리</h3>
+        <p>몸 표면에는 굵은 털이 전체에 조잡하게 나 있으며, 꼬리 끝에는 줄모양의 긴 털이 나 있다.</p>
+        <h3>코</h3>
+        <p>코끼리의 코는 가장 활용을 많이하는 수단이다.</p>
+
+        <h2>3. 생태</h2>
+        <p>코끼리는 일반적으로 30~40마리씩 무리를 짓고 산다.</p>
+        
+        <h2>4. 인간과의 관계</h2>
+        <p>사람들은 수천 년 전부터 코끼리를 길들여 이용했다.</p>
+      </article>
+      <aside>
+        <div class="toc">
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
