@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/assets/css/default.css" />
     <link rel="stylesheet" href="/assets/css/defaultPost.css" />
     <link rel="stylesheet" href="/assets/css/syntax.css" />
+    <link rel="stylesheet" href="/assets/css/disqus.css" />
     <script defer src="/assets/js/header.js"></script>
     <script defer src="/assets/js/post.js"></script>
     <script
@@ -64,6 +65,9 @@
       </div>
     </div>
     {% include footer-nav.html %} 
+    <div class="disqus-container">
+      {% include disqus.html %} 
+    </div>
     {% include analytics.html %}
   </body>
 </html>
