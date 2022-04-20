@@ -68,5 +68,39 @@
         </div>
       </aside>
     </main>
+    <script>
+      const tags = document.querySelectorAll('h1,h2')
+      const toc = document.querySelector('.toc')
+
+      tags.forEach(tag => {
+        if (tag.matches('h1')) {
+          const ul = document.createElement('ul')
+          ul.classList.add('toc-title')
+          ul.textContent = tag.textContent
+          toc.appendChild(ul)
+        }
+        else {
+          const li = document.createElement('li')
+          li.classList.add('toc-item')
+          li.textContent = tag.textContent
+          toc.firstElementChild.appendChild(li)
+        }
+      })
+
+      // toc-title, toc-item 클래스명을 가진 엘리먼트의 dataset에 index 값을 추가한다. ex. data-index="0" 형태
+      const tocItems = document.querySelectorAll('.toc-title, .toc-item')
+      tocItems.forEach((item, index) => item.dataset.index = index)
+
+      // h1, h2 태그들에도 data-index를 부여해준다. IntersectionObserver에서 사용할 예정.
+      tags.forEach((tag, index) => tag.dataset.index = index)
+
+      // toc 클래스를 가진 div 태그(toc 목차들의 조상)에 click 이벤트를 건다. (이벤트 위임)
+      // scrollIntoView 이벤트를 통해 해당 태그로 이동한다.
+      toc.addEventListener('click', e => {
+        if (e.target.matches('.toc-title') || e.target.matches('.toc-item')) {
+          tags[e.target.dataset.index].scrollIntoView({ behavior: "smooth", block: "center"})
+        }
+      })
+    </script>
   </body>
 </html>
