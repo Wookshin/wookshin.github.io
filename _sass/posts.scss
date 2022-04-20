@@ -89,6 +89,24 @@ body {
   }
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-secondary;
+  color: $text-color-third;
+
+  .page_number {
+    padding: 20px;
+  }
+
+  .previous, .next {
+    color: $text-color-primary;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
 .dark {
   $text-color-primary: #56d1d5;
   $text-color-secondary: white;
@@ -116,6 +134,14 @@ body {
 
     .subtitle, .date, .readtime {
       color: $text-color-third;
+    }
+  }
+
+  .pagination {
+    color: $text-color-third;
+  
+    .previous, .next {
+      color: $text-color-primary;
     }
   }
 }

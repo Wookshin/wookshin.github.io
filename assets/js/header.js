@@ -1,18 +1,30 @@
-window.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    document
-      .getElementsByClassName("logo")[0]
-      .addEventListener("click", function (event) {
-        location.href = "/";
-      });
-  },
-  false
-);
+console.log("DOMContentLoaded");
+
+if (localStorage.getItem("theme") === "light") {
+  document.documentElement.classList.remove("dark");
+  localStorage.setItem("theme", "light");
+} else {
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("theme", "dark");
+}
+
+document
+  .getElementsByClassName("logo")[0]
+  .addEventListener("click", function (event) {
+    location.href = "/";
+  });
+
+var icons = document.querySelectorAll(".toggle");
+
+Array.prototype.forEach.call(icons, function (icon) {
+  icon.addEventListener("click", iconChangeHandler);
+});
+
+localStorage.getItem("theme") === "light"
+  ? document.querySelector(".fa-moon").click()
+  : document.querySelector(".fa-sun").click();
 
 function iconChangeHandler(event) {
-  console.log("iconChangeHandler");
-
   if (event.target.matches(".fa-sun")) {
     event.target.style.display = "none";
     document.querySelector(".fa-moon").style.display = "inline";
@@ -25,21 +37,3 @@ function iconChangeHandler(event) {
     localStorage.setItem("theme", "light");
   } 
 }
-
-window.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    console.log("DOMContentLoaded");
-
-    var icons = document.querySelectorAll(".toggle");
-
-    Array.prototype.forEach.call(icons, function (icon) {
-      icon.addEventListener("click", iconChangeHandler);
-    });
-
-    localStorage.getItem("theme") === "light"
-      ? document.querySelector(".fa-moon").click()
-      : document.querySelector(".fa-sun").click();
-  },
-  false
-);
