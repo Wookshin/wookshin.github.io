@@ -214,6 +214,15 @@ body {
   border: none;
 }
 
+@media screen and (max-width: 600px) {
+  .arrow-up {
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+  }
+}
+
+
 .dark {
   /* color */
   $base-color-primary: #38989b;
