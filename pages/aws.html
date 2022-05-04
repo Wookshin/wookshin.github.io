@@ -1,0 +1,21 @@
+---
+layout: default
+title: AWS 태그
+---
+<div class="display list">
+  <div class="posts">
+    {% assign available_posts = site.posts | where: "tags", "aws" %}
+    {% for post in available_posts %}
+      <a href="{{ post.url }}" class="post">
+        <div class="title">{{ post.title }}</div>
+        <div class="subtitle">{{ post.subtitle }}</div>
+        <div><span class="date">{{ post.date  | date: "%b %d, %Y" }}</span> ㆍ  <span class="readtime">{{ post.readtime }} read</span></div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+<div class="pagination">
+  <span class="previous">이전</span>
+  <span class="page_number "><span class="current-page"></span> of <span class="total-page"></span></span>
+  <span class="next ">다음</span>
+</div>
