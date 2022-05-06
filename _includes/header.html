@@ -43,6 +43,17 @@
                 </a>
               </li>
               <li class="submenu-item">
+                <a href="/pages/aws">
+                  <span class="submenu-item__name">
+                    AWS
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "aws" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li class="submenu-item">
                 <a href="/pages/tool">
                   <span class="submenu-item__name">
                     TOOL
