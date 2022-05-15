@@ -54,6 +54,17 @@
                 </a>
               </li>
               <li class="submenu-item">
+                <a href="/pages/design-pattern">
+                  <span class="submenu-item__name">
+                    DESIGN PATTERN
+                    <span class="post-count">
+                      {% assign tagPosts = site.posts | where: "tags", "design-pattern" %}
+                      {{tagPosts.size}}
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li class="submenu-item">
                 <a href="/pages/tool">
                   <span class="submenu-item__name">
                     TOOL
