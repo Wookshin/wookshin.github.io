@@ -109,7 +109,7 @@ body {
 
   h4 {
     font-size: calc(#{$font-size-fifth} * 2.3);
-    color: #248689;
+    color: #6ed3d7;
   }
 
   h1,
@@ -242,8 +242,12 @@ body {
     color: $font-color-primary;
     background-color: $background-color !important;
 
-    a, h4 {
+    a {
       color: $font-color-secondary;
+    }
+
+    h4 {
+      color: #2d6567;
     }
     
     h1, h2, h3 {
