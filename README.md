@@ -1,6 +1,7 @@
 # 욱신 블로그
 
 <img src="https://wookshin.github.io/portfolio/imgs/projects/wookshin-blog.png"  title="portfolio" />
+<img src="https://wookshin.github.io/portfolio/imgs/projects/wookshin-blog-post.png"  title="portfolio" />
 
 <br/>
 
