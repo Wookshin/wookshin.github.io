@@ -1,6 +1,6 @@
 # 욱신 블로그
 
-<img src="https://wookshin.github.io/portfolio/imgs/projects/blog_white_list.png"  title="portfolio" />
+<img src="https://wookshin.github.io/portfolio/imgs/projects/wookshin-blog.png"  title="portfolio" />
 
 <br/>
 
