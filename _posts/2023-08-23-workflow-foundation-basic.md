@@ -3,7 +3,7 @@ title: 워크플로우 파운데이션(WF) 소개 - 단순하게 알아보기
 subtitle: Workflow Foundation
 readtime: 10 min
 author: wookshin
-tags: [C#]
+tags: [c#]
 comments: true
 ---
 
@@ -129,7 +129,41 @@ namespace HelloWorld
 
 <br/><br/>
 
-## 4. 결론
+## 4. InArgument의 활용 (액티비티에 값 넘기기)
+
+보통은 IDictionary<string, object> 타입의 딕셔너리를 사용하여 액티비티에 값을 전달합니다.  
+액티비티에선 InArgument를 사용하여 전달받은 값을 활용합니다.  
+이 딕셔너리의 키는 액티비티에서 정의한 InArgument의 이름과 일치해야 하며, 값은 해당 InArgument가 기대하는 타입의 값을 가지고 있어야 합니다.
+
+<br/>
+
+예를 들어, 액티비티 클래스에서 다음과 같이 InArgument<string> 타입의 Question 변수를 정의했다면,
+
+```csharp
+public InArgument<string> Question { get; set; }
+```
+
+워크플로우를 호출할 때는 다음과 같이 딕셔너리를 사용해서 값을 전달할 수 있습니다.
+
+```csharp
+IDictionary<string, object> inputs = new Dictionary<string, object>
+{
+    { "Question", "What is your name?" }
+};
+```
+
+그리고 이 딕셔너리를 WorkflowInvoker.Invoke 메서드에 전달하면, 액티비티 내부에서 Question.Get(context)를 사용해 이 값을 가져와 사용할 수 있습니다.
+
+```csharp
+IDictionary<string, object> outputs = WorkflowInvoker.Invoke(new GetUserInput(), inputs);
+```
+
+딕셔너리의 키("Question"이라는 문자열)는 InArgument의 변수 이름("Question")과 일치해야 하고, 값의 타입은 InArgument가 정의된 타입과 일치해야 합니다.  
+이런 방식으로 InArgument를 통해 워크플로우 액티비티에 값을 전달할 수 있습니다.
+
+<br/><br/>
+
+## 5. 결론
 
 워크플로우 파운데이션은 여러 작업을 순서대로 자동화하고 효율적으로 만들어주는 도구입니다.  
 복잡한 것 같아도 기본적으로는 우리가 일상에서 경험하는 '단계'와 '순서'를 컴퓨터가 이해할 수 있게 번역해주는 것이죠.
