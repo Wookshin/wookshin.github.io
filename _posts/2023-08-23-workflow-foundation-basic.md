@@ -37,7 +37,7 @@ WF는 이러한 일련의 단계를 컴퓨터 프로그램에서 쉽게 만들�
 
 <br/>
 
-### 액티비티 만들기
+### 3-1. Say Hello 만들기
 
 이 코드는 "Hello, World!"라고 출력하는 간단한 액티비티입니다.
 
@@ -58,8 +58,6 @@ namespace HelloWorld
 
 <br/>
 
-### 워크플로우 런타임
-
 WorkflowInvoker.Invoke 메서드를 사용하여 SayHello 액티비티를 실행시킵니다.
 
 ```csharp
@@ -75,6 +73,58 @@ namespace HelloWorld
         }
     }
 }
+```
+
+<br/>
+
+### 3-2. 입력을 받아 출력하기
+
+이 코드는 입력을 받는 액티비티입니다.
+
+```csharp
+using System.Activities;
+
+namespace HelloWorld
+{
+    public class GetUserInput : CodeActivity<string>
+    {
+        public InArgument<string> Question { get; set; }
+
+        protected override string Execute(CodeActivityContext context)
+        {
+            Console.Write(Question.Get(context));
+            return Console.ReadLine();
+        }
+    }
+}
+```
+
+<br/>
+
+사용자로부터 입력을 받아 "Hello, [입력받은 이름]"을 출력합니다.
+
+```csharp
+using System.Activities;
+using System.Collections.Generic;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IDictionary<string, object> inputs = new Dictionary<string, object>
+            {
+                { "Question", "What is your name?" }
+            };
+
+            IDictionary<string, object> outputs = WorkflowInvoker.Invoke(new GetUserInput(), inputs);
+
+            Console.WriteLine($"Hello, {outputs["Result"]}");
+        }
+    }
+}
+
 ```
 
 <br/><br/>
