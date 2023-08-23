@@ -1,10 +1,10 @@
 ---
 layout: default
-title: c# 태그
+title: C# 태그
 ---
 <div class="display list">
   <div class="posts">
-    {% assign available_posts = site.posts | where: "tags", "c#" %}
+    {% assign available_posts = site.posts | where: "tags", "dotnet" %}
     {% for post in available_posts %}
       <a href="{{ post.url }}" class="post">
         <div class="title">{{ post.title }}</div>
