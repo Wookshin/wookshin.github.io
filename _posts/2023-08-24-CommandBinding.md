@@ -47,9 +47,11 @@ UI 컨트롤과 실제 비즈니스 로직을 분리함으로써, 더 유지보�
 
 ## 3. 예제 코드
 
+이 코드에서 ApplicationCommands.New 명령은 "새 문서를 생성합니다."라는 메시지 박스를 띄우는 NewCommand_Executed 메서드에 바인딩됩니다.  
+NewCommand_CanExecute는 이 명령이 실행 가능한 상태인지를 판단합니다.
+
 <br/>
 
-```csharp
 ```csharp
 using System;
 using System.Windows;
@@ -143,5 +145,11 @@ private void DeleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
     // 삭제 로직
 }
 ```
+
+<br/><br/>
+
+## 4. 마치며
+
+CommandBinding은 .NET 애플리케이션 개발에서 사용자 인터페이스와 로직을 효과적으로 연결하는 강력한 도구입니다. 코드의 재사용성을 높이고, 유지보수를 쉽게 만들어 줍니다.
 
 <br/><br/><br/><br/><br/>
