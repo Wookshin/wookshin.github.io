@@ -15,7 +15,7 @@ comments: true
 
 ## 1. Implicit waits와 Explicit waits의 특징
 
-### Implicit waits
+#### Implicit waits
 
 - 웹드라이버는 **지정된 시간 동안 웹 요소가 나타날 때까지 기다립니다**.
 - 해당 시간 내에 요소가 발견되면 실행을 계속합니다. 만약 요소가 발견되지 않으면, **타임아웃 예외를 발생시킵니다**.
@@ -23,7 +23,7 @@ comments: true
 
 <br/>
 
-### Explicit waits
+#### Explicit waits
 
 - **특정 조건이 만족될 때까지 기다리도록 설계된 것입니다**. 예를 들면, 요소가 클릭 가능해질 때까지 기다리는 것과 같은 조건을 부여합니다.
 - `WebDriverWait`와 `ExpectedConditions` 클래스를 사용하여 구현됩니다.
@@ -41,7 +41,7 @@ Implicit waits는 웹드라이버가 전체 생명주기에 걸쳐 일정 시간
 
 <br/>
 
-### 예시 1: 페이지 로딩 후 특정 요소 찾기
+#### 예시 1: 페이지 로딩 후 특정 요소 찾기
 
 ```csharp
 using OpenQA.Selenium;
@@ -69,7 +69,7 @@ class ImplicitWaitExample1
 
 <br/>
 
-### 예시 2: 여러 요소 찾기
+#### 예시 2: 여러 요소 찾기
 
 ```csharp
 using OpenQA.Selenium;
@@ -102,7 +102,7 @@ class ImplicitWaitExample2
 
 <br/>
 
-### 예시 1: 요소가 클릭 가능할 때까지 기다리기
+#### 예시 1: 요소가 클릭 가능할 때까지 기다리기
 
 ```csharp
 using OpenQA.Selenium;
@@ -131,7 +131,7 @@ class ExplicitWaitExample1
 
 <br/>
 
-### 예시 2: 요소가 표시될 때까지 기다리기
+#### 예시 2: 요소가 표시될 때까지 기다리기
 
 ```csharp
 using OpenQA.Selenium;
@@ -176,8 +176,5 @@ class ExplicitWaitExample2
 어느 방법이 더 좋다고 단정지을 수는 없으며, 테스트의 요구사항과 복잡성에 따라 적절한 대기 전략을 선택하는 것이 중요합니다.  
 테스트 자동화의 성공은 디테일에 있습니다.  
 단순히 코드를 실행하는 것이 아니라, 실제 사용자 경험을 얼마나 정확하게 반영하는가가 중요한데, 이를 위해서는 대기 전략을 잘 활용하는 것이 빠질 수 없는 요소입니다.  
-앞으로도 Selenium과 웹 테스트 자동화에 대한 다양한 주제와 팁을 공유할 예정이니, 많은 관심과 피드백 부탁드립니다.
-
-감사합니다!
 
 <br/><br/><br/><br/><br/>
