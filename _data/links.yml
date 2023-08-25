@@ -13,4 +13,7 @@
 - name: "자동 Web Driver 버전 설정(.NET)"
   url: https://github.com/rosolko/WebDriverManager.Net
   tag: dotnet
+- name: Chrome Driver 버전별 다운로드 URL 관리(.json)
+  url: https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json
+  tag: dotnet
   
