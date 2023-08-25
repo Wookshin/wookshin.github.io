@@ -148,6 +148,7 @@ private void DeleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
 
 ## 4. 마치며
 
-CommandBinding은 .NET 애플리케이션 개발에서 사용자 인터페이스와 로직을 효과적으로 연결하는 강력한 도구입니다. 코드의 재사용성을 높이고, 유지보수를 쉽게 만들어 줍니다.
+CommandBinding은 .NET 애플리케이션 개발에서 사용자 인터페이스와 로직을 효과적으로 연결하는 강력한 도구입니다.  
+코드의 재사용성을 높이고, 유지보수를 쉽게 만들어 줍니다.
 
 <br/><br/><br/><br/><br/>
