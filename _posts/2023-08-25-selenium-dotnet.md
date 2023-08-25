@@ -46,8 +46,6 @@ CI/CD 파이프라인에 포함하여 빌드 및 배포 프로세스 중 자동�
 
 ### 1) 로그인 페이지 테스트
 
-<br/>
-
 ```csharp
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
