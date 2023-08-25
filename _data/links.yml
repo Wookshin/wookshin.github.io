@@ -10,3 +10,7 @@
 - name: liquid 에서 where 사용방법(공식문서)
   url: https://shopify.github.io/liquid/filters/where/
   tag: ruby
+- name: "자동 Web Driver 버전 설정(.NET)"
+  url: https://github.com/rosolko/WebDriverManager.Net
+  tag: dotnet
+  
