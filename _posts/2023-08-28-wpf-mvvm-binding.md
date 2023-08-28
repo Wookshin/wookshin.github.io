@@ -1,0 +1,203 @@
+---
+title: WPF MVVM 패턴, 그리고 Binding
+subtitle: WPF 시리즈
+readtime: 15 min
+author: wookshin
+tags: [dotnet]
+comments: true
+---
+
+<br/>
+
+# WPF MVVM 패턴, 그리고 Binding
+
+안녕하세요! 오늘은 WPF (Windows Presentation Foundation)에서 Binding과 MVVM (Model-View-ViewModel) 패턴에 대한 이해를 도와드릴 예정입니다.  
+이 글을 통해 Binding이 어떻게 작동하는지, 그리고 MVVM과 어떻게 연결되는지 알아보겠습니다.
+
+<br/>
+
+## 1. MVVM 패턴 소개
+
+MVVM은 Model, View, ViewModel의 약자로, 세 부분으로 나뉩니다.
+
+- **Model**: 데이터와 비즈니스 로직을 담당합니다.
+- **View**: UI (User Interface)를 담당합니다.
+- **ViewModel**: View와 Model을 연결하는 로직을 담당합니다.
+
+<br/>
+
+## 2. 왜 MVVM이 필요한가?
+
+MVVM 패턴은 큰 프로젝트나 복잡한 UI를 가진 애플리케이션에서 매우 유용합니다.  
+예를 들어, 여러 개발자가 같은 프로젝트에 참여하고 있다면, MVVM을 사용하면 UI와 로직을 분리하여 작업할 수 있습니다.  
+이렇게 하면 코드의 재사용성이 높아지고 유지보수가 쉬워집니다.
+
+<br/>
+
+#### 예시: 쇼핑몰 앱
+
+- **Model**: 상품 데이터, 가격, 재고 등
+- **View**: 상품 목록, 가격 표시, 장바구니 등의 UI
+- **ViewModel**: 상품을 장바구니에 추가하는 로직, 가격 계산 등
+
+만약 MVVM을 사용하지 않는다면, 상품을 장바구니에 추가할 때마다 UI 코드 내에서 모든 것을 처리해야 할 것입니다.  
+이는 코드가 복잡해지고, 다른 개발자가 이해하기 어렵게 만듭니다.
+
+<br/><br/>
+
+## 3. MVVM 구현 예제 코드
+
+#### Model
+
+```csharp
+public class Product
+{
+    public string Name { get; set; }
+    public double Price { get; set; }
+}
+```
+
+<br/>
+
+#### ViewModel
+
+ObservableCollection을 통해 위 Model을 관리하고 있습니다.
+
+```csharp
+public class ShoppingCartViewModel : INotifyPropertyChanged
+{
+    private ObservableCollection<Product> _products;
+    public ObservableCollection<Product> Products
+    {
+        get { return _products; }
+        set
+        {
+            _products = value;
+            OnPropertyChanged("Products");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    public ICommand AddToCartCommand { get; private set; }
+
+    public ShoppingCartViewModel()
+    {
+        Products = new ObservableCollection<Product>();
+        AddToCartCommand = new RelayCommand(AddProductToCart);
+    }
+
+    private void AddProductToCart(object parameter)
+    {
+        // Add product to cart logic
+    }
+}
+```
+
+<br/>
+
+#### View (Xaml 코드)
+
+```xml
+<ListView ItemsSource="{Binding Products}">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" />
+                <TextBlock Text="{Binding Price}" />
+            </StackPanel>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+<Button Command="{Binding AddToCartCommand}" Content="Add to Cart" />
+```
+
+<br/><br/>
+
+## 4. Binding이란?
+
+Binding은 View와 ViewModel 사이의 데이터 연결을 담당합니다.  
+Binding을 통해 ViewModel의 변경사항이 자동으로 View에 반영되고, 반대로 View의 변경사항도 ViewModel에 자동으로 반영됩니다.
+
+<br/><br/>
+
+## 5. Binding의 내부 동작 방식 
+
+Binding이 어떻게 동작하는지를 이해하려면 여러 WPF의 특성과 기술을 알아야 합니다.  
+이 중에서도 두 가지 주요 기술이 있습니다: `DependencyProperty`와 `INotifyPropertyChanged`.
+
+<br/>
+
+#### DependencyProperty
+
+`DependencyProperty`는 WPF에서 제공하는 특별한 종류의 프로퍼티입니다. 이 프로퍼티는 자동으로 값의 변경을 감지하고, 변경이 일어나면 연결된 UI 요소를 업데이트합니다.
+
+<br/>
+
+#### 예시 코드 (XAML)
+
+```xml
+<TextBlock x:Name="textBlock1" Text="{Binding ElementName=textBox1, Path=Text}" />
+<TextBox x:Name="textBox1" Text="Hello, WPF!" />
+```
+
+이 코드에서 `TextBlock`의 `Text` 프로퍼티는 `TextBox`의 `Text` 프로퍼티에 바인딩됩니다.  
+`Text` 프로퍼티는 `DependencyProperty`이므로, `TextBox`의 텍스트가 변경되면 `TextBlock`도 자동으로 업데이트됩니다.
+
+<br/>
+
+#### INotifyPropertyChanged
+
+`INotifyPropertyChanged` 인터페이스는 ViewModel에서 주로 사용되며, 프로퍼티의 값이 변경될 때 `PropertyChanged` 이벤트를 발생시켜 UI에 알려줍니다.
+
+<br/>
+
+#### 예시 코드 (ViewModel)
+
+```csharp
+public class MainViewModel : INotifyPropertyChanged
+{
+    private string _userName;
+    public string UserName
+    {
+        get { return _userName; }
+        set
+        {
+            _userName = value;
+            OnPropertyChanged("UserName");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+
+XAML:
+
+```xml
+<TextBlock Text="{Binding UserName}" />
+```
+
+이 코드에서 ViewModel의 `UserName` 프로퍼티가 변경되면 `PropertyChanged` 이벤트가 발생하고, 이에 따라 바인딩된 `TextBlock`의 `Text` 프로퍼티가 업데이트됩니다.
+이렇게 `DependencyProperty`와 `INotifyPropertyChanged`를 이용하면, WPF에서 데이터 바인딩이 어떻게 내부적으로 동작하는지 이해할 수 있습니다.
+
+<br/><br/>
+
+## 6. 마치며
+
+WPF의 데이터 바인딩은 코드와 UI의 분리, 자동 업데이트, 표준화 및 재사용성 등 여러 목적을 위해 설계되었습니다.  
+내부 동작 방식은 복잡해 보이지만, 이를 이해하고 적절히 활용한다면 강력하고 효율적인 애플리케이션을 개발할 수 있습니다.  
+이 글을 통해 바인딩의 목적과 내부 동작 방식에 대한 깊은 이해를 얻었길 바랍니다.
+
+
+<br/><br/><br/><br/><br/>
