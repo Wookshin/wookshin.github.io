@@ -1,6 +1,6 @@
 ---
 title: Selenium에서 웹 요소를 기다리는 기술 - Implicit vs Explicit
-subtitle: Selenium에 대해 알아보기
+subtitle: Selenium 시리즈
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
