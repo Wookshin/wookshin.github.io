@@ -1,6 +1,6 @@
 ---
 title: 워크플로우 파운데이션(WF) 소개 - 단순하게 알아보기
-subtitle: Workflow Foundation
+subtitle: WF(Workflow Foundation) 시리즈
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
