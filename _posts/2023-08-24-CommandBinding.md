@@ -1,6 +1,6 @@
 ---
 title: CommandBinding in .NET - 간단하게 이해하기
-subtitle: CommandBinding에 대해 알아보기
+subtitle: .NET 시리즈
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
