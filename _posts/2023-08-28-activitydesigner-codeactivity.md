@@ -48,7 +48,17 @@ public class MyCodeActivity : CodeActivity
 2. **디자인과 런타임 연계**: `ActivityDesigner`는 `CodeActivity`의 속성과 바인딩되어, 디자인 시간의 변경이 런타임에도 반영됩니다.
 3. **재사용성과 확장성**: `CodeActivity`와 `ActivityDesigner`는 독립적으로 확장하고 재사용할 수 있습니다.
 
-<br/><br/>
+<br/>
+
+"디자인 시간의 변경이 런타임에도 반영됩니다"는 워크플로우 디자이너에서 편집한 액티비티의 속성이나 설정이 실제 실행 시점(런타임)의 워크플로우에도 적용된다는 의미입니다.  
+
+**디자인 시간(Design-time)**: 워크플로우를 구성하거나 수정하는 시점을 말하며, 여기서는 액티비티의 속성을 설정하거나 편집할 수 있습니다.  
+**런타임(Runtime)**: 워크플로우가 실제로 실행되는 시점을 말합니다.  
+
+예를 들어, CodeActivity의 어떤 속성을 ActivityDesigner를 통해 변경했다면, 그 변경사항은 워크플로우가 실제로 실행될 때 해당 CodeActivity 인스턴스에 반영됩니다.  
+이는 디자이너에서의 편집과 실제 실행 사이에 일관성을 유지하게 해줍니다.
+
+<br/>
 
 ## 2. ActivityDesigner와 CodeActivity의 연결 방법
 
