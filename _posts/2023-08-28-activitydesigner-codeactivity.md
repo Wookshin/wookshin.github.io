@@ -1,6 +1,6 @@
 ---
 title: ActivityDesigner와 CodeActivity - 연결, 활용, 그리고 그 관계 이해하기
-subtitle: Workflow Foundation (WF) 시리즈
+subtitle: WF(Workflow Foundation) 시리즈
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
