@@ -117,6 +117,24 @@ public class ShoppingCartViewModel : INotifyPropertyChanged
 <Button Command="{Binding AddToCartCommand}" Content="Add to Cart" />
 ```
 
+#### Data Context 설정
+
+바인딩의 소스는 일반적으로 DataContext를 통해 설정됩니다.  
+이는 XAML 파일의 루트 요소 또는 특정 UI 요소에서 설정할 수 있습니다.
+
+```xml
+<Window x:Class="YourNamespace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:ShoppingCartViewModel/>
+    </Window.DataContext>
+    
+    <!-- Your UI here -->
+</Window>
+```
+
 <br/><br/>
 
 ## 4. Binding이란?
