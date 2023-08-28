@@ -72,7 +72,7 @@ SQL 쿼리가 오라클 데이터베이스에서 실행될 때, 그 과정은 �
 
 <br/><br/>
 
-## 6. Bind되는 값에 따라 SQL Plan도 변경되어야지 않아?
+## 6. Bind 값에 따라 SQL Plan도 변경되어야 하는 것 아닌가?
 
 바인드 변수를 사용할 때 주의할 점 중 하나는 바로 "바인드 변수 피크"(Bind Variable Peeking) 또는 오라클 11g 이후에서는 "어댑티브 커서 공유"(Adaptive Cursor Sharing)라고 불리는 현상입니다.
 
