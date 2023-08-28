@@ -117,6 +117,8 @@ public class ShoppingCartViewModel : INotifyPropertyChanged
 <Button Command="{Binding AddToCartCommand}" Content="Add to Cart" />
 ```
 
+<br/>
+
 #### Data Context 설정
 
 바인딩의 소스는 일반적으로 DataContext를 통해 설정됩니다.  
@@ -157,7 +159,7 @@ Binding이 어떻게 동작하는지를 이해하려면 여러 WPF의 특성과 
 
 <br/>
 
-#### 예시 코드 (XAML)
+#### 예시 코드 (Xaml)
 
 ```xml
 <TextBlock x:Name="textBlock1" Text="{Binding ElementName=textBox1, Path=Text}" />
@@ -200,7 +202,9 @@ public class MainViewModel : INotifyPropertyChanged
 }
 ```
 
-XAML:
+<br/>
+
+#### 예시코드 (Xaml)
 
 ```xml
 <TextBlock Text="{Binding UserName}" />
