@@ -184,6 +184,8 @@ public MainWindow()
 - `DataContext`가 변경되면 해당 요소와 그 하위 요소의 모든 바인딩이 업데이트됩니다. 따라서 `DataContext`를 자주 변경하는 것은 성능 문제를 야기할 수 있습니다.
 - 부모 요소와 자식 요소가 다른 `DataContext`를 가질 경우, 자식 요소의 바인딩은 부모의 `DataContext`를 상속받지 않습니다. 이 경우 자식 요소는 명시적으로 `DataContext`를 설정해야 합니다.
 
+<br/>
+
 이러한 방식으로 `DataContext`는 WPF의 바인딩 메커니즘에서 중심 역할을 하며, ViewModel과 View를 효과적으로 연결해 줍니다.
 
 <br/><br/>
