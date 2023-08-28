@@ -34,7 +34,7 @@ public class MyCodeActivity : CodeActivity
 
 `ActivityDesigner`는 워크플로우 액티비티를 시각적으로 표현하고 편집하는 인터페이스를 제공합니다. 이는 주로 XAML을 사용하여 정의됩니다.
 
-```xaml
+```xml
 <sap:ActivityDesigner x:Class="MyNamespace.MyCodeActivityDesigner">
     <!-- UI 정의 -->
 </sap:ActivityDesigner>
