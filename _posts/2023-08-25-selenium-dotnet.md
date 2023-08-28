@@ -1,6 +1,6 @@
 ---
 title: 빠르게 배우는 Selenium과 .NET - 3가지 실용적인 예제로 알아보기
-subtitle: Selenium에 대해 알아보기
+subtitle: Selenium 시리즈
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
