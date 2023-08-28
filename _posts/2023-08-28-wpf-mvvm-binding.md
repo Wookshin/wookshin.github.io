@@ -1,6 +1,6 @@
 ---
 title: WPF MVVM 패턴, 그리고 Binding
-subtitle: WPF 시리즈
+subtitle: WPF(Windows Presentation Foundation) 시리즈
 readtime: 15 min
 author: wookshin
 tags: [dotnet]
