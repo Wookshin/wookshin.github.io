@@ -12,7 +12,7 @@ comments: true
 # WPF MVVM 패턴, 그리고 Binding
 
 안녕하세요! 오늘은 WPF (Windows Presentation Foundation)에서 Binding과 MVVM (Model-View-ViewModel) 패턴에 대한 이해를 도와드릴 예정입니다.  
-이 글을 통해 Binding이 어떻게 작동하는지, 그리고 MVVM과 어떻게 연결되는지 알아보겠습니다.
+이 글을 통해 MVVM 패턴이 무엇인지, Binding이 어떻게 작동하는지, 그리고 MVVM과 어떻게 연결되는지 알아보겠습니다.
 
 <br/>
 
@@ -139,14 +139,63 @@ public class ShoppingCartViewModel : INotifyPropertyChanged
 
 <br/><br/>
 
-## 4. Binding이란?
+## 4. 갑자기 나타난 DataContext란 무엇인가?
+
+`DataContext`는 WPF (Windows Presentation Foundation)에서 중요한 역할을 하는 프로퍼티 중 하나입니다.  
+이 프로퍼티는 바인딩의 기본 소스가 되며, 어떤 객체가 UI와 어떻게 연결될 것인지를 정의합니다.  
+`DataContext`는 상속될 수 있는 프로퍼티입니다. 즉, 부모 요소의 `DataContext` 설정이 자식 요소로 전파될 수 있습니다.
+
+<br/>
+
+#### 작동 원리
+
+1. **바인딩의 기본 소스 설정**: WPF 바인딩 시스템에서는 `Binding` 객체의 `Source` 프로퍼티를 명시적으로 설정하지 않으면 자동으로 해당 요소의 `DataContext`를 바인딩 소스로 사용합니다.
+
+2. **계층적 상속**: `DataContext`는 계층적으로 상속됩니다. 부모 요소에 `DataContext`가 설정되면, 그 설정은 자식 요소에게 상속됩니다. 이를 통해 ViewModel의 하위 객체를 UI의 하위 요소와 쉽게 바인딩할 수 있습니다.
+
+3. **값 변경 알림**: `DataContext`는 일반적으로 `INotifyPropertyChanged` 인터페이스를 구현한 객체에 바인딩됩니다. 이렇게 하면 데이터가 변경될 때 UI에 자동으로 알릴 수 있습니다.
+
+<br/>
+
+#### 예제
+
+예를 들어, 아래와 같이 `MainWindow` 클래스에 `DataContext`를 설정할 수 있습니다.
+
+```csharp
+public MainWindow()
+{
+    InitializeComponent();
+    this.DataContext = new YourViewModel();
+}
+```
+
+이렇게 하면, XAML에서는 다음과 같이 간단하게 프로퍼티에 접근할 수 있습니다.
+
+```xaml
+<TextBlock Text="{Binding YourProperty}" />
+```
+
+여기서 `YourProperty`는 `YourViewModel` 클래스 내에 정의된 프로퍼티입니다.
+
+<br/>
+
+#### 주의 사항
+
+- `DataContext`가 변경되면 해당 요소와 그 하위 요소의 모든 바인딩이 업데이트됩니다. 따라서 `DataContext`를 자주 변경하는 것은 성능 문제를 야기할 수 있습니다.
+- 부모 요소와 자식 요소가 다른 `DataContext`를 가질 경우, 자식 요소의 바인딩은 부모의 `DataContext`를 상속받지 않습니다. 이 경우 자식 요소는 명시적으로 `DataContext`를 설정해야 합니다.
+
+이러한 방식으로 `DataContext`는 WPF의 바인딩 메커니즘에서 중심 역할을 하며, ViewModel과 View를 효과적으로 연결해 줍니다.
+
+<br/><br/>
+
+## 5. Binding이란?
 
 Binding은 View와 ViewModel 사이의 데이터 연결을 담당합니다.  
 Binding을 통해 ViewModel의 변경사항이 자동으로 View에 반영되고, 반대로 View의 변경사항도 ViewModel에 자동으로 반영됩니다.
 
 <br/><br/>
 
-## 5. Binding의 내부 동작 방식 
+## 6. Binding의 내부 동작 방식 
 
 Binding이 어떻게 동작하는지를 이해하려면 여러 WPF의 특성과 기술을 알아야 합니다.  
 이 중에서도 두 가지 주요 기술이 있습니다: `DependencyProperty`와 `INotifyPropertyChanged`.
@@ -215,7 +264,7 @@ public class MainViewModel : INotifyPropertyChanged
 
 <br/><br/>
 
-## 6. 마치며
+## 7. 마치며
 
 WPF의 데이터 바인딩은 코드와 UI의 분리, 자동 업데이트, 표준화 및 재사용성 등 여러 목적을 위해 설계되었습니다.  
 내부 동작 방식은 복잡해 보이지만, 이를 이해하고 적절히 활용한다면 강력하고 효율적인 애플리케이션을 개발할 수 있습니다.  
