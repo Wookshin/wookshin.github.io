@@ -62,8 +62,6 @@ public class MyCodeActivity : CodeActivity
 
 ## 2. ActivityDesigner와 CodeActivity의 연결 방법
 
-<br/>
-
 #### DesignerAttribute 사용
 
 `.NET`의 `DesignerAttribute`를 사용하여 `CodeActivity`에 대한 디자이너를 지정할 수 있습니다.
@@ -92,8 +90,6 @@ public class MyCodeActivity : CodeActivity
 
 ## 3. 예시: 간단한 로그 작성 액티비티
 
-<br/>
-
 #### CodeActivity 구현
 
 ```csharp
@@ -113,7 +109,7 @@ public class LogActivity : CodeActivity
 
 #### ActivityDesigner 구현
 
-```xaml
+```xml
 <sap:ActivityDesigner x:Class="MyNamespace.LogActivityDesigner">
     <TextBox Text="{Binding ModelItem.Message, Mode=TwoWay}" />
 </sap:ActivityDesigner>
@@ -131,6 +127,8 @@ public class LogActivity : CodeActivity
 }
 ```
 
+<br/>
+
 이제 `LogActivity`를 워크플로우 디자이너에 추가하면, `LogActivityDesigner`가 자동으로 로드되어 메시지를 입력할 수 있는 텍스트 박스를 제공합니다.
 
 <br/><br/>
@@ -139,6 +137,7 @@ public class LogActivity : CodeActivity
 
 `ActivityDesigner`와 `CodeActivity`의 적절한 조합과 연결은 워크플로우의 디자인 타임과 런타임을 이어주는 중요한 역할을 합니다.  
 이 둘을 정확하게 연결하고 활용하면, 워크플로우 개발 과정이 훨씬 더 효율적이고 사용자 친화적이 될 수 있습니다.  
+
 특히, `.NET`의 `DesignerAttribute`를 사용하여 두 컴포넌트를 쉽게 연결할 수 있고, 이를 통해 사용자는 워크플로우 디자이너 내에서 직관적으로 액티비티를 편집할 수 있습니다.  
 이런 접근 방식은 워크플로우 애플리케이션의 개발과 유지 보수를 크게 단순화할 수 있습니다.
 
