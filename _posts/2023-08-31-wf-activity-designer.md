@@ -69,13 +69,27 @@ private void ActivityDesigner_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
+<br/><br/>
+
+## 3. 일대일 매핑과 다대일 매핑
+
 <br/>
 
-## 3. 일대일 매핑에 불과하다면 신기할 것도 없어!
+#### 일대일 매핑 (One-to-One Mapping)
 
-잠깐만요, 놀랍게도 다대일 매핑도 가능합니다. 
+일대일 매핑이란, 하나의 액티비티가 하나의 디자이너와 연결되는 것을 의미합니다. 이는 아주 간단하고 직관적인 방법입니다.
 
-즉, 여러 액티비티가 하나의 디자이너를 공유할 수 있어요. 신기하죠?
+예를 들어, 내가 만든 `MyActivity`라는 액티비티가 있다고 해보겠습니다. 이 액티비티에 디자이너를 적용하려면 아래와 같이 코드를 작성하면 됩니다.
+
+```csharp
+[Designer(typeof(MyActivityDesigner))]
+public class MyActivity : Activity
+{
+    // ...
+}
+```
+
+이렇게 하면 `MyActivity` 액티비티는 `MyActivityDesigner` 디자이너와 연결됩니다. 간단하죠?
 
 <br/>
 
@@ -164,7 +178,7 @@ private void ActivityDesigner_Loaded(object sender, RoutedEventArgs e)
 
 <br/><br/>
 
-## 4. ModelItem에 액티비티가 매핑되는 시점이 언제야?
+## 4. 액티비티, 디자이너, ModelItem 관계를 정리해줘!
 
 디자이너가 로딩되는 시점은 일반적으로 워크플로우 디자이너에 액티비티를 드래그 앤 드롭하여 추가했을 때나, 프로그래밍 방식으로 액티비티를 워크플로우에 추가했을 때입니다.
 
