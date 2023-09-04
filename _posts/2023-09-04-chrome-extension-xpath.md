@@ -43,14 +43,14 @@ Chrome Extension을 만들기 위해 가장 먼저 필요한 것은 `manifest.js
   "name": "XPath Finder",  // 확장 프로그램의 이름
   "version": "1.0",        // 확장 프로그램의 버전
   "permissions": ["activeTab"], // 필요한 권한. 현재 활성 탭에 접근하기 위해 "activeTab"을 설정.
-  "background": {          // 백그라운드 스크립트 설정
+  "background": {          // 메인 웹 페이지와 팝업 페이지 간 소통 역할을 해주는 백그라운드 스크립트 설정
     "service_worker": "service-worker.js",
     "type": "module"
   },
-  "content_scripts": [     // 컨텐트 스크립트 설정
+  "content_scripts": [     // 메인 웹 페이지에서 동작하는 컨텐트 스크립트 설정
     {
       "matches": ["<all_urls>"], // 모든 URL에 적용
-      "js": ["content.js"]
+      "js": ["content.js"] // 메인 웹 페이지에서 context.js를 수행 
     }
   ],
   "action": {              // 팝업 UI 설정
@@ -130,6 +130,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 Background Script는 확장 프로그램이 실행되는 동안 지속적으로 실행되는 스크립트입니다. 
 
+웹 페이지와 팝업 페이지가 소통할 수 있도록 중간 다리 역할을 합니다.  
+
 여기서는 XPath 정보를 받아 처리할 거에요.
 
 ```javascript
@@ -149,11 +151,11 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
 <br/>
 
-### 2-4. Popup UI (`popup.html`)
+#### 2-4. Popup UI (`popup.html`)
 
 Popup UI는 사용자가 확장 프로그램 아이콘을 클릭했을 때 나타나는 작은 창입니다. 
 
-여기에는 활성화 버튼이 있을 거에요.
+여기에는 활성화 버튼(Activate)이 있을 거에요.
 
 ```html
 <!DOCTYPE html>
@@ -224,7 +226,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 이 기능은 웹 개발뿐만 아니라 데이터 분석, 웹 스크래핑 등 다양한 분야에서 유용하게 사용될 수 있어요.
 
 지금까지 Chrome Extension으로 웹 페이지의 XPath 정보를 가져오는 방법에 대해 알아봤습니다. 
-
-다음 번에는 더 발전된 기능을 추가해 볼 예정이니, 기대해 주세요!
 
 <br/><br/><br/><br/><br/>
