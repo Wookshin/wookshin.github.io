@@ -187,6 +187,10 @@ body {
   code {
     font-family: $highlight-font-family;
     font-size: $font-size-fourth;
+
+    .err {
+      color: #c15e93;
+    }
   }
 }
 
