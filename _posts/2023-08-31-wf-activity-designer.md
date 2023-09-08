@@ -1,7 +1,7 @@
 ---
 title: Workflow 디자이너와 액티비티의 신비로운 연결고리 해석하기
 subtitle: WF(Workflow Foundation) 시리즈
-readtime: 12 min
+readtime: 6 min
 author: wookshin
 tags: [dotnet]
 comments: true
