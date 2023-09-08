@@ -15,7 +15,9 @@ comments: true
 
 오늘은 .NET의 중심부에서 작동하는 신비한 섬, 바로 `AppDomain`에 대해 깊이 들어가볼 생각입니다. 
 
-지금부터 여러분은 이 작은 섬에서 어떻게 여행을 즐길 수 있는지 알게 될 겁니다. 준비됐나요? 🚀
+지금부터 여러분은 이 작은 섬에서 어떻게 여행을 즐길 수 있는지 알게 될 겁니다. 
+
+준비됐나요? 🚀
 
 <br/>
 
@@ -27,7 +29,7 @@ comments: true
 
 즉, 어셈블리, 변수, 보안 설정 등이 각각의 `AppDomain` 내에서 격리됩니다.
 
-<br/>
+<br/><br/>
 
 ## 2. 격리되었다는 것은 무엇인가요? 🤔
 
@@ -62,7 +64,9 @@ comments: true
 
 대부분의 .NET 애플리케이션은 기본적으로 하나의 `AppDomain`에서 시작되므로, 따로 설정하지 않으면 `AppDomain.CurrentDomain`은 그 시작되는 `AppDomain`을 참조하게 됩니다.
 
-예를 들어 현재 `AppDomain`의 정보와 어셈블리 목록을 출력하려면 다음과 같이 할 수 있습니다:
+<br/>
+
+예를 들어 현재 `AppDomain`의 정보와 어셈블리 목록을 출력하려면 다음과 같이 할 수 있습니다.
 
 ```csharp
 // 현재 AppDomain의 정보 출력
@@ -102,9 +106,11 @@ foreach (Assembly guest in currentGuests)
 }
 ```
 
+<br/>
+
 #### 4.3 새로운 섬(AppDomain) 만들기
 
-새로운 섬을 창설하려면 어떻게 해야 할까요? `AppDomain.CreateDomain`을 사용하면 새로운 `AppDomain`을 생성할 수 있습니다.
+새로운 섬을 만들려면 어떻게 해야 할까요? `AppDomain.CreateDomain`을 사용하면 새로운 `AppDomain`을 생성할 수 있습니다.
 
 ```csharp
 AppDomain newIsland = AppDomain.CreateDomain("NewIsland");
@@ -169,19 +175,21 @@ AppDomain.Unload(unwantedDomain);
 
 <br/>
 
-#### 메시지 교환 방법
+### 메시지 교환 방법
 
 `AppDomain` 간에 직접적인 메시지 교환이 일반적으로는 어렵습니다. 그러나 .NET은 몇 가지 방법을 제공합니다.
 
-##### 첫째, **Serialization**
+#### 첫째, **Serialization**
 
 객체를 직렬화하여 바이트 스트림으로 만든 다음, 그 스트림을 다른 `AppDomain`에 전달하여 역직렬화할 수 있습니다.
 
 <br/>
 
-##### 둘째, **MarshalByRefObject**
+#### 둘째, **MarshalByRefObject**
 
 이 클래스를 상속받은 객체를 다른 `AppDomain`으로 전달할 수 있습니다. 이렇게 하면 원격 프로시를 통해 메시지를 교환할 수 있습니다.
+
+<br/>
 
 #### MarshalByRefObject 사용 예시
 
@@ -217,13 +225,13 @@ class Program
 }
 ```
 
-이 예시에서는 `MarshalByRefObject`를 상속받은 `Messenger` 클래스를 사용하여 메시지를 전송합니다. 이를 통해 다른 `AppDomain`에 있는 객체와 통신이 가능합니다.
+이 예시에서는 `MarshalByRefObject`를 상속받은 `Messenger` 클래스를 사용하여 메시지를 전송합니다. 
 
-이와 같이 `AppDomain`은 격리된 실행 공간을 제공하지만, 몇 가지 방법으로 이 공간을 넘어 다른 `AppDomain`과 통신할 수 있습니다.
+이를 통해 다른 `AppDomain`에 있는 객체와 통신이 가능합니다.
 
 <br/>
 
-##### 셋째, AppDomain에서 Callback 사용하기
+#### 셋째, AppDomain에서 Callback 사용하기
 
 .NET에서는 `AppDomain.DoCallBack` 메서드를 통해 다른 `AppDomain`에서 코드를 실행할 수 있습니다. 
 
@@ -261,7 +269,9 @@ class Program
 
 `DoCallBack` 메서드를 사용하면, 쉽게 다른 `AppDomain`에서 코드를 실행할 수 있습니다. 
 
-이 기능은, 예를 들어, 다른 `AppDomain`에서 어떤 초기화 작업을 수행하거나 상태를 확인해야 할 때 유용하게 사용될 수 있습니다.
+이 기능은 다른 `AppDomain`에서 어떤 초기화 작업을 수행하거나 상태를 확인해야 할 때 유용하게 사용될 수 있습니다.
+
+이와 같이 `AppDomain`은 격리된 실행 공간을 제공하지만, 몇 가지 방법으로 이 공간을 넘어 다른 `AppDomain`과 통신할 수 있습니다.
 
 <br/><br/>
 
