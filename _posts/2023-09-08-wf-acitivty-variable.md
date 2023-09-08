@@ -1,7 +1,7 @@
 ---
 title: A 액티비티에서 B 액티비티로 데이터 전달하기(Windows WF)
 subtitle: WF(Workflow Foundation) 시리즈
-readtime: 12 min
+readtime: 5 min
 author: wookshin
 tags: [dotnet]
 comments: true
