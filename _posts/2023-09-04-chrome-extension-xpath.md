@@ -1,7 +1,7 @@
 ---
 title: Chrome Extension으로 웹 페이지의 XPath 정보 가져오기
 subtitle: Chrome Extension 시리즈
-readtime: 12 min
+readtime: 6 min
 author: wookshin
 tags: [etc]
 comments: true
