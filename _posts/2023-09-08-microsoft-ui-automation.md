@@ -1,6 +1,6 @@
 ---
 title: Microsoft UI Automation Framework - 트리 구조로 UI 자동화의 세계를 탐험하다!
-subtitle: WF(Workflow Foundation) 시리즈
+subtitle: .NET 시리즈
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
