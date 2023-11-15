@@ -195,7 +195,7 @@ myFace.png
 oops.xml
 ```
 
-3) `(yes)?(?(1) indeed| no)`
+3) `(yes)?(?(1) indeed|no)`
 
 ```
 yes indeed
