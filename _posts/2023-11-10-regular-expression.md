@@ -57,21 +57,25 @@ comments: true
 
 ### 집합으로 찾기
 1. `[abc]`
-`abcdefg`
+
+```
+abcdefg
+```
 
 2. `a[abc]`
+
 `aa ab ac ad`
 
-3. `[^abc]`
+5. `[^abc]`
 `defabc`
 
-4. `[0-5]`
+6. `[0-5]`
 `1234567890`
 
-5. `[^bcdfghjklmnpqrstvwxyz]`
+7. `[^bcdfghjklmnpqrstvwxyz]`
 `abcdefghijklmnopqrstuvwxyz`
 
-6. `^[bcdfghjklmnpqrstvwxyz]`
+8. `^[bcdfghjklmnpqrstvwxyz]`
 ```
 apple
 bus
