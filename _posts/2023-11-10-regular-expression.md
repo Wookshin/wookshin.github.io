@@ -202,7 +202,6 @@ yes indeed
 yes no
 indeed
 no
-no indeed
 ```
 
 4) `(Error)?(?(1) Code: [0-9]{3}|No Error)`
