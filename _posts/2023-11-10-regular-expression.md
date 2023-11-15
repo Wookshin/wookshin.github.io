@@ -195,9 +195,22 @@ myFace.png
 oops.xml
 ```
 
-3) ``
+3) `(yes)?(?(1) indeed| no)`
 
 ```
+yes indeed
+yes no
+indeed
+no
+no indeed
+```
+
+4) `(Error)?(?(1) Code: [0-9]{3}|No Error)`
+
+```
+Error Code: 404
+No Error
+Error Code: XYZ
 ```
 
 
