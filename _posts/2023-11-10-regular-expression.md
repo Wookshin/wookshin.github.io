@@ -64,18 +64,30 @@ abcdefg
 
 2. `a[abc]`
 
-`aa ab ac ad`
+```
+aa ab ac ad
+```
 
-5. `[^abc]`
-`defabc`
+3. `[^abc]`
 
-6. `[0-5]`
-`1234567890`
+```
+defabc
+```
 
-7. `[^bcdfghjklmnpqrstvwxyz]`
-`abcdefghijklmnopqrstuvwxyz`
+4. `[0-5]`
 
-8. `^[bcdfghjklmnpqrstvwxyz]`
+```
+1234567890
+```
+
+5. `[^bcdfghjklmnpqrstvwxyz]`
+
+```
+abcdefghijklmnopqrstuvwxyz
+```
+
+6. `^[bcdfghjklmnpqrstvwxyz]`
+
 ```
 apple
 bus
