@@ -56,37 +56,37 @@ comments: true
 ## 3. 패턴 활용 예제들
 
 ### 집합으로 찾기
-1. `[abc]`
+1) `[abc]`
 
 ```
 abcdefg
 ```
 
-2. `a[abc]`
+2) `a[abc]`
 
 ```
 aa ab ac ad
 ```
 
-3. `[^abc]`
+3) `[^abc]`
 
 ```
 defabc
 ```
 
-4. `[0-5]`
+4) `[0-5]`
 
 ```
 1234567890
 ```
 
-5. `[^bcdfghjklmnpqrstvwxyz]`
+5) `[^bcdfghjklmnpqrstvwxyz]`
 
 ```
 abcdefghijklmnopqrstuvwxyz
 ```
 
-6. `^[bcdfghjklmnpqrstvwxyz]`
+6) `^[bcdfghjklmnpqrstvwxyz]`
 
 ```
 apple
