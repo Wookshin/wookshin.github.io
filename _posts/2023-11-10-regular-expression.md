@@ -96,12 +96,6 @@ cat
 english
 ```
 
-7) `K[3-4][A-Z0-9]`
-
-```
-K1234ABCD-123456  K1234ABCD-EFGHIJ
-```
-
 <br/>
 
 ### 반복 찾기
@@ -163,16 +157,18 @@ https://naver.com
 444
 ```
 
-2) `(\w+),\1`
+2) `([A-Z_]+),\1` or `(\w+),\1`
 
 ```
 USER_ID,USER_NAME,USER_PWD,USER_PWD,USER_DEPT 
 ```
 
-3) `(Chae) (Shinwook)` → `\2 \1`
+3) `([A-Z]+) ([A-Z]+)` → `\2 \1`
 
 ```
 Chae Shinwook
+Wang Hyunsung
+Park Heeje
 ```
 
 <br/>
