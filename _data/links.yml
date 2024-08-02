@@ -16,4 +16,8 @@
 - name: Chrome Driver 버전별 다운로드 URL 관리(.json)
   url: https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json
   tag: dotnet
+- name: Azure Static Web Apps에서 권한 관리하기
+  url: https://techcommunity.microsoft.com/t5/apps-on-azure-blog/how-to-setup-built-in-authentication-for-azure-static-web-apps/ba-p/3734709
+  tag: azure
+
   
