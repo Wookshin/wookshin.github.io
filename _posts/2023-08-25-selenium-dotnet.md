@@ -1,6 +1,6 @@
 ---
-title: 빠르게 배우는 Selenium과 .NET - 3가지 실용적인 예제로 알아보기
-subtitle: Selenium 시리즈
+title: .NET에서 Selenium 활용하기 - 3가지 실전 예제
+subtitle: "#Selenium #ChromeDriver #FindElements"
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# 빠르게 배우는 Selenium과 .NET : 3가지 실용적인 예제로 알아보기
+# .NET에서 Selenium 활용하기 - 3가지 실전 예제
 
 <br/>
 
