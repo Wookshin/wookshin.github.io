@@ -1,6 +1,6 @@
 ---
-title: 딥 다이브 - ExpressionTextBox와 ModelItem의 마법같은 Binding 관계
-subtitle: WF(Workflow Foundation) 시리즈
+title: ExpressionTextBox와 ModelItem의 바인딩 관계
+subtitle: "#WorkflowFoundation #ExpressionTextBox #ModelItem #Binding"
 readtime: 12 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# 딥 다이브: ExpressionTextBox와 ModelItem의 마법같은 Binding 관계
+# ExpressionTextBox와 ModelItem의 바인딩 관계
 
 안녕하세요, Workflow Foundation (WF)의 신비로운 세계를 탐험하는 여러분! 
 
