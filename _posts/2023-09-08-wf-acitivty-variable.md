@@ -1,5 +1,5 @@
 ---
-title: A 액티비티에서 B 액티비티로 데이터 전달하기(Workflow Foundation)
+title: A 액티비티에서 B 액티비티로 데이터 전달하기
 subtitle: "#WorkflowFoundation #InArgument #OutArugment #Variables"
 readtime: 5 min
 author: wookshin
