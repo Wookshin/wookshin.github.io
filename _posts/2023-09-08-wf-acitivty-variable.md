@@ -1,6 +1,6 @@
 ---
-title: A 액티비티에서 B 액티비티로 데이터 전달하기(Windows WF)
-subtitle: WF(Workflow Foundation) 시리즈
+title: A 액티비티에서 B 액티비티로 데이터 전달하기(Workflow Foundation)
+subtitle: #WorkflowFoundation #InArgument #OutArugment #Variables
 readtime: 5 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# A 액티비티에서 B 액티비티로 데이터 전달하기(Windows WF)
+# A 액티비티에서 B 액티비티로 데이터 전달하기(Workflow Foundation)
 
 안녕하세요! 
 
