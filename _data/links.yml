@@ -19,5 +19,7 @@
 - name: Azure Static Web Apps에서 권한 관리하기
   url: https://techcommunity.microsoft.com/t5/apps-on-azure-blog/how-to-setup-built-in-authentication-for-azure-static-web-apps/ba-p/3734709
   tag: azure
-
+- name: fasiai AI 교육 (강력 추천)
+  url: https://course.fast.ai/
+  tag: ai
   
