@@ -1,6 +1,6 @@
 ---
 title: 오라클 SQL 성능 최적화 - 바인드 변수와 Shared Memory 이해하기
-subtitle: Oracle 시리즈
+subtitle: "#Oracle #바인드변수 #SharedMemory #LibraryCache #SqlPlan"
 readtime: 7 min
 author: wookshin
 tags: [etc]
