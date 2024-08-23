@@ -1,6 +1,6 @@
 ---
-title: 윈도우의 '뇌'를 깨우치다 - 레지스트리에 숨겨진 비밀들
-subtitle: windows 시리즈
+title: Windows 레지스트리 간단 정리
+subtitle: "#Windows #Registry #레지스트리"
 readtime: 6 min
 author: wookshin
 tags: [etc]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# 윈도우의 '뇌'를 깨우치다: 레지스트리에 숨겨진 비밀들
+# Windows 레지스트리 간단 정리
 
 <br/>
 
