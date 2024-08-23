@@ -1,6 +1,6 @@
 ---
-title: Microsoft UI Automation Framework - 트리 구조로 UI 자동화의 세계를 탐험하다!
-subtitle: .NET 시리즈
+title: Microsoft UI Automation Framework 이해하기
+subtitle: "#AutomationElement #TreeWalker #ControlPatterns"
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# Microsoft UI Automation Framework: 트리 구조로 UI 자동화의 세계를 탐험하다!
+# Microsoft UI Automation Framework 이해하기
 
 안녕하세요, 여러분! 
 
