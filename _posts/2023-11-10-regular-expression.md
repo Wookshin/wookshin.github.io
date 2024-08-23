@@ -1,6 +1,6 @@
 ---
 title: 정규표현식의 유용한 패턴
-subtitle: ##집합찾기 #반복찾기 #역참조 #조건달기
+subtitle: \#집합찾기 #반복찾기 #역참조 #조건달기
 readtime: 6 min
 author: wookshin
 tags: [etc]
