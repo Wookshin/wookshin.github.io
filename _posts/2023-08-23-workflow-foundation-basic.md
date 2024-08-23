@@ -1,6 +1,6 @@
 ---
-title: 워크플로우 파운데이션(WF) 소개 - 단순하게 알아보기
-subtitle: WF(Workflow Foundation) 시리즈
+title: 워크플로우 파운데이션(Workflow Foundation) 소개
+subtitle: "#WorkflowFoundation #소개 #기본개념"
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
@@ -9,9 +9,9 @@ comments: true
 
 <br/>
 
-# 워크플로우 파운데이션(Workflow Foundation - WF) 소개: 단순하게 알아보기
+# 워크플로우 파운데이션(Workflow Foundation) 소개
 
-워크플로우 파운데이션 (WF)는 여러 작업을 자동화하고 관리할 수 있게 도와주는 도구입니다.  
+워크플로우 파운데이션(Workflow Foundation)는 여러 작업을 자동화하고 관리할 수 있게 도와주는 도구입니다.  
 간단하게 설명하자면, 일상에서의 '레시피'와 같은 것입니다.  
 빵을 굽기 위해선 먼저 재료를 준비하고, 반죽을 만든 후, 오븐에 굽는 등의 단계가 있죠. WF는 이런 단계를 컴퓨터가 이해할 수 있도록 도와주는 프로그램입니다.
 
