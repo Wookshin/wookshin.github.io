@@ -3,7 +3,7 @@ title: ExpressionTextBox와 ModelItem의 바인딩 관계
 subtitle: "#WorkflowFoundation #ExpressionTextBox #ModelItem #Binding"
 readtime: 12 min
 author: wookshin
-tags: [dotnet]
+tags: [windows-WF]
 comments: true
 ---
 
