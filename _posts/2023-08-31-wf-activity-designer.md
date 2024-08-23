@@ -3,7 +3,7 @@ title: Workflow 디자이너와 액티비티의 관계
 subtitle: "#WorkflowFoundation #Designer #Activity #ModelItem"
 readtime: 6 min
 author: wookshin
-tags: [dotnet]
+tags: [windows-WF]
 comments: true
 ---
 
