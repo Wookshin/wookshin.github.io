@@ -1,5 +1,5 @@
 ---
-title: CommandBinding in .NET - 간단하게 이해하기
+title: .NET에서 CommandBinding 활용하기
 subtitle: "#.NET #CommandBinding #디자인패턴"
 readtime: 10 min
 author: wookshin
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# CommandBinding in .NET: 간단하게 이해하기
+# .NET에서 CommandBinding 활용하기
 
 .NET에서 GUI 애플리케이션을 개발하면서, 사용자의 액션을 감지하고 적절한 로직을 수행하는 것은 중요한 부분입니다.  
 `CommandBinding`은 이러한 과정을 더 효율적이고 관리하기 쉽게 만들어주는 매커니즘 중 하나입니다.  
