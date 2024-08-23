@@ -1,6 +1,6 @@
 ---
-title: 정규표현식으로 시간 절약하기
-subtitle: 당신의 하루에 몇 시간을 더하세요
+title: 정규표현식의 유용한 패턴
+subtitle: #집합찾기 #반복찾기 #역참조 #조건달기
 readtime: 6 min
 author: wookshin
 tags: [etc]
