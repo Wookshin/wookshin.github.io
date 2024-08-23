@@ -1,10 +1,10 @@
 ---
 layout: default
-title: DESIGN PATTERN 태그
+title: AI 태그
 ---
 <div class="display list">
   <div class="posts">
-    {% assign available_posts = site.posts | where: "tags", "design-pattern" %}
+    {% assign available_posts = site.posts | where: "tags", "ai" %}
     {% for post in available_posts %}
       <a href="{{ post.url }}" class="post">
         <div class="title">{{ post.title }}</div>
