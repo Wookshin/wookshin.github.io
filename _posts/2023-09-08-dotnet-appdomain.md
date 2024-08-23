@@ -1,6 +1,6 @@
 ---
-title: AppDomain 탐구 - .NET에서의 신비로운 섬 🏝️
-subtitle: .NET 시리즈
+title: AppDomain 탐구
+subtitle: "#AppDomain #격리 #어셈블리별도실행 #플러그인시스템"
 readtime: 14 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# AppDomain 탐구 - .NET에서의 신비로운 섬 🏝️
+# AppDomain 탐구
 
 안녕하세요, .NET 개발자 여러분! 
 
