@@ -1,15 +1,15 @@
 ---
-title: ActivityDesigner와 CodeActivity - 연결, 활용, 그리고 그 관계 이해하기
-subtitle: WF(Workflow Foundation) 시리즈
+title: ActivityDesigner와 CodeActivity 이해하기
+subtitle: "#WorkflowFoundation #ActivityDesigner #CodeActivity"
 readtime: 10 min
 author: wookshin
-tags: [dotnet]
+tags: [windows-WF]
 comments: true
 ---
 
 <br/>
 
-# ActivityDesigner와 CodeActivity: 연결, 활용, 그리고 그 관계 이해하기
+# ActivityDesigner와 CodeActivity 이해하기
 
 <br/>
 
