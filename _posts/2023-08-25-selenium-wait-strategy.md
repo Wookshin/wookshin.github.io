@@ -1,5 +1,5 @@
 ---
-title: Selenium Implicit vs Explicit : 웹 요소 기다리기
+title: Selenium Implicit vs Explicit - 웹 요소 기다리기
 subtitle: "#Selenium #IWebDriver #Implicit #Explicit"
 readtime: 10 min
 author: wookshin
