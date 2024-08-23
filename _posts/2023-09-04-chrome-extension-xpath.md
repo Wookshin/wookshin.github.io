@@ -1,6 +1,6 @@
 ---
-title: Chrome Extension으로 웹 페이지의 XPath 정보 가져오기
-subtitle: Chrome Extension 시리즈
+title: Chrome Extension 활용하여여 웹 페이지 XPath 정보 가져오기
+subtitle: "#ChromeExtension #크롬확장프로그램 #XPath"
 readtime: 6 min
 author: wookshin
 tags: [etc]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# Chrome Extension으로 웹 페이지의 XPath 정보 가져오기
+# Chrome Extension 활용하여 웹 페이지 XPath 정보 가져오기
 
 안녕하세요! 
 
