@@ -1,6 +1,6 @@
 ---
-title: Selenium에서 웹 요소를 기다리는 기술 - Implicit vs Explicit
-subtitle: Selenium 시리즈
+title: Selenium Implicit vs Explicit : 웹 요소 기다리기
+subtitle: "#Selenium #IWebDriver #Implicit #Explicit"
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# Selenium에서 웹 요소를 기다리는 기술 : Implicit vs Explicit
+# Selenium Implicit vs Explicit : 웹 요소 기다리기
 
 <br/>
 
