@@ -1,6 +1,6 @@
 ---
 title: CommandBinding in .NET - 간단하게 이해하기
-subtitle: .NET 시리즈
+subtitle: "#.NET #CommandBinding #디자인패턴"
 readtime: 10 min
 author: wookshin
 tags: [dotnet]
