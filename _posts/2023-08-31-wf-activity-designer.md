@@ -1,6 +1,6 @@
 ---
-title: Workflow 디자이너와 액티비티의 신비로운 연결고리 해석하기
-subtitle: WF(Workflow Foundation) 시리즈
+title: Workflow 디자이너와 액티비티의 관계
+subtitle: "#WorkflowFoundation #Designer #Activity #ModelItem"
 readtime: 6 min
 author: wookshin
 tags: [dotnet]
@@ -9,7 +9,7 @@ comments: true
 
 <br/>
 
-# Workflow 디자이너와 액티비티의 신비로운 연결고리 해석하기
+# Workflow 디자이너와 액티비티의 관계
 
 안녕하세요, 여러분! 
 
